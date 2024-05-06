@@ -8,11 +8,16 @@ const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
-const cactusTech: { desc: string; href: string; title: string }[] = [
+const webpageTech: { desc: string; href: string; title: string }[] = [
 	{
 		desc: "Build fast websites, faster.",
 		href: "https://astro.build",
 		title: "Astro",
+	},
+	{
+		desc: "Chrismwilliams' Astro Theme Cactus.",
+		href: "https://github.com/chrismwilliams/astro-theme-cactus/blob/main/package.json",
+		title: "Cactus Theme",
 	},
 	{
 		desc: "Rapidly build modern websites without ever leaving your HTML.",
@@ -50,19 +55,102 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 		title: "Expressive Code",
 	},
 ];
+
+const botTech: { desc: string; href: string; title: string }[] = [
+	{
+		desc: "Converts ANSI escape codes into HTML.",
+		href: "https://www.npmjs.com/package/ansi-to-html",
+		title: "ansi-to-html",
+	},
+	{
+		desc: "ASCII cows that can say things in your terminal.",
+		href: "https://www.npmjs.com/package/cowsay",
+		title: "cowsay",
+	},
+	{
+		desc: "Loads environment variables from a .env file.",
+		href: "https://www.npmjs.com/package/dotenv",
+		title: "dotenv",
+	},
+	{
+		desc: "Rainbow coloring for text in the terminal.",
+		href: "https://www.npmjs.com/package/lolcatjs",
+		title: "lolcatjs",
+	},
+	{
+		desc: "Generates images from HTML.",
+		href: "https://www.npmjs.com/package/node-html-to-image",
+		title: "node-html-to-image",
+	},
+	{
+		desc: "Fork pseudoterminals in Node.js.",
+		href: "https://www.npmjs.com/package/node-pty",
+		title: "node-pty",
+	},
+	{
+		desc: "Twitter API client for Node.js.",
+		href: "https://www.npmjs.com/package/twitter-api-v2",
+		title: "twitter-api-v2",
+	},
+	{
+		desc: "JavaScript that scales.",
+		href: "https://www.npmjs.com/package/typescript",
+		title: "typescript",
+	},
+	{
+		desc: "Wraps input text into a column of specified width.",
+		href: "https://www.npmjs.com/package/word-wrap",
+		title: "word-wrap",
+	},
+	{
+		desc: "TypeScript definitions for Node.js.",
+		href: "https://www.npmjs.com/package/@types/node",
+		title: "@types/node",
+	},
+	{
+		desc: "TypeScript definitions for lolcatjs.",
+		href: "https://www.npmjs.com/package/@types/lolcatjs",
+		title: "@types/lolcatjs",
+	},
+	{
+		desc: "Automate, customize, and execute software development workflows.",
+		href: "https://github.com/features/actions",
+		title: "GitHub Actions",
+	},
+	{
+		desc: "A time-based job scheduler in Unix-like operating systems.",
+		href: "https://en.wikipedia.org/wiki/Cron",
+		title: "Cron Job",
+	},
+];
 ---
 
 <PageLayout meta={{ title: "Home" }}>
 	<section>
-		<h1 class="title mb-6">Hello World!</h1>
+		<h1 class="title mb-6">Hello there!</h1>
+		<img src="../src/assets/hello-there.avif" alt="Hello There! meme" />
+		<span class="block text-center text-sm text-gray-500"
+			>Image by <a href="https://knowyourmeme.com/memes/hello-there" class="cactus-link"
+				>suzcatonmars</a
+			> from knowyourmeme</span
+		>
+		<br />
 		<p class="mb-4">
-			Hi, I’m a theme for Astro, an example of how you can use this starter to create a personal
-			blog. If you want to know more about how you can customise me, add more posts, and make it
-			your own, click on the github icon link below and it will take you to my repo.
+			This is the homepage for the <a class="cactus-link" href="https://twitter.com/cowsayco"
+				>Cowsay.co Twitter Bot</a
+			>, a fun project that combines the classic command-line program cowsay from Tony Monroe with
+			the power of social media. Our bot tweets a curated quote each day, presented in the unique
+			style of a cowsay ASCII art message. To learn more about how this bot was built with
+			TypeScript, or to contribute to the project, click on the GitHub icon below to visit our
+			<a class="cactus-link" href="https://github.com/meowso/cowsay">Bot's repository</a> or this <a
+				class="cactus-link"
+				href="https://github.com/meowso/cowsay-homepage">homepage's repo.</a
+			>
 		</p>
+
 		<SocialList />
 	</section>
-	<section aria-label="Blog post list" class="mt-16">
+	<!-- <section aria-label="Blog post list" class="mt-16">
 		<h2 class="title mb-4 text-xl">Posts</h2>
 		<ul class="space-y-4">
 			{
@@ -73,12 +161,31 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 				))
 			}
 		</ul>
-	</section>
+	</section> -->
 	<section class="mt-16">
-		<h2 class="title mb-4 text-xl">Technologies</h2>
+		<h2 class="title mb-6 text-xl">Technologies</h2>
+		<h3 class="title mb-4 text-lg">Twitter bot</h3>
 		<dl class="space-y-4">
 			{
-				cactusTech.map(({ desc, href, title }) => (
+				botTech.map(({ desc, href, title }) => (
+					<div class="flex flex-col gap-2 md:flex-row">
+						<dt>
+							<span class="flex">
+								<a class="cactus-link" href={href} rel="noopener noreferrer" target="_blank">
+									{title}
+								</a>
+								:
+							</span>
+						</dt>
+						<dd>{desc}</dd>
+					</div>
+				))
+			}
+		</dl>
+		<h3 class="title mb-4 mt-6 text-lg">Webpage</h3>
+		<dl class="space-y-4">
+			{
+				webpageTech.map(({ desc, href, title }) => (
 					<div class="flex flex-col gap-2 md:flex-row">
 						<dt>
 							<span class="flex">
