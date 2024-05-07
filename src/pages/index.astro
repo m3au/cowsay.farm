@@ -1,16 +1,41 @@
 ---
-// import SocialList from "@/components/SocialList.astro";
-// import PostPreview from "@/components/blog/PostPreview.astro";
 import PageLayout from "@/layouts/Base.astro";
-// import { getAllPosts, sortMDByDate } from "@/data/post";
 import { Image } from "astro:assets";
-
-// const MAX_POSTS = 10;
-// const allPosts = await getAllPosts();
-// const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
-
 import heroImg from "@/assets/hero_unit.png";
 ---
+
+<style>
+	html[data-theme="dark"] #cta span {
+		mix-blend-mode: plus-lighter;
+	}
+
+	html[data-theme="dark"] #cta:hover span {
+		mix-blend-mode: color-dodge;
+	}
+
+	html[data-theme="dark"] #cta a {
+		color: #29bc89;
+	}
+
+	.rainbow {
+		background-color: #343a40;
+		border-radius: 4px;
+		color: #fff;
+		cursor: pointer;
+		padding: 8px 16px;
+	}
+
+	.rainbow-1:hover {
+		background-image: linear-gradient(90deg, #3769ff 0%, #ff1e42 40%, #5bff1e 80%, #3769ff 100%);
+		animation: slidebg 10s linear infinite;
+	}
+
+	@keyframes slidebg {
+		to {
+			background-position: 30vw;
+		}
+	}
+</style>
 
 <script>
 	document.addEventListener("DOMContentLoaded", function () {
@@ -32,6 +57,22 @@ import heroImg from "@/assets/hero_unit.png";
 			});
 		}
 	});
+
+	function getUserPref() {
+		const lightModePref = window.matchMedia("(prefers-color-scheme: light)");
+		const storedTheme = typeof localStorage !== "undefined" && localStorage.getItem("theme");
+		return storedTheme || (lightModePref.matches ? "light" : "dark");
+	}
+
+	const theme = getUserPref();
+
+	if (theme !== "dark") {
+		const script = document.createElement("script");
+		script.src = "https://platform.twitter.com/widgets.js";
+		script.async = true;
+		document.body.appendChild(script);
+	}
+	console.log("🚀 ~ getUserPref ~ getUserPref:", getUserPref());
 </script>
 
 <PageLayout meta={{ title: "Cowsay.co Developer quotes and clichés to brighten your day 🐄🛸" }}>
@@ -56,27 +97,11 @@ import heroImg from "@/assets/hero_unit.png";
 		</p>
 	</section>
 
-	<!-- <section aria-label="Blog post list" class="mt-16">
-		<h2 class="title mb-4 text-xl">Posts</h2>
-		<ul class="space-y-4">
-			{
-				allPostsByDate.map((p) => (
-					<li class="flex flex-col gap-x-2 sm:flex-row">
-						<PostPreview post={p} />
-					</li>
-				))
-			}
-		</ul>
-	</section> -->
-
-	<section id="cta" class="">
-		<p class="my-6 h-7 w-full leading-7">
-			<a
-				href="https://twitter.com/cowsayco?ref_src=twsrc%5Etfw"
-				class="twitter-follow-button text-center"
-				data-show-count="false"
-				data-size="large">Follow @cowsayco</a
-			>
-		</p>
-	</section>
-</PageLayout>
+	<section id="cta" class="my-6 h-7 w-full leading-7">
+		<a
+			class="twitter-follow-button rainbow rainbow-1"
+			href="https://twitter.com/cowsayco?ref_src=twsrc%5Etfw"
+			data-size="large"><span>Follow @cowsayco</span></a
+		>
+	</section></PageLayout
+>
