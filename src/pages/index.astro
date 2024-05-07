@@ -3,129 +3,16 @@ import SocialList from "@/components/SocialList.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
 import PageLayout from "@/layouts/Base.astro";
 import { getAllPosts, sortMDByDate } from "@/data/post";
+import { Image } from "astro:assets";
 
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
-const webpageTech: { desc: string; href: string; title: string }[] = [
-	{
-		desc: "Build fast websites, faster.",
-		href: "https://astro.build",
-		title: "Astro",
-	},
-	{
-		desc: "Chrismwilliams' Astro Theme Cactus.",
-		href: "https://github.com/chrismwilliams/astro-theme-cactus/blob/main/package.json",
-		title: "Cactus Theme",
-	},
-	{
-		desc: "Rapidly build modern websites without ever leaving your HTML.",
-		href: "https://tailwindcss.com",
-		title: "Tailwind CSS",
-	},
-	{
-		desc: "Simple and easy-to-use markup language.",
-		href: "https://www.markdownguide.org/",
-		title: "Markdown",
-	},
-	{
-		desc: "Markdown for the component era.",
-		href: "https://mdxjs.com/",
-		title: "MDX",
-	},
-	{
-		desc: "Generating png Open Graph images for blog posts.",
-		href: "https://github.com/vercel/satori",
-		title: "Satori",
-	},
-	{
-		desc: "A fully static search library.",
-		href: "https://pagefind.app/",
-		title: "Pagefind",
-	},
-	{
-		desc: "An easy to use Icon component for Astro.",
-		href: "https://github.com/natemoo-re/astro-icon#readme",
-		title: "Astro Icon",
-	},
-	{
-		desc: "Highly customisable source code & syntax highlighter",
-		href: "https://expressive-code.com/",
-		title: "Expressive Code",
-	},
-];
-
-const botTech: { desc: string; href: string; title: string }[] = [
-	{
-		desc: "Converts ANSI escape codes into HTML.",
-		href: "https://www.npmjs.com/package/ansi-to-html",
-		title: "ansi-to-html",
-	},
-	{
-		desc: "ASCII cows that can say things in your terminal.",
-		href: "https://www.npmjs.com/package/cowsay",
-		title: "cowsay",
-	},
-	{
-		desc: "Loads environment variables from a .env file.",
-		href: "https://www.npmjs.com/package/dotenv",
-		title: "dotenv",
-	},
-	{
-		desc: "Rainbow coloring for text in the terminal.",
-		href: "https://www.npmjs.com/package/lolcatjs",
-		title: "lolcatjs",
-	},
-	{
-		desc: "Generates images from HTML.",
-		href: "https://www.npmjs.com/package/node-html-to-image",
-		title: "node-html-to-image",
-	},
-	{
-		desc: "Fork pseudoterminals in Node.js.",
-		href: "https://www.npmjs.com/package/node-pty",
-		title: "node-pty",
-	},
-	{
-		desc: "Twitter API client for Node.js.",
-		href: "https://www.npmjs.com/package/twitter-api-v2",
-		title: "twitter-api-v2",
-	},
-	{
-		desc: "JavaScript that scales.",
-		href: "https://www.npmjs.com/package/typescript",
-		title: "typescript",
-	},
-	{
-		desc: "Wraps input text into a column of specified width.",
-		href: "https://www.npmjs.com/package/word-wrap",
-		title: "word-wrap",
-	},
-	{
-		desc: "TypeScript definitions for Node.js.",
-		href: "https://www.npmjs.com/package/@types/node",
-		title: "@types/node",
-	},
-	{
-		desc: "TypeScript definitions for lolcatjs.",
-		href: "https://www.npmjs.com/package/@types/lolcatjs",
-		title: "@types/lolcatjs",
-	},
-	{
-		desc: "Automate, customize, and execute software development workflows.",
-		href: "https://github.com/features/actions",
-		title: "GitHub Actions",
-	},
-	{
-		desc: "A time-based job scheduler in Unix-like operating systems.",
-		href: "https://en.wikipedia.org/wiki/Cron",
-		title: "Cron Job",
-	},
-];
+import heroImg from "@/assets/hero_unit.png";
 ---
 
-<script type="module">
+<!-- <script type="module">
 	// When .kenobi is hovered, we replace the hero_unit.png with the hello-there.avif
 	const kenobi = document.querySelector(".kenobi");
 	const img = document.querySelector("img");
@@ -141,17 +28,39 @@ const botTech: { desc: string; href: string; title: string }[] = [
 	kenobi.addEventListener("mouseout", () => {
 		img.src = "hero_unit.png";
 	});
-</script>
-
+</script> -->
 <style is:global>
 	.kenobi {
-		cursor: pointer;
+		cursor: default;
 		/* font-family: "Roboto Mono", monospace; */
 		/* font-size: 2.5rem; */
 		/* font-weight: 700; */
 		/* color: #2b6cb0; */
 	}
 </style>
+
+<script>
+	// This script will run on the client-side
+	document.addEventListener("DOMContentLoaded", function () {
+		const kenobi = document.getElementById("kenobi");
+
+		if (kenobi) {
+			kenobi.addEventListener("mouseover", () => {
+				const img = document.querySelector("img");
+				if (img) {
+					img.src = "hello-there.avif";
+				}
+			});
+
+			kenobi.addEventListener("mouseout", () => {
+				const img = document.querySelector("img");
+				if (img) {
+					img.src = "hero_unit.png";
+				}
+			});
+		}
+	});
+</script>
 
 <PageLayout meta={{ title: "Home" }}>
 	<section>
@@ -162,20 +71,19 @@ const botTech: { desc: string; href: string; title: string }[] = [
 				>suzcatonmars</a
 			> from knowyourmeme</span
 		> -->
-		<h1 class="title mb-6"><span class="kenobi cactus-link">Hello there!</span></h1>
-		<img src="hero_unit.png" alt="Cowsay" />
+		<h1 class="title mb-6"><span id="kenobi" class="cactus-link">Hello there!</span></h1>
+		<!-- <img src="hero_unit.png" alt="Cowsay" /> -->
+		<div class="flex justify-center">
+			<Image alt="Cowsay" fetchpriority="high" loading="eager" src={heroImg} />
+		</div>
 		<br />
 		<p class="mb-4">
 			This is the homepage for the <a class="cactus-link" href="https://twitter.com/cowsayco"
 				>Cowsay.co Twitter Bot</a
-			>, a fun project that combines the classic command-line program cowsay from Tony Monroe with
-			the power of social media. Our bot tweets a curated quote each day, presented in the unique
-			style of a cowsay ASCII art message. To learn more about how this bot was built with
-			TypeScript, or to contribute to the project, click on the GitHub icon below to visit our
-			<a class="cactus-link" href="https://github.com/meowso/cowsay">Bot's repository</a> or this <a
-				class="cactus-link"
-				href="https://github.com/meowso/cowsay-homepage">homepage's repo.</a
-			>
+			>, a fun project that combines the classic command-line program cowsay from Tony Monroe in
+			1999 with the power of social media, for a daily dose of occitocine. Our bot tweets a curated
+			quote each day, presented in the unique style of a cowsay ASCII art message and colored to
+			lolcat standards.
 		</p>
 
 		<SocialList />
@@ -191,44 +99,5 @@ const botTech: { desc: string; href: string; title: string }[] = [
 				))
 			}
 		</ul>
-	</section> -->
-	<!-- <section class="mt-16">
-		<h2 class="title mb-6 text-xl">Technologies</h2>
-		<h3 class="title mb-4 text-lg">Twitter bot</h3>
-		<dl class="space-y-4">
-			{
-				botTech.map(({ desc, href, title }) => (
-					<div class="flex flex-col gap-2 md:flex-row">
-						<dt>
-							<span class="flex">
-								<a class="cactus-link" href={href} rel="noopener noreferrer" target="_blank">
-									{title}
-								</a>
-								:
-							</span>
-						</dt>
-						<dd>{desc}</dd>
-					</div>
-				))
-			}
-		</dl>
-		<h3 class="title mb-4 mt-6 text-lg">Webpage</h3>
-		<dl class="space-y-4">
-			{
-				webpageTech.map(({ desc, href, title }) => (
-					<div class="flex flex-col gap-2 md:flex-row">
-						<dt>
-							<span class="flex">
-								<a class="cactus-link" href={href} rel="noopener noreferrer" target="_blank">
-									{title}
-								</a>
-								:
-							</span>
-						</dt>
-						<dd>{desc}</dd>
-					</div>
-				))
-			}
-		</dl>
 	</section> -->
 </PageLayout>

@@ -1,47 +1,210 @@
 ---
-import aboutImg from "@/assets/about-astro.png";
+import aboutImg from "@/assets/dead-code.png";
 import PageLayout from "@/layouts/Base.astro";
 import { Image } from "astro:assets";
 
 const meta = {
-	description: "I'm a starter theme for Astro.build",
+	description: "A twitter bot that tweets random cowsay messages.",
 	title: "About",
 };
+
+const webpageTech: { desc: string; href: string; title: string }[] = [
+	{
+		desc: "Astro is a front-end framework for building faster websites with less client-side JavaScript.",
+		href: "https://astro.build",
+		title: "Astro",
+	},
+	{
+		desc: "Cactus Theme is a customizable Astro theme developed by Chrismwilliams, providing a unique aesthetic for Astro-based projects.",
+		href: "https://github.com/chrismwilliams/astro-theme-cactus/blob/main/package.json",
+		title: "Cactus Theme",
+	},
+	{
+		desc: "Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces directly in your HTML.",
+		href: "https://tailwindcss.com",
+		title: "Tailwind CSS",
+	},
+	{
+		desc: "Markdown is a lightweight markup language for creating formatted text using a plain-text editor.",
+		href: "https://www.markdownguide.org/",
+		title: "Markdown",
+	},
+	{
+		desc: "MDX is an authorable format that lets you seamlessly write JSX in your Markdown documents.",
+		href: "https://mdxjs.com/",
+		title: "MDX",
+	},
+	{
+		desc: "Satori is a tool developed by Vercel for generating Open Graph images in PNG format for blog posts.",
+		href: "https://github.com/vercel/satori",
+		title: "Satori",
+	},
+	{
+		desc: "Pagefind is a fully static search library, providing search functionality without the need for a server or database.",
+		href: "https://pagefind.app/",
+		title: "Pagefind",
+	},
+	{
+		desc: "Astro Icon is a component for Astro that simplifies the use of SVG icons in your projects.",
+		href: "https://github.com/natemoo-re/astro-icon#readme",
+		title: "Astro Icon",
+	},
+	{
+		desc: "Expressive Code is a highly customizable syntax highlighter for displaying source code in a more expressive and visually appealing way.",
+		href: "https://expressive-code.com/",
+		title: "Expressive Code",
+	},
+];
+
+const botTech: { desc: string; href: string; title: string }[] = [
+	{
+		desc: "ansi-to-html is a library that converts ANSI escape codes, used for styling console output, into HTML elements.",
+		href: "https://www.npmjs.com/package/ansi-to-html",
+		title: "ansi-to-html",
+	},
+	{
+		desc: "cowsay is a program that generates ASCII pictures of a cow with a message in a speech bubble in your terminal.",
+		href: "https://www.npmjs.com/package/cowsay",
+		title: "cowsay",
+	},
+	{
+		desc: "dotenv is a zero-dependency module that loads environment variables from a .env file into process.env in Node.js applications.",
+		href: "https://www.npmjs.com/package/dotenv",
+		title: "dotenv",
+	},
+	{
+		desc: "lolcatjs is a library that applies rainbow colors to text in the terminal, inspired by the Ruby lolcat gem.",
+		href: "https://www.npmjs.com/package/lolcatjs",
+		title: "lolcatjs",
+	},
+	{
+		desc: "node-html-to-image is a Node.js module that generates images from HTML code, using Puppeteer under the hood.",
+		href: "https://www.npmjs.com/package/node-html-to-image",
+		title: "node-html-to-image",
+	},
+	{
+		desc: "node-pty is a Node.js module for creating and interacting with pseudoterminals - virtual devices that emulate a terminal.",
+		href: "https://www.npmjs.com/package/node-pty",
+		title: "node-pty",
+	},
+	{
+		desc: "twitter-api-v2 is a comprehensive Twitter v2 API client for Node.js, supporting both REST and streaming APIs.",
+		href: "https://www.npmjs.com/package/twitter-api-v2",
+		title: "twitter-api-v2",
+	},
+	{
+		desc: "TypeScript is a statically typed superset of JavaScript that compiles to plain JavaScript and adds optional types, classes, and modules.",
+		href: "https://www.npmjs.com/package/typescript",
+		title: "typescript",
+	},
+	{
+		desc: "word-wrap is a simple module for wrapping input text into a column of specified width, useful for formatting console output.",
+		href: "https://www.npmjs.com/package/word-wrap",
+		title: "word-wrap",
+	},
+	{
+		desc: "@types/node provides TypeScript definitions for Node.js, allowing for type checking and autocompletion in TypeScript projects.",
+		href: "https://www.npmjs.com/package/@types/node",
+		title: "@types/node",
+	},
+	{
+		desc: "@types/lolcatjs provides TypeScript definitions for the lolcatjs library, enabling type checking and autocompletion.",
+		href: "https://www.npmjs.com/package/@types/lolcatjs",
+		title: "@types/lolcatjs",
+	},
+	{
+		desc: "GitHub Actions is a CI/CD system fully integrated with GitHub, allowing for automation of software workflows directly within a repository.",
+		href: "https://github.com/features/actions",
+		title: "GitHub Actions",
+	},
+	{
+		desc: "Cron is a time-based job scheduler in Unix-like operating systems, used to schedule jobs (commands or scripts) to run periodically at fixed times, dates, or intervals.",
+		href: "https://en.wikipedia.org/wiki/Cron",
+		title: "Cron Job",
+	},
+	{
+		desc: "Puppeteer is a Node.js library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol.",
+		href: "https://www.npmjs.com/package/puppeteer",
+		title: "Puppeteer",
+	},
+	{
+		desc: "GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub.",
+		href: "https://github.com/features/actions",
+		title: "GitHub Actions",
+	},
+	{
+		desc: "Netlify lets you build, host, and maintain web projects with continuous deployment and serverless functions.",
+		href: "https://www.netlify.com/",
+		title: "Netlify",
+	},
+];
 ---
 
 <PageLayout meta={meta}>
 	<div class="space-y-6">
 		<h1 class="title">About</h1>
 		<p>
-			Hi, I’m a starter Astro. I’m particularly great for getting you started with your own blogging
-			website.
-		</p>
-		<div class="flex justify-center">
+			Hi, I'm a Twitter bot that tweets random cowsay messages. I was created by
+			<a
+				class="cactus-link"
+				href="https://about.me/bruno_vop"
+				rel="noopener noreferrer"
+				target="_blank"
+				>m3auso
+			</a> using Node.js, cowsay, lolcatjs and the Twitter API. I'm hosted on Netlify and my source code
+			is available on GitHub.
+
 			<Image
-				alt="A cartoon cactus looking at the 'Astro.build' logo"
+				class="mb-4 mt-2 object-contain"
+				alt="I see Dead code illustration by chatGPT4"
 				fetchpriority="high"
 				loading="eager"
 				src={aboutImg}
 			/>
-		</div>
-		<p>Here are my some of my awesome built in features:</p>
-		<ul class="list-inside list-disc">
-			<li>I'm ultra fast as I'm a static site</li>
-			<li>I'm fully responsive</li>
-			<li>I come with a light and dark mode</li>
-			<li>I'm easy to customise and add additional content</li>
-			<li>I have Tailwind CSS styling</li>
-			<li>Shiki code syntax highlighting</li>
-			<li>Satori for auto generating OG images for blog posts</li>
-		</ul>
-		<p>
-			Clone or fork my <a
-				aria-label="github repository"
-				class="cactus-link inline-block"
-				href="https://github.com/chrismwilliams/astro-cactus"
-				rel="noopener noreferrer"
-				target="_blank">repo</a
-			> if you like me!
+
+			To learn more or to contribute to this side-kick project, visit our
+			<a class="cactus-link" href="https://github.com/meowso/cowsay">bot's repository</a> or this <a
+				class="cactus-link"
+				href="https://github.com/meowso/cowsay-homepage">homepage's repo.</a
+			>
+
+			<section class="pt-12">
+				<h2 class="title mb-6 text-2xl">Technologies</h2>
+				<h3 class="title mb-4 text-lg">Twitter bot</h3>
+				<dl class="space-y-4">
+					{
+						botTech.map(({ desc, href, title }) => (
+							<div class="flex flex-col gap-2">
+								<dt class="font-bold">
+									<span>
+										<a class="cactus-link" href={href} rel="noopener noreferrer" target="_blank">
+											{title}
+										</a>
+									</span>
+								</dt>
+								<dd>{desc}</dd>
+							</div>
+						))
+					}
+				</dl>
+				<h3 class="title mb-4 mt-6 text-lg">Webpage</h3>
+				<dl class="space-y-4">
+					{
+						webpageTech.map(({ desc, href, title }) => (
+							<div class="flex flex-col gap-2">
+								<dt class="font-bold">
+									<span class="flex">
+										<a class="cactus-link" href={href} rel="noopener noreferrer" target="_blank">
+											{title}
+										</a>
+									</span>
+								</dt>
+								<dd>{desc}</dd>
+							</div>
+						))
+					}
+				</dl>
+			</section>
 		</p>
 	</div>
 </PageLayout>
