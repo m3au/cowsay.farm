@@ -2,15 +2,31 @@
 <script is:inline>
 	const lightModePref = window.matchMedia("(prefers-color-scheme: light)");
 
+	// function getUserPref() {
+	// 	const storedTheme = typeof localStorage !== "undefined" && localStorage.getItem("theme");
+	// 	return storedTheme || (lightModePref.matches ? "light" : "dark");
+	// }
+
 	function getUserPref() {
-		const storedTheme = typeof localStorage !== "undefined" && localStorage.getItem("theme");
-		return storedTheme || (lightModePref.matches ? "light" : "dark");
+		// Check if the user has visited the site before
+		const hasVisited = localStorage.getItem("hasVisited");
+
+		// If the user has not visited the site before, set the theme to 'light'
+		if (!hasVisited) {
+			localStorage.setItem("hasVisited", "true");
+			localStorage.setItem("theme", "light");
+			return "light";
+		}
+
+		// If the user has visited the site before, return their saved theme preference
+		const savedTheme = localStorage.getItem("theme");
+		return savedTheme || "light";
 	}
 
 	function setTheme(newTheme) {
 		if (newTheme !== "light" && newTheme !== "dark") {
 			return console.warn(
-				`Invalid theme value '${newTheme}' received. Expected 'light' or 'dark'.`,
+				`Invalid theme value '${newTheme}' received. Expected 'light' or 'dark'.`
 			);
 		}
 
