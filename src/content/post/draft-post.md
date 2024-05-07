@@ -1,6 +1,6 @@
 ---
 title: "The very first cowsay tweet"
-description: "The very first time cowsay was used to tweet"
+description: "The very first time cowsay was used to tweet in May 6"
 publishDate: "7 May 2024"
 tags: ["cowsay", "twitter", "first-tweet"]
 ogImage: "/social-card.png"
