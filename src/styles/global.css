@@ -33,13 +33,3 @@
 		@apply mx-auto flex min-h-screen max-w-3xl flex-col bg-bgColor px-8 pt-16 font-mono text-sm font-normal text-textColor antialiased;
 	}
 }
-
-#cta {
-	transition: transform 1.5s;
-	transform: translateY(-999px);
-}
-
-#cta.show {
-	transition: transform 1.5s;
-	transform: translateY(0);
-}

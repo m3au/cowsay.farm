@@ -4,7 +4,7 @@ Welcome to the Cowsayco Twitter Bot repository. This project combines the classi
 
 ## About
 
-This Twitter bot tweets a random cowsay message daily. It was created by m3auso using a variety of technologies including Node.js, cowsay, lolcatjs, ansi-to-html, Puppeteer, and the Twitter API. The bot is hosted on Netlify and its source code is available on GitHub.
+This Twitter bot tweets a random cowsay message daily. It was created by m3auso using a variety of technologies including node.js, cowsay, lolcatjs, ansi-to-html, puppeteer, and twitter-api-v2. The bot is hosted on netlify and its source code is available on GitHub.
 
 ## Technologies
 

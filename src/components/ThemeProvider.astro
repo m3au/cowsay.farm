@@ -34,15 +34,6 @@
 	// initial setup
 	setTheme(getUserPref());
 
-	setTimeout(() => {
-		setTimeout(() => {
-			const ctaButton = document.getElementById("cta");
-			if (ctaButton) {
-				ctaButton.classList.add("show");
-			}
-		}, 500);
-	}, 0);
-
 	// View Transitions hook to restore theme
 	document.addEventListener("astro:after-swap", () => setTheme(getUserPref()));
 
