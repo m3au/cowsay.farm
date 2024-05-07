@@ -1,6 +1,6 @@
-# Cowsay.co Twitter Bot
+# Cowsayco Twitter Bot
 
-Welcome to the Cowsay.co Twitter Bot repository. This project combines the classic command-line program `cowsay` with the power of social media, delivering a daily dose of oxytocin through curated quotes presented in unique ASCII art messages.
+Welcome to the Cowsayco Twitter Bot repository. This project combines the classic command-line program `cowsay` with the power of social media, delivering a daily dose of oxytocin through curated quotes presented in unique ASCII art messages.
 
 ## About
 

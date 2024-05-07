@@ -15,13 +15,13 @@ export const siteConfig: SiteConfig = {
 	},
 	// Meta property used as the default description meta property
 	description:
-		"This is the homepage for the Cowsay.co Twitter Bot, a fun project that combines the classic command-line program cowsay from 1999 with the power of social media. Our bot tweets a curated quote each day, presented in the unique style of a cowsay ASCII art message.",
+		"This is the homepage for the Cowsayco Twitter Bot, a fun project that combines the classic command-line program cowsay from 1999 with the power of social media. Our bot tweets a curated quote each day, presented in the unique style of a cowsay ASCII art message.",
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: "en-GB",
 	// Meta property, found in src/components/BaseHead.astro L:42
 	ogLocale: "en_GB",
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
-	title: "Cowsay.co",
+	title: "Cowsayco",
 	// webmentions: {
 	// 	// Webmention.io API endpoint. Get your own here: https://webmention.io/, and follow this blog post: https://astro-cactus.chriswilliams.dev/posts/webmentions/
 	// 	link: "https://webmention.io/astro-cactus.chriswilliams.dev/webmention",
