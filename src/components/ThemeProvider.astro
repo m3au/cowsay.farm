@@ -32,15 +32,14 @@
 	}
 
 	// initial setup
+	setTheme(getUserPref());
+
 	setTimeout(() => {
 		setTimeout(() => {
-			setTheme(getUserPref());
-			setTimeout(() => {
-				const ctaButton = document.getElementById("cta");
-				if (ctaButton) {
-					ctaButton.classList.add("show");
-				}
-			}, 500);
+			const ctaButton = document.getElementById("cta");
+			if (ctaButton) {
+				ctaButton.classList.add("show");
+			}
 		}, 500);
 	}, 0);
 
