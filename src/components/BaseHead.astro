@@ -20,12 +20,6 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 <meta content="IE=edge" http-equiv="X-UA-Compatible" />
 <title>{siteTitle}</title>
 
-{/* Icons / Favicon */}
-<!-- <link href="/favicon.ico" rel="icon" sizes="any" /> -->
-<!-- <link href="/icon.svg" rel="icon" type="image/svg+xml" /> -->
-<!-- <link href="/apple-touch-icon.png" rel="apple-touch-icon" /> -->
-<!-- <link href="/manifest.webmanifest" rel="manifest" /> -->
-
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -34,6 +28,17 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 <meta name="msapplication-TileColor" content="#da532c" />
 <meta name="theme-color" content="#ffffff" />
 <link href={canonicalURL} rel="canonical" />
+
+{/* Twitter card Tags */}
+<meta name="twitter:card" content="social-card" />
+<meta name="twitter:site" content="@cowsayco" />
+<meta name="twitter:creator" content="@m3auso" />
+<meta name="twitter:title" content="Cowsay.co 🐄 homepage" />
+<meta
+	name="twitter:description"
+	content="This is the homepage for the Cowsay.co Twitter Bot, a fun project that combines the classic command-line program cowsay from Tony Monroe in 1999 with the power of social media, for a daily dose of occitocine."
+/>
+<meta name="twitter:image" content="https://cowsay.co/social-card.png" />
 
 {/* Primary Meta Tags */}
 <meta content={siteTitle} name="title" />
