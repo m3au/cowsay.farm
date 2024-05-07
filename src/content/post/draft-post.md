@@ -1,9 +1,16 @@
 ---
-title: "A working draft title"
-description: "This post is for testing the draft post functionality"
-publishDate: "10 Sept 2023"
-tags: ["test"]
-draft: true
+title: "The very first cowsay tweet"
+description: "The very first time cowsay was used to tweet"
+publishDate: "7 May 2024"
+tags: ["cowsay", "twitter", "first-tweet"]
+ogImage: "/social-card.png"
+draft: false
 ---
 
-If this is working correctly, this post should only be accessible in a dev environment, as well as any tags that are unique to this post.
+This was the first time that Cowsay ever tweeted. It was a simple message, but it was the beginning of a new era. The tweet was sent on May 7, 2024, and it was a momentous occasion for all of us who love cowsay.
+
+[check it out!](https://twitter.com/cowsayco/status/1787397837195444446/photo/1)
+
+```yaml
+ogImage: "/social-card.png"
+```

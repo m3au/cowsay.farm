@@ -144,7 +144,9 @@ const botTech: { desc: string; href: string; title: string }[] = [
 	<div class="space-y-6">
 		<h1 class="title">About</h1>
 		<p>
-			Hi, I'm a Twitter bot that tweets random cowsay messages. I was created by
+			Hi, I'm a
+			<a class="cactus-link" href="https://twitter.com/cowsayco"> Twitter bot </a>
+			that tweets random cowsay messages. I was created by
 			<a
 				class="cactus-link"
 				href="https://about.me/bruno_vop"
@@ -153,15 +155,15 @@ const botTech: { desc: string; href: string; title: string }[] = [
 				>m3auso
 			</a> using Node.js, cowsay, lolcatjs, ansi-to-html, Puppeteer and the Twitter API. I'm hosted on
 			Netlify and my source code is available on GitHub.
-
-			<Image
-				class="mb-4 mt-4 object-contain"
-				alt="I see Dead code illustration by chatGPT4"
-				fetchpriority="high"
-				loading="eager"
-				src={aboutImg}
-			/>
-
+		</p>
+		<Image
+			class="object-contain"
+			alt="I see Dead code illustration by chatGPT4"
+			fetchpriority="high"
+			loading="eager"
+			src={aboutImg}
+		/>
+		<p>
 			To learn more or to contribute to this side-kick project, visit our
 			<a class="cactus-link" href="https://github.com/meowso/cowsay">bot's repository</a> or this <a
 				class="cactus-link"

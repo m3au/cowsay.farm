@@ -21,6 +21,9 @@
 		"editor.defaultFormatter": "astro-build.astro-vscode"
 	},
 	"cSpell.words": [
-		"mdast"
+		"Consolas",
+		"mdast",
+		"Menlo",
+		"Webmention"
 	]
 }

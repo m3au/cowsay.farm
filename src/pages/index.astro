@@ -36,7 +36,9 @@ import heroImg from "@/assets/hero_unit.png";
 
 <PageLayout meta={{ title: "Cowsay.co Twitter Bot: Daily Doses of ASCII Art Fun" }}>
 	<section>
-		<h1 class="title mb-6"><span id="kenobi" class="cactus-link">Hello there!</span></h1>
+		<h1 class="title mb-6 inline-block cursor-pointer" id="kenobi">
+			<span class="cactus-link">Hello there!</span> 🐄🛸
+		</h1>
 		<div class="flex justify-center">
 			<Image alt="Cowsay" fetchpriority="high" loading="eager" src={heroImg} />
 		</div>
@@ -45,11 +47,13 @@ import heroImg from "@/assets/hero_unit.png";
 			This is the homepage for the <a class="cactus-link" href="https://twitter.com/cowsayco"
 				>Cowsay.co Twitter Bot</a
 			>, a fun project that combines the classic command-line program cowsay from Tony Monroe in
-			<a href="https://github.com/tnalpgge/rank-amateur-cowsay">1999</a> with the power of social media,
-			for a daily dose of occitocine. Our bot tweets a curated quote each day, presented in the unique
-			style of a cowsay ASCII art message and colored to lolcat standards.
+			<a class="cactus-link" href="https://github.com/tnalpgge/rank-amateur-cowsay">1999</a> with the
+			power of social media, for a daily dose of occitocine. Our bot tweets a curated quote each day,
+			presented in the unique style of a cowsay ASCII art message and colored to lolcat standards.
 		</p>
+	</section>
 
+	<section>
 		<SocialList />
 	</section>
 	<!-- <section aria-label="Blog post list" class="mt-16">
