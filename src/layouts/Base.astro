@@ -17,6 +17,12 @@ const {
 } = Astro.props;
 ---
 
+<script>
+	window.onload = function () {
+		document.body.style.transition = "background-color 0.5s, color 0.5s";
+	};
+</script>
+
 <html lang={siteConfig.lang}>
 	<head>
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />

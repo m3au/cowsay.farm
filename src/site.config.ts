@@ -21,7 +21,7 @@ export const siteConfig: SiteConfig = {
 	// Meta property, found in src/components/BaseHead.astro L:42
 	ogLocale: "en_GB",
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
-	title: "Cowsayco",
+	title: "@cowsayco",
 	// webmentions: {
 	// 	// Webmention.io API endpoint. Get your own here: https://webmention.io/, and follow this blog post: https://astro-cactus.chriswilliams.dev/posts/webmentions/
 	// 	link: "https://webmention.io/astro-cactus.chriswilliams.dev/webmention",
