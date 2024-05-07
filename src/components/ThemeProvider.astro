@@ -2,25 +2,9 @@
 <script is:inline>
 	const lightModePref = window.matchMedia("(prefers-color-scheme: light)");
 
-	// function getUserPref() {
-	// 	const storedTheme = typeof localStorage !== "undefined" && localStorage.getItem("theme");
-	// 	return storedTheme || (lightModePref.matches ? "light" : "dark");
-	// }
-
 	function getUserPref() {
-		// Check if the user has visited the site before
-		const hasVisited = localStorage.getItem("hasVisited");
-
-		// If the user has not visited the site before, set the theme to 'light'
-		if (!hasVisited) {
-			localStorage.setItem("hasVisited", "true");
-			localStorage.setItem("theme", "light");
-			return "light";
-		}
-
-		// If the user has visited the site before, return their saved theme preference
-		const savedTheme = localStorage.getItem("theme");
-		return savedTheme || "light";
+		const storedTheme = typeof localStorage !== "undefined" && localStorage.getItem("theme");
+		return storedTheme || (lightModePref.matches ? "light" : "dark");
 	}
 
 	function setTheme(newTheme) {
@@ -48,7 +32,17 @@
 	}
 
 	// initial setup
-	setTheme(getUserPref());
+	setTimeout(() => {
+		setTimeout(() => {
+			setTheme(getUserPref());
+			setTimeout(() => {
+				const ctaButton = document.getElementById("cta");
+				if (ctaButton) {
+					ctaButton.classList.add("show");
+				}
+			}, 500);
+		}, 500);
+	}, 0);
 
 	// View Transitions hook to restore theme
 	document.addEventListener("astro:after-swap", () => setTheme(getUserPref()));

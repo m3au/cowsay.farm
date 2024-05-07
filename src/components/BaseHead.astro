@@ -24,9 +24,8 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 <link rel="manifest" href="/site.webmanifest" />
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-<meta name="msapplication-TileColor" content="#da532c" />
-<meta name="theme-color" content="#ffffff" />
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1D1F20" />
+<meta name="msapplication-TileColor" content="#1D1F20" />
 <link href={canonicalURL} rel="canonical" />
 
 {/* Twitter card Tags */}
@@ -97,3 +96,5 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 }
 
 <meta content={Astro.generator} name="generator" />
+
+<script async src="https://platform.twitter.com/widgets.js"></script>

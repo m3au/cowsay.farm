@@ -1,5 +1,6 @@
 ---
 import aboutImg from "@/assets/dead-code.png";
+import SocialList from "@/components/SocialList.astro";
 import PageLayout from "@/layouts/Base.astro";
 import { Image } from "astro:assets";
 
@@ -141,71 +142,72 @@ const botTech: { desc: string; href: string; title: string }[] = [
 ---
 
 <PageLayout meta={meta}>
-	<div class="space-y-6">
-		<h1 class="title">About</h1>
+	<section>
+		<h1 class="title mb-6">About</h1>
 		<p>
-			Hi, I'm a
-			<a class="cactus-link" href="https://twitter.com/cowsayco"> Twitter bot</a>
-			that tweets random cowsay messages. I was created by
-			<a
-				class="cactus-link"
-				href="https://about.me/bruno_vop"
-				rel="noopener noreferrer"
-				target="_blank"
-				>m3auso
-			</a> using Node.js, cowsay, lolcatjs, ansi-to-html, Puppeteer and the Twitter API. I'm hosted on
-			Netlify and my source code is available on GitHub.
+			Hi, I'm a <a class="cactus-link" href="https://twitter.com/cowsayco">Twitter Bot</a> that posts
+			random developer jokes daily.
 		</p>
+
 		<Image
-			class="object-contain"
+			class="mt-4 object-contain"
 			alt="I see Dead code illustration by chatGPT4"
 			fetchpriority="high"
 			loading="eager"
 			src={aboutImg}
 		/>
-		<p>
-			To learn more or to contribute to this side-kick project, visit our
-			<a class="cactus-link" href="https://github.com/meowso/cowsay">bot's repository</a> or this <a
-				class="cactus-link"
-				href="https://github.com/meowso/cowsay-homepage">homepage's repo.</a
-			>
+
+		<p class="mt-4">
+			I was created using Node.js, cowsay, lolcatjs, ansi-to-html, Puppeteer and the Twitter API.
+			I'm hosted on Netlify, and my source code is available on GitHub.
 		</p>
-		<section class="pt-12">
-			<h2 class="title mb-6 text-2xl">Technologies</h2>
-			<h3 class="title mb-4 text-lg">Twitter bot</h3>
-			<dl class="space-y-4">
-				{
-					botTech.map(({ desc, href, title }) => (
-						<div class="flex flex-col gap-2">
-							<dt class="font-bold">
-								<span>
-									<a class="cactus-link" href={href} rel="noopener noreferrer" target="_blank">
-										{title}
-									</a>
-								</span>
-							</dt>
-							<dd>{desc}</dd>
-						</div>
-					))
-				}
-			</dl>
-			<h3 class="title mb-4 mt-6 text-lg">Webpage</h3>
-			<dl class="space-y-4">
-				{
-					webpageTech.map(({ desc, href, title }) => (
-						<div class="flex flex-col gap-2">
-							<dt class="font-bold">
-								<span class="flex">
-									<a class="cactus-link" href={href} rel="noopener noreferrer" target="_blank">
-										{title}
-									</a>
-								</span>
-							</dt>
-							<dd>{desc}</dd>
-						</div>
-					))
-				}
-			</dl>
-		</section>
-	</div>
+		<p class="mt-4">
+			To learn more or to contribute to this side-kick project, visit our
+			<a class="cactus-link" href="https://github.com/meowso/cowsay">repository</a>.
+		</p>
+	</section>
+
+	<hr class="my-16" />
+
+	<section>
+		<h2 class="title mb-6 text-2xl">Technologies</h2>
+		<h3 class="title mb-4 text-lg">Twitter bot</h3>
+		<dl class="space-y-4">
+			{
+				botTech.map(({ desc, href, title }) => (
+					<div class="flex flex-col gap-2">
+						<dt class="font-bold">
+							<span>
+								<a class="cactus-link" href={href} rel="noopener noreferrer" target="_blank">
+									{title}
+								</a>
+							</span>
+						</dt>
+						<dd>{desc}</dd>
+					</div>
+				))
+			}
+		</dl>
+		<h3 class="title mb-4 mt-6 text-lg">Webpage</h3>
+		<dl class="space-y-4">
+			{
+				webpageTech.map(({ desc, href, title }) => (
+					<div class="flex flex-col gap-2">
+						<dt class="font-bold">
+							<span class="flex">
+								<a class="cactus-link" href={href} rel="noopener noreferrer" target="_blank">
+									{title}
+								</a>
+							</span>
+						</dt>
+						<dd>{desc}</dd>
+					</div>
+				))
+			}
+		</dl>
+	</section>
+	<hr class="my-16" />
+	<section>
+		<SocialList />
+	</section>
 </PageLayout>
