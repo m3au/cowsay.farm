@@ -12,35 +12,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 import heroImg from "@/assets/hero_unit.png";
 ---
 
-<!-- <script type="module">
-	// When .kenobi is hovered, we replace the hero_unit.png with the hello-there.avif
-	const kenobi = document.querySelector(".kenobi");
-	const img = document.querySelector("img");
-
-	if (!kenobi || !img) {
-		throw new Error("Could not find .kenobi or img element");
-	}
-
-	kenobi.addEventListener("mouseover", () => {
-		img.src = "hello-there.avif";
-	});
-
-	kenobi.addEventListener("mouseout", () => {
-		img.src = "hero_unit.png";
-	});
-</script> -->
-<style is:global>
-	.kenobi {
-		cursor: default;
-		/* font-family: "Roboto Mono", monospace; */
-		/* font-size: 2.5rem; */
-		/* font-weight: 700; */
-		/* color: #2b6cb0; */
-	}
-</style>
-
 <script>
-	// This script will run on the client-side
 	document.addEventListener("DOMContentLoaded", function () {
 		const kenobi = document.getElementById("kenobi");
 
@@ -64,15 +36,7 @@ import heroImg from "@/assets/hero_unit.png";
 
 <PageLayout meta={{ title: "Home" }}>
 	<section>
-		<!-- <h1 class="title mb-6">Hello there!</h1>
-		<img src="../src/assets/hello-there.avif" alt="Hello There! meme" />
-		<span class="block text-center text-sm text-gray-500"
-			>Image by <a href="https://knowyourmeme.com/memes/hello-there" class="cactus-link"
-				>suzcatonmars</a
-			> from knowyourmeme</span
-		> -->
 		<h1 class="title mb-6"><span id="kenobi" class="cactus-link">Hello there!</span></h1>
-		<!-- <img src="hero_unit.png" alt="Cowsay" /> -->
 		<div class="flex justify-center">
 			<Image alt="Cowsay" fetchpriority="high" loading="eager" src={heroImg} />
 		</div>
