@@ -62,21 +62,6 @@ import heroImg from "@/assets/hero_unit.png";
 			});
 		}
 	});
-
-	function getUserPref() {
-		const lightModePref = window.matchMedia("(prefers-color-scheme: light)");
-		const storedTheme = typeof localStorage !== "undefined" && localStorage.getItem("theme");
-		return storedTheme || (lightModePref.matches ? "light" : "dark");
-	}
-
-	const theme = getUserPref();
-
-	if (theme !== "dark") {
-		const script = document.createElement("script");
-		script.src = "https://platform.twitter.com/widgets.js";
-		script.async = true;
-		document.body.appendChild(script);
-	}
 </script>
 
 <PageLayout meta={{ title: "developer jokes" }}>
@@ -103,7 +88,7 @@ import heroImg from "@/assets/hero_unit.png";
 
 	<section id="cta" class="my-6 h-7 w-full leading-7">
 		<a
-			class="twitter-follow-button rainbow rainbow-1"
+			class="rainbow rainbow-1"
 			href="https://twitter.com/cowsayco?ref_src=twsrc%5Etfw"
 			data-size="large"><span>Follow @cowsayco</span></a
 		>
