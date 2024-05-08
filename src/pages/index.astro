@@ -47,20 +47,18 @@ import heroImg from "@/assets/hero_unit.png";
 <script>
 	document.addEventListener("DOMContentLoaded", function () {
 		const kenobi = document.getElementById("kenobi");
+		const img = document.querySelector("img");
+		const title = document.getElementById("abduction");
 
 		if (kenobi) {
 			kenobi.addEventListener("mouseover", () => {
-				const img = document.querySelector("img");
-				if (img) {
-					img.src = "hello-there.avif";
-				}
+				if (img) img.src = "hello-there.avif";
+				if (title) title.textContent = "Hello there! 🛸";
 			});
 
 			kenobi.addEventListener("mouseout", () => {
-				const img = document.querySelector("img");
-				if (img) {
-					img.src = "hero_unit.png";
-				}
+				if (img) img.src = "hero_unit.png";
+				if (title) title.textContent = "Hello there! 🐄";
 			});
 		}
 	});
@@ -84,7 +82,7 @@ import heroImg from "@/assets/hero_unit.png";
 <PageLayout meta={{ title: "developer jokes" }}>
 	<section>
 		<h1 class="title mb-6 inline-block cursor-pointer" id="kenobi">
-			<span>Hello there! 🐄 </span>
+			<span id="abduction">Hello there! 🐄 </span>
 		</h1>
 
 		<div class="flex justify-center">
