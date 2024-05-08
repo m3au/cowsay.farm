@@ -15,7 +15,7 @@ export const siteConfig: SiteConfig = {
 	},
 	// Meta property used as the default description meta property
 	description:
-		"This is the homepage for the Cowsayco Twitter Bot, a fun project that combines the classic command-line program cowsay from 1999 with the power of social media. Our bot tweets a curated quote each day, presented in the unique style of a cowsay ASCII art message.",
+		"This is the homepage for @cowsayco twitter account, a fun project that combines the classic command-line program cowsay from 1999 with the power of social media. Our bot tweets a curated quote each day, presented in the unique style of a cowsay ASCII art message.",
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: "en-GB",
 	// Meta property, found in src/components/BaseHead.astro L:42
