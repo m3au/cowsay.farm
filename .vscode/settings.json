@@ -21,10 +21,15 @@
 		"editor.defaultFormatter": "astro-build.astro-vscode"
 	},
 	"cSpell.words": [
+		"Chrismwilliams",
 		"Consolas",
+		"DALL",
+		"deadcode",
 		"mdast",
 		"Menlo",
+		"Paletton",
 		"pseudoterminals",
+		"Vercel",
 		"Webmention"
 	]
 }
