@@ -1,4 +1,4 @@
-name: Deploy to Namecheap (FTPS)
+name: Deploy to Namecheap
 
 on:
   push:
@@ -26,18 +26,18 @@ jobs:
       - name: Build site
         run: bun run build
 
-      - name: Deploy to Namecheap via FTPS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.SFTP_SERVER }}
-          username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          protocol: ftps
-          port: 21
-          local-dir: ./dist/
-          server-dir: ./public_html/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/.DS_Store
+      - name: Setup SSH tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y sshpass rsync
+
+      - name: Deploy to Namecheap via SFTP/SSH
+        run: |
+          export SSHPASS="${{ secrets.SFTP_PASSWORD }}"
+          rsync -avz --delete \
+            --exclude='.git*' \
+            --exclude='node_modules' \
+            --exclude='.DS_Store' \
+            -e "sshpass -e ssh -o StrictHostKeyChecking=no -p 22" \
+            ./dist/ \
+            ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }}:~/public_html/
