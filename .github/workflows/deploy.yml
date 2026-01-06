@@ -33,11 +33,13 @@ jobs:
 
       - name: Deploy to Namecheap via SFTP/SSH
         run: |
+          PORT="${{ secrets.SFTP_PORT }}"
+          if [ -z "$PORT" ]; then PORT=21098; fi
           export SSHPASS="${{ secrets.SFTP_PASSWORD }}"
           rsync -avz --delete \
             --exclude='.git*' \
             --exclude='node_modules' \
             --exclude='.DS_Store' \
-            -e "sshpass -e ssh -o StrictHostKeyChecking=no -p 22" \
+            -e "sshpass -e ssh -o StrictHostKeyChecking=no -p $PORT" \
             ./dist/ \
             ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }}:~/public_html/
