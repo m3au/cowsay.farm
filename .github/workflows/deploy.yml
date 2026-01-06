@@ -1,4 +1,4 @@
-name: Deploy to Namecheap (SFTP)
+name: Deploy to Namecheap (FTPS)
 
 on:
   push:
@@ -26,14 +26,14 @@ jobs:
       - name: Build site
         run: bun run build
 
-      - name: Deploy to Namecheap via SFTP
+      - name: Deploy to Namecheap via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.SFTP_SERVER }}
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
-          protocol: sftp
-          port: 22
+          protocol: ftps
+          port: 21
           local-dir: ./dist/
           server-dir: ./public_html/
           exclude: |
