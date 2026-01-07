@@ -1,0 +1,49 @@
+---
+import { getBuybacks } from "@/data/buybacks";
+---
+
+<div class="buyback-tracker">
+	{(() => {
+		const buybacks = getBuybacks();
+		
+		if (buybacks.length === 0) {
+			return (
+				<p class="text-muted mb-4">No buybacks yet. Check back after the first shop sale or NFT auction!</p>
+			);
+		}
+
+		return (
+			<div class="space-y-4">
+				{buybacks.map((buyback) => (
+					<div class="p-4 border border-accent rounded">
+						<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+							<div>
+								<p class="font-bold">{buyback.amount} $COWSAYS</p>
+								<p class="text-sm text-muted">{buyback.date}</p>
+							</div>
+							<div class="text-sm">
+								<p class="text-muted">Source: {buyback.source}</p>
+								{buyback.txHash && (
+									<a
+										class="cactus-link text-xs break-all"
+										href={`https://solscan.io/tx/${buyback.txHash}`}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										View on Solscan
+									</a>
+								)}
+							</div>
+						</div>
+						{buyback.usdValue && (
+							<p class="text-sm">Value: ${buyback.usdValue.toLocaleString()}</p>
+						)}
+					</div>
+				))}
+			</div>
+		);
+	})()}
+</div>
+
+
+

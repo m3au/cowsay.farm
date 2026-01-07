@@ -1,0 +1,54 @@
+---
+interface Props {
+	nft?: {
+		id: string;
+		title: string;
+		image: string;
+		quote: string;
+		auctionEnd?: string;
+		currentBid?: number;
+		minBid?: number;
+		marketplaceUrl?: string;
+	};
+}
+
+const { nft } = Astro.props;
+---
+
+{nft && (
+	<div class="auction-card border border-accent rounded p-4 mb-4">
+		<div class="mb-4">
+			<img src={nft.image} alt={nft.title} class="w-full rounded" />
+		</div>
+		<h3 class="font-bold mb-2">{nft.title}</h3>
+		<p class="text-sm text-muted mb-4 italic">"{nft.quote}"</p>
+		<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+			<div>
+				{nft.currentBid && (
+					<p class="text-sm">
+						Current Bid: <span class="font-bold">${nft.currentBid.toLocaleString()}</span>
+					</p>
+				)}
+				{nft.minBid && (
+					<p class="text-sm text-muted">Minimum Bid: ${nft.minBid.toLocaleString()}</p>
+				)}
+				{nft.auctionEnd && (
+					<p class="text-xs text-muted">Ends: {nft.auctionEnd}</p>
+				)}
+			</div>
+			{nft.marketplaceUrl && (
+				<a
+					class="cactus-link text-sm"
+					href={nft.marketplaceUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					View Auction →
+				</a>
+			)}
+		</div>
+	</div>
+)}
+
+
+

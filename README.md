@@ -30,6 +30,47 @@ Here's a brief overview of the main technologies used in this project:
 
 The webpage for this project is built using Astro with the Cactus Theme, and styled with Tailwind CSS. Content is written in Markdown and MDX. Other tools used include Satori for generating Open Graph images, Pagefind for static search functionality, Astro Icon for SVG icons, and Expressive Code for visually appealing source code display.
 
+## Token Contract Address Setup
+
+After the token launch, you need to configure the contract address to display it on the homepage with a QR code. There are three ways to set it:
+
+### Option 1: Environment Variable (Recommended for Local Development)
+
+1. Create or update your `.env` file in the project root:
+   ```bash
+   CONTRACT_ADDRESS=YourSolanaContractAddressHere
+   ```
+
+2. The contract address will automatically be picked up during build time.
+
+### Option 2: Direct Configuration
+
+1. Open `src/site.config.ts`
+2. Update the `contractAddress` field:
+   ```typescript
+   contractAddress: "YourSolanaContractAddressHere",
+   ```
+
+### Option 3: GitHub Actions Secret (For CI/CD Deployments)
+
+If you're using GitHub Actions for deployment, add the contract address as a repository secret:
+
+1. Go to your repository on GitHub
+2. Navigate to **Settings** → **Secrets and variables** → **Actions**
+3. Click **New repository secret**
+4. Add:
+   - **Name**: `CONTRACT_ADDRESS`
+   - **Value**: Your Solana contract address
+
+The deployment workflow (`.github/workflows/deploy.yml`) is already configured to use this secret during the build process.
+
+Once the contract address is set, it will automatically appear on the homepage with:
+- A QR code for easy scanning
+- The full contract address in a copyable format
+- A copy button for quick sharing
+
+**Note:** The contract address section will only display when a contract address is configured. If no address is set, the section will be hidden.
+
 ## Contribute
 
 To learn more or to contribute to this project, visit our bot's repository or this homepage's repo.

@@ -1,0 +1,92 @@
+---
+import QRCode from "qrcode";
+
+interface Props {
+	contractAddress?: string;
+}
+
+const { contractAddress } = Astro.props;
+
+// Generate QR code as data URL if contract address is provided
+// We'll generate a light version (black on white) which works well in both themes
+let qrCodeDataUrl: string | null = null;
+if (contractAddress) {
+	try {
+		qrCodeDataUrl = await QRCode.toDataURL(contractAddress, {
+			width: 256,
+			margin: 2,
+			color: {
+				dark: "#000000",
+				light: "#FFFFFF",
+			},
+			errorCorrectionLevel: "M",
+		});
+	} catch (error) {
+		console.error("Error generating QR code:", error);
+	}
+}
+---
+
+{contractAddress && qrCodeDataUrl && (
+	<section class="my-8 rounded-lg border border-gray-300 dark:border-gray-700 p-6 bg-gray-50 dark:bg-gray-900">
+		<h2 class="title mb-4 text-xl">Contract Address</h2>
+		<div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
+			<div class="flex-shrink-0">
+				<img
+					src={qrCodeDataUrl}
+					alt="QR Code for Contract Address"
+					class="w-48 h-48 border border-gray-300 dark:border-gray-700 rounded-lg bg-white p-2"
+				/>
+			</div>
+			<div class="flex-1 min-w-0">
+				<p class="mb-2 text-sm text-gray-600 dark:text-gray-400">Solana Contract Address:</p>
+				<div class="flex items-center gap-2 flex-wrap">
+					<code class="font-mono text-sm break-all bg-gray-100 dark:bg-gray-800 px-3 py-2 rounded border border-gray-300 dark:border-gray-700">
+						{contractAddress}
+					</code>
+					<button
+						id="copy-address-btn"
+						class="px-3 py-2 text-sm rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+						aria-label="Copy contract address"
+					>
+						Copy
+					</button>
+				</div>
+				<p class="mt-3 text-xs text-gray-500 dark:text-gray-500">
+					Scan the QR code or copy the address to add $COWSAYS to your wallet
+				</p>
+			</div>
+		</div>
+	</section>
+)}
+
+{contractAddress && (
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const copyBtn = document.getElementById("copy-address-btn");
+			const contractAddress = "{contractAddress}";
+
+			if (copyBtn) {
+				copyBtn.addEventListener("click", async function () {
+					try {
+						await navigator.clipboard.writeText(contractAddress);
+						const originalText = copyBtn.textContent;
+						copyBtn.textContent = "Copied!";
+						copyBtn.classList.add("bg-green-100", "dark:bg-green-900");
+						setTimeout(() => {
+							copyBtn.textContent = originalText;
+							copyBtn.classList.remove("bg-green-100", "dark:bg-green-900");
+						}, 2000);
+					} catch (err) {
+						console.error("Failed to copy:", err);
+						copyBtn.textContent = "Failed";
+						setTimeout(() => {
+							copyBtn.textContent = "Copy";
+						}, 2000);
+					}
+				});
+			}
+		});
+	</script>
+)}
+

@@ -25,6 +25,8 @@ jobs:
 
       - name: Build site
         run: bun run build
+        env:
+          CONTRACT_ADDRESS: ${{ secrets.CONTRACT_ADDRESS }}
 
       - name: Setup SSH tools
         run: |
