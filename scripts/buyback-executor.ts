@@ -40,8 +40,8 @@ const DEFAULT_CONFIG: BuybackConfig = {
  * Execute a buyback using Jupiter or Raydium
  */
 async function executeBuyback(
-	amountSol: number,
-	config: BuybackConfig,
+	_amountSol: number,
+	_config: BuybackConfig,
 ): Promise<{ txHash: string; tokensReceived: number }> {
 	// TODO: Implement actual buyback execution
 	// 1. Connect to Solana RPC
