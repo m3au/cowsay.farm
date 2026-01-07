@@ -22,6 +22,10 @@ export const siteConfig: SiteConfig = {
 	ogLocale: "en_GB",
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
 	title: "@cowsayco",
+	// Token contract address (set after launch)
+	// Option 1: Set via environment variable CONTRACT_ADDRESS
+	// Option 2: Set directly here, e.g., contractAddress: "YourContractAddressHere",
+	contractAddress: import.meta.env.CONTRACT_ADDRESS || undefined,
 	// webmentions: {
 	// 	// Webmention.io API endpoint. Get your own here: https://webmention.io/, and follow this blog post: https://astro-cactus.chriswilliams.dev/posts/webmentions/
 	// 	link: "https://webmention.io/astro-cactus.chriswilliams.dev/webmention",
@@ -33,6 +37,18 @@ export const menuLinks: { path: string; title: string }[] = [
 	{
 		path: "/",
 		title: "Home",
+	},
+	{
+		path: "/token/",
+		title: "Token",
+	},
+	{
+		path: "/shop/",
+		title: "Shop",
+	},
+	{
+		path: "/nfts/",
+		title: "NFTs",
 	},
 	{
 		path: "/about/",

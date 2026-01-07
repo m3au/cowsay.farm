@@ -2,6 +2,8 @@
 import PageLayout from "@/layouts/Base.astro";
 import { Image } from "astro:assets";
 import heroImg from "@/assets/hero_unit.png";
+import ContractAddress from "@/components/token/ContractAddress.astro";
+import { siteConfig } from "@/site-config";
 ---
 
 <style>
@@ -92,5 +94,10 @@ import heroImg from "@/assets/hero_unit.png";
 			href="https://twitter.com/intent/user?screen_name=cowsayco"
 			data-size="large"><span>Follow @cowsayco</span></a
 		>
-	</section></PageLayout
+	</section>
+
+	{siteConfig.contractAddress && (
+		<ContractAddress contractAddress={siteConfig.contractAddress} />
+	)}
+</PageLayout
 >

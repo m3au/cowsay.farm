@@ -1,15 +1,14 @@
-import mdx from "@astrojs/mdx";
-import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 import expressiveCode from "astro-expressive-code";
-import icon from "astro-icon";
-import fs from "fs";
-import rehypeExternalLinks from "rehype-external-links";
-import remarkUnwrapImages from "remark-unwrap-images";
-
 import { expressiveCodeOptions } from "./src/site.config";
+import fs from "fs";
+import icon from "astro-icon";
+import mdx from "@astrojs/mdx";
+import rehypeExternalLinks from "rehype-external-links";
 import { remarkReadingTime } from "./src/utils/remark-reading-time";
+import remarkUnwrapImages from "remark-unwrap-images";
+import sitemap from "@astrojs/sitemap";
+import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
@@ -42,10 +41,8 @@ export default defineConfig({
 			},
 		},
 	},
-	// https://docs.astro.build/en/guides/prefetch/
 	prefetch: true,
-	// ! Please remember to replace the following site property with your own domain
-	site: "https://cowsay.co/",
+	site: "https://cowsay.farm/",
 	vite: {
 		optimizeDeps: {
 			exclude: ["@resvg/resvg-js"],
@@ -58,8 +55,7 @@ function rawFonts(ext: string[]) {
 	return {
 		name: "vite-plugin-raw-fonts",
 		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		// @ts-expect-error:next-line
-		transform(_, id) {
+		transform(_: any, id: string) {
 			if (ext.some((e) => id.endsWith(e))) {
 				const buffer = fs.readFileSync(id);
 				return {

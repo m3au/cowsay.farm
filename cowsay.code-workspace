@@ -1,0 +1,49 @@
+{
+  "folders": [
+    {
+      "name": "cowsay",
+      "path": ".",
+    },
+  ],
+  "settings": {
+    "files.exclude": {
+      ".editorconfig": true,
+      ".eslintignore": true,
+      ".prettierignore": true,
+      ".gitattributes": true,
+      ".markdownlint.jsonc": true,
+      "bun.lockb": true,
+      "node_modules": true,
+    },
+    "files.associations": {
+      "*.json": "jsonc",
+      "*.astro": "astro",
+    },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "essen.prettier-vscode",
+    "markdownlint.config": {
+      "MD033": false,
+      "MD041": false,
+      "MD013": false,
+    },
+    "[markdown]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[astro]": {
+      "editor.defaultFormatter": "astro-build.astro-vscode",
+    },
+  },
+}
+

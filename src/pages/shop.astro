@@ -1,0 +1,56 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+import ProductGrid from "@/components/shop/ProductGrid.astro";
+import PnLDashboard from "@/components/shop/PnLDashboard.astro";
+
+const meta = {
+	description: "Shop for Cowsay merchandise featuring your favorite developer quotes on T-shirts, mugs, mousepads, and more.",
+	title: "Shop",
+};
+---
+
+<PageLayout meta={meta}>
+	<section>
+		<h1 class="title mb-6">Shop</h1>
+		<p class="mb-4">
+			Show your love for developer quotes with Cowsay merchandise! All products feature curated quotes from the
+			@cowsayco Twitter bot.
+		</p>
+		<p class="mb-4">
+			<strong>100% of profits</strong> from all merchandise sales are automatically reinvested into $COWSAYS token
+			buybacks. Every purchase supports the token ecosystem.
+		</p>
+	</section>
+
+	<section>
+		<h2 class="title mb-6 mt-16 text-2xl">Products</h2>
+		
+		<ProductGrid />
+	</section>
+
+	<section>
+		<h2 class="title mb-6 mt-16 text-2xl">Revenue & Buybacks</h2>
+		
+		<p class="mb-4">
+			We believe in full transparency. Below you can see all shop revenue, expenses, and how profits are used for
+			token buybacks.
+		</p>
+
+		<PnLDashboard />
+	</section>
+
+	<section>
+		<h2 class="title mb-6 mt-16 text-2xl">How It Works</h2>
+		
+		<ol class="list-decimal list-inside space-y-2 mb-4">
+			<li>You purchase merchandise featuring your favorite Cowsay quotes</li>
+			<li>We calculate profits after expenses (production, shipping, platform fees)</li>
+			<li>All profits are automatically used to buy $COWSAYS tokens</li>
+			<li>Buyback transactions are publicly recorded on-chain</li>
+			<li>You can track all buybacks on our <a class="cactus-link" href="/transparency">transparency dashboard</a></li>
+		</ol>
+	</section>
+</PageLayout>
+
+
+
