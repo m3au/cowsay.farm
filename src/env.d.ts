@@ -15,4 +15,5 @@ interface ImportMetaEnv {
 
 interface ImportMeta {
 	readonly env: ImportMetaEnv;
+	readonly main?: boolean; // Bun-specific: true if this is the main module
 }
