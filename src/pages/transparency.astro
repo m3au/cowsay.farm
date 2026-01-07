@@ -5,7 +5,7 @@ import BuybackHistory from "@/components/transparency/BuybackHistory.astro";
 import WalletTracker from "@/components/transparency/WalletTracker.astro";
 
 const meta = {
-	description: "Complete financial transparency for the Cowsay ecosystem including P&L, buyback history, and wallet balances.",
+	description: "Complete financial transparency for the Cowsay ecosystem including P&L, buyback history, token burns, and wallet balances.",
 	title: "Transparency Dashboard",
 };
 ---
@@ -48,6 +48,25 @@ const meta = {
 	</section>
 
 	<section>
+		<h2 class="title mb-6 mt-16 text-2xl">Token Burning</h2>
+		
+		<p class="mb-4">
+			All rewards and fees from Pump.fun are dedicated to <strong>permanent token burning</strong>. This creates a deflationary mechanism that reduces the circulating supply over time.
+		</p>
+
+		<ul class="list-disc list-inside space-y-2 mb-4">
+			<li><strong>Pumpfun Trading Fees:</strong> Portion of trading fees distributed back to creator</li>
+			<li><strong>Pumpfun Rewards:</strong> Any rewards, incentives, or fee rebates from Pump.fun platform</li>
+			<li><strong>Burning Process:</strong> Funds are used to purchase tokens from the market and permanently burn them</li>
+			<li><strong>Transparency:</strong> All burn transactions are publicly recorded on-chain</li>
+		</ul>
+
+		<p class="mb-4 text-sm text-muted">
+			Burn transactions will be tracked and displayed here once they begin. All burns are verifiable on-chain via Solana explorer.
+		</p>
+	</section>
+
+	<section>
 		<h2 class="title mb-6 mt-16 text-2xl">Commitment Statement</h2>
 		
 		<div class="mb-4 rounded border border-accent p-4">
@@ -73,6 +92,7 @@ const meta = {
 			<li>On-chain transactions via <a class="cactus-link" href="https://solscan.io" target="_blank" rel="noopener noreferrer">Solana Explorer</a></li>
 			<li>Wallet balances via blockchain explorer</li>
 			<li>Buyback transactions publicly visible</li>
+			<li>Token burn transactions publicly visible</li>
 			<li>P&L dashboard updated regularly</li>
 		</ul>
 	</section>
