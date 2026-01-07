@@ -1,173 +1,156 @@
 ---
-import aboutImg from "@/assets/works-on-my-machine.png";
-import deadcodeImg from "@/assets/dead-code.png";
 import SocialList from "@/components/SocialList.astro";
 import PageLayout from "@/layouts/Base.astro";
-import { Image } from "astro:assets";
 
 const meta = {
-	description: "A bot that tweets random dev jokes.",
+	description: "Learn about the $COWSAYS token project, creator commitment, and mission to build a sustainable Solana token ecosystem.",
 	title: "About",
 };
-
-const webpageTech: { desc: string; href: string; title: string }[] = [
-	{
-		desc: "Astro is a front-end framework for building faster websites with less client-side JavaScript.",
-		href: "https://astro.build",
-		title: "Astro",
-	},
-	{
-		desc: "Cactus Theme is a customizable Astro theme developed by Chrismwilliams, providing a unique aesthetic for Astro-based projects.",
-		href: "https://github.com/chrismwilliams/astro-theme-cactus/blob/main/package.json",
-		title: "Cactus Theme",
-	},
-	{
-		desc: "Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces directly in your HTML.",
-		href: "https://tailwindcss.com",
-		title: "Tailwind CSS",
-	},
-	{
-		desc: "MDX is an authorable format that lets you seamlessly write JSX in your Markdown documents.",
-		href: "https://mdxjs.com/",
-		title: "MDX",
-	},
-	{
-		desc: "Satori is a tool developed by Vercel for generating Open Graph images in PNG format for blog posts.",
-		href: "https://github.com/vercel/satori",
-		title: "Satori",
-	},
-	{
-		desc: "Pagefind is a fully static search library, providing search functionality without needing a server or database.",
-		href: "https://pagefind.app/",
-		title: "Pagefind",
-	},
-	{
-		desc: "Paletton is a tool for creating color palettes with up to four colors, providing a range of options for color selection and customization.",
-		href: "https://paletton.com/",
-		title: "Paletton",
-	},
-	{
-		desc: "Midjourney is an AI tool that generates images from text, combining GPT-3 and DALL-E to create unique visuals.",
-		href: "https://www.midjourney.com/",
-		title: "Midjourney",
-	},
-	{
-		desc: "render.com lets you build, host, and maintain web projects with continuous deployment and serverless functions.",
-		href: "https://www.render.com/",
-		title: "Render",
-	},
-];
-
-const botTech: { desc: string; href: string; title: string }[] = [
-	{
-		desc: "cowsay is a program that generates ASCII pictures of a cow with a message in a speech bubble in your terminal.",
-		href: "https://www.npmjs.com/package/cowsay",
-		title: "cowsay",
-	},
-	{
-		desc: "word-wrap is a simple module for wrapping input text into a column of specified width, useful for formatting console output.",
-		href: "https://www.npmjs.com/package/word-wrap",
-		title: "word-wrap",
-	},
-	{
-		desc: "ansi-to-html ansi-to-html is a library that converts ANSI escape codes for styling console output into HTML elements.",
-		href: "https://www.npmjs.com/package/ansi-to-html",
-		title: "ansi-to-html",
-	},
-	{
-		desc: "node-html-to-image is a Node.js module that generates images from HTML code using Puppeteer under the hood.",
-		href: "https://www.npmjs.com/package/node-html-to-image",
-		title: "node-html-to-image",
-	},
-	{
-		desc: "lolcatjs is a library that applies rainbow colors to text in the terminal, inspired by the Ruby lolcat gem.",
-		href: "https://www.npmjs.com/package/lolcatjs",
-		title: "lolcatjs",
-	},
-	{
-		desc: "twitter-api-v2 is a comprehensive Twitter v2 API client for Node.js, supporting REST and streaming APIs.",
-		href: "https://www.npmjs.com/package/twitter-api-v2",
-		title: "twitter-api-v2",
-	},
-	{
-		desc: "GitHub Actions is a CI/CD system fully integrated with GitHub, allowing for the automation of software workflows directly within a repository.",
-		href: "https://github.com/features/actions",
-		title: "GitHub Actions",
-	},
-];
 ---
 
 <PageLayout meta={meta}>
 	<section>
-		<h1 class="title mb-6">About</h1>
-		<p>
-			Hi, I'm a <a class="cactus-link" href="https://twitter.com/cowsayco">Bot</a> that posts random
-			developer quotes.
+		<h1 class="title mb-6">About $COWSAYS</h1>
+		<p class="mb-4">
+			$COWSAYS is a Solana token project built around the @cowsayco community. What started as a fun Twitter bot
+			sharing daily developer quotes has evolved into a transparent, community-driven token ecosystem with a
+			long-term vision.
 		</p>
-
-		<Image
-			class="mt-4"
-			alt="Cow saying it works on my machine pixel art"
-			fetchpriority="high"
-			loading="eager"
-			src={aboutImg}
-		/>
+		<p class="mb-4">
+			The project combines the nostalgic charm of the classic <a class="cactus-link" href="https://github.com/tnalpgge/rank-amateur-cowsay">cowsay</a> command-line program from 1999 with modern blockchain technology, creating a sustainable token economy backed by real revenue streams.
+		</p>
 	</section>
 
 	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Technologies</h2>
-
-		<p class="mt-4">
-			I was created using node.js, cowsay, lolcatjs, ansi-to-html, node-html-to-image, and the
-			twitter-api-v2. I'm hosted on Netlify, and my source code is available on GitHub.
+		<h2 class="title mb-6 mt-16 text-2xl">Mission</h2>
+		<p class="mb-4">
+			Our mission is to build a sustainable, transparent token ecosystem that rewards the community while maintaining
+			long-term value. We achieve this through:
 		</p>
-		<p class="my-4">
-			To learn more or to contribute to this side-kick project,
-			<a class="cactus-link" href="https://github.com/meowso/cowsay">visit our repository</a>.
-		</p>
-		<h3 class="title mb-4 mt-8 text-lg">Twitter bot</h3>
-		<dl class="space-y-4">
-			{
-				botTech.map(({ desc, href, title }) => (
-					<div class="flex flex-col gap-2">
-						<dt>
-							<span>
-								<a class="cactus-link" href={href} rel="noopener noreferrer" target="_blank">
-									{title}
-								</a>
-							</span>
-						</dt>
-						<dd>{desc}</dd>
-					</div>
-				))
-			}
-		</dl>
-		<h3 class="title mb-4 mt-8 text-lg">Webpage</h3>
-		<dl class="space-y-4">
-			{
-				webpageTech.map(({ desc, href, title }) => (
-					<div class="flex flex-col gap-2">
-						<dt>
-							<span class="flex">
-								<a class="cactus-link" href={href} rel="noopener noreferrer" target="_blank">
-									{title}
-								</a>
-							</span>
-						</dt>
-						<dd>{desc}</dd>
-					</div>
-				))
-			}
-		</dl>
+		<ul class="list-disc list-inside space-y-2 mb-4">
+			<li><strong>Transparency:</strong> All financial operations, wallet balances, and buyback transactions are publicly disclosed</li>
+			<li><strong>Long-term Commitment:</strong> Creator holds 20% of supply with a 10-year vesting lock, demonstrating diamond hands</li>
+			<li><strong>Sustainable Buybacks:</strong> All profits from merchandise and NFT sales are automatically reinvested into token buybacks</li>
+			<li><strong>Community Growth:</strong> Focus on building a sustainable ecosystem around the Cowsay brand</li>
+		</ul>
 	</section>
+
 	<section>
-		<Image
-			class="mb-8 mt-20"
-			alt="I see Dead code illustration by chatGPT4"
-			fetchpriority="low"
-			loading="lazy"
-			src={deadcodeImg}
-		/>
+		<h2 class="title mb-6 mt-16 text-2xl">Creator Story & Commitment</h2>
+		<p class="mb-4">
+			I'm the creator of the @cowsayco Twitter bot and the $COWSAYS token project. What started as a side project to
+			bring daily developer humor to the community has grown into something much bigger.
+		</p>
+		<div class="mb-4 rounded border border-accent p-4">
+			<p class="mb-2">
+				<strong>My Public Commitment:</strong> I publicly commit to holding 20% of the $COWSAYS token supply (200M tokens) and will
+				not sell any tokens from this allocation for a period of 10 years from the token launch date.
+			</p>
+			<p class="mb-2">
+				<strong>Locking Mechanism:</strong> These tokens are secured with a 10-year vesting lock using <strong>Streamflow</strong> (popular & trusted platform), providing on-chain verification from day 1. This protects the floor price, stabilizes the market, and demonstrates my long-term commitment to the project.
+			</p>
+			<p class="text-sm text-muted">
+				See <a class="cactus-link" href="https://github.com/meowso/cowsay/blob/main/TRANSPARENCY.md" target="_blank" rel="noopener noreferrer">TRANSPARENCY.md</a> for full commitment details.
+			</p>
+		</div>
+		<p class="mb-4">
+			This commitment isn't just words—it's backed by on-chain verification. You can verify the lock yourself on the Solana blockchain from day 1.
+		</p>
+	</section>
+
+	<section>
+		<h2 class="title mb-6 mt-16 text-2xl">Token Overview</h2>
+		<p class="mb-4">
+			$COWSAYS is the official token of the Cowsay ecosystem, built on Solana for fast, low-cost transactions.
+		</p>
+		<dl class="space-y-4 mb-4">
+			<div class="flex flex-col gap-2">
+				<dt>
+					<span class="font-bold">Total Supply</span>
+				</dt>
+				<dd>1,000,000,000 (1B fixed supply)</dd>
+			</div>
+			<div class="flex flex-col gap-2">
+				<dt>
+					<span class="font-bold">Creator Allocation</span>
+				</dt>
+				<dd>20% (200M tokens) - 10-year vesting lock via Streamflow</dd>
+			</div>
+			<div class="flex flex-col gap-2">
+				<dt>
+					<span class="font-bold">Public Distribution</span>
+				</dt>
+				<dd>80% (800M tokens) - via fair bonding curve + DEX</dd>
+			</div>
+		</dl>
+		<p class="mb-4">
+			For complete tokenomics information, visit the <a class="cactus-link" href="/token/">Token page</a> or see the
+			<a class="cactus-link" href="https://github.com/meowso/cowsay/blob/main/TOKENOMICS.md" target="_blank" rel="noopener noreferrer">TOKENOMICS.md</a> file.
+		</p>
+	</section>
+
+	<section>
+		<h2 class="title mb-6 mt-16 text-2xl">Key Features</h2>
+		
+		<h3 class="title mb-4 mt-8 text-lg">Automated Buyback Mechanism</h3>
+		<p class="mb-4">
+			All profits from the Cowsay ecosystem are automatically reinvested into $COWSAYS token buybacks:
+		</p>
+		<ul class="list-disc list-inside space-y-2 mb-4">
+			<li><strong>Merchandise Shop:</strong> All profits from T-shirts, mugs, mousepads, and other products</li>
+			<li><strong>NFT Auctions:</strong> All proceeds from auctioned quote artwork NFTs</li>
+			<li><strong>Future Revenue:</strong> Any additional revenue generated by the Cowsay ecosystem</li>
+		</ul>
+		<p class="mb-4">
+			This creates a sustainable buyback mechanism where the success of the Cowsay brand directly benefits token
+			holders through continuous buybacks for 10 years.
+		</p>
+
+		<h3 class="title mb-4 mt-8 text-lg">Full Transparency</h3>
+		<p class="mb-4">
+			We believe in complete transparency. All financial operations are publicly tracked:
+		</p>
+		<ul class="list-disc list-inside space-y-2 mb-4">
+			<li>Real-time wallet balance tracking</li>
+			<li>Profit & Loss dashboard</li>
+			<li>On-chain buyback transaction history</li>
+			<li>Public wallet addresses</li>
+		</ul>
+		<p class="mb-4">
+			Visit the <a class="cactus-link" href="/transparency/">Transparency Dashboard</a> to see everything in real-time.
+		</p>
+	</section>
+
+	<section>
+		<h2 class="title mb-6 mt-16 text-2xl">Resources & Links</h2>
+		
+		<ul class="space-y-2 mb-4">
+			<li>
+				<a class="cactus-link" href="/token/">Token Information</a> - Complete token details and buyback tracker
+			</li>
+			<li>
+				<a class="cactus-link" href="/transparency/">Transparency Dashboard</a> - Financial transparency and wallet tracking
+			</li>
+			<li>
+				<a class="cactus-link" href="/shop/">Merchandise Shop</a> - Support the project and contribute to buybacks
+			</li>
+			<li>
+				<a class="cactus-link" href="/nfts/">NFT Auctions</a> - Collect unique quote artwork NFTs
+			</li>
+			<li>
+				<a class="cactus-link" href="https://github.com/meowso/cowsay/blob/main/TOKENOMICS.md" target="_blank" rel="noopener noreferrer">Full Tokenomics</a> - Detailed tokenomics documentation
+			</li>
+			<li>
+				<a class="cactus-link" href="https://github.com/meowso/cowsay/blob/main/TRANSPARENCY.md" target="_blank" rel="noopener noreferrer">Transparency & Commitment</a> - Complete transparency statement
+			</li>
+			<li>
+				<a class="cactus-link" href="https://twitter.com/cowsayco" target="_blank" rel="noopener noreferrer">@cowsayco on Twitter</a> - Follow for daily developer quotes
+			</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2 class="title mb-6 mt-16 text-2xl">Connect</h2>
 		<SocialList />
 	</section>
 </PageLayout>
