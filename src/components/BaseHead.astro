@@ -77,9 +77,6 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 {/* Sitemap */}
 <link href="/sitemap-index.xml" rel="sitemap" />
 
-{/* RSS auto-discovery */}
-<link href="/rss.xml" rel="alternate" title={siteConfig.title} type="application/rss+xml" />
-
 {/* Webmentions */}
 {
 	siteConfig.webmentions && (

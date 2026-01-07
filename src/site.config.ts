@@ -2,7 +2,7 @@ import type { SiteConfig } from "@/types";
 import type { AstroExpressiveCodeOptions } from "astro-expressive-code";
 
 export const siteConfig: SiteConfig = {
-	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
+	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49)
 	author: "Bruno Palma",
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
 	date: {
@@ -15,7 +15,7 @@ export const siteConfig: SiteConfig = {
 	},
 	// Meta property used as the default description meta property
 	description:
-		"This is the homepage for @cowsayco twitter account, a fun project that combines the classic command-line program cowsay from 1999 with the power of social media. Our bot tweets a curated quote each day, presented in the unique style of a cowsay ASCII art message.",
+		"$COWSAYS is a Solana token project built around the @cowsayco community. Featuring transparent tokenomics, automated buybacks, and a 10-year creator commitment.",
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: "en-GB",
 	// Meta property, found in src/components/BaseHead.astro L:42
@@ -43,6 +43,10 @@ export const menuLinks: { path: string; title: string }[] = [
 		title: "Token",
 	},
 	{
+		path: "/roadmap/",
+		title: "Roadmap",
+	},
+	{
 		path: "/shop/",
 		title: "Shop",
 	},
@@ -53,10 +57,6 @@ export const menuLinks: { path: string; title: string }[] = [
 	{
 		path: "/about/",
 		title: "About",
-	},
-	{
-		path: "/posts/",
-		title: "Blog",
 	},
 ];
 

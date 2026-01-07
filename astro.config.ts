@@ -3,9 +3,7 @@ import expressiveCode from "astro-expressive-code";
 import { expressiveCodeOptions } from "./src/site.config";
 import fs from "fs";
 import icon from "astro-icon";
-import mdx from "@astrojs/mdx";
 import rehypeExternalLinks from "rehype-external-links";
-import { remarkReadingTime } from "./src/utils/remark-reading-time";
 import remarkUnwrapImages from "remark-unwrap-images";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
@@ -22,7 +20,6 @@ export default defineConfig({
 			applyBaseStyles: false,
 		}),
 		sitemap(),
-		mdx(),
 	],
 	markdown: {
 		rehypePlugins: [
@@ -34,7 +31,7 @@ export default defineConfig({
 				},
 			],
 		],
-		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
+		remarkPlugins: [remarkUnwrapImages],
 		remarkRehype: {
 			footnoteLabelProperties: {
 				className: [""],
