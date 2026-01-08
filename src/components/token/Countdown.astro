@@ -1,0 +1,77 @@
+---
+interface Props {
+	targetDate: string; // ISO 8601 date string, e.g., "2024-12-31T23:59:59Z"
+}
+
+const { targetDate } = Astro.props;
+---
+
+<section class="my-8 rounded-lg border border-accent p-6">
+	<h2 class="title mb-4 text-2xl">Contract Address Drop Countdown</h2>
+	<p class="mb-6">The contract address will be revealed when the countdown reaches zero.</p>
+	
+	<div id="countdown" class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+		<div class="flex flex-col items-center rounded-lg bg-bgColor p-4">
+			<div class="text-3xl font-bold" id="days">00</div>
+			<div class="text-sm text-muted">Days</div>
+		</div>
+		<div class="flex flex-col items-center rounded-lg bg-bgColor p-4">
+			<div class="text-3xl font-bold" id="hours">00</div>
+			<div class="text-sm text-muted">Hours</div>
+		</div>
+		<div class="flex flex-col items-center rounded-lg bg-bgColor p-4">
+			<div class="text-3xl font-bold" id="minutes">00</div>
+			<div class="text-sm text-muted">Minutes</div>
+		</div>
+		<div class="flex flex-col items-center rounded-lg bg-bgColor p-4">
+			<div class="text-3xl font-bold" id="seconds">00</div>
+			<div class="text-sm text-muted">Seconds</div>
+		</div>
+	</div>
+	
+	<div id="countdown-expired" class="hidden">
+		<p class="text-center text-lg font-bold">The countdown has ended!</p>
+	</div>
+</section>
+
+<script define:vars={{ targetDate }}>
+	const target = new Date(targetDate).getTime();
+	const daysEl = document.getElementById("days");
+	const hoursEl = document.getElementById("hours");
+	const minutesEl = document.getElementById("minutes");
+	const secondsEl = document.getElementById("seconds");
+	const countdownEl = document.getElementById("countdown");
+	const expiredEl = document.getElementById("countdown-expired");
+
+	function updateCountdown() {
+		const now = new Date().getTime();
+		const distance = target - now;
+
+		if (distance < 0) {
+			if (countdownEl) countdownEl.classList.add("hidden");
+			if (expiredEl) expiredEl.classList.remove("hidden");
+			return;
+		}
+
+		const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		if (daysEl) daysEl.textContent = String(days).padStart(2, "0");
+		if (hoursEl) hoursEl.textContent = String(hours).padStart(2, "0");
+		if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, "0");
+		if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, "0");
+	}
+
+	// Update immediately and then every second
+	updateCountdown();
+	const interval = setInterval(() => {
+		updateCountdown();
+		const now = new Date().getTime();
+		if (target - now < 0) {
+			clearInterval(interval);
+		}
+	}, 1000);
+</script>
+

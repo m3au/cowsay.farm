@@ -2,13 +2,13 @@
 
 ## Creator Commitment
 
-I publicly commit to holding **20% of the $COWSAYS token supply** and will not sell any tokens from this allocation for a period of **10 years** from the token launch date.
+I publicly commit to holding **20% of the $COWSAYS token supply** and will not sell any tokens from this allocation for a period of **3 years** from the token launch date.
 
 ### Commitment Details
 
 - **Allocation**: 20% of total token supply (200,000,000 tokens)
-- **Holding Period**: 10 years (no selling before [Launch Date + 10 years])
-- **Locking Mechanism**: 10-year vesting lock using **Streamflow** (popular & trusted platform)
+- **Holding Period**: 3 years (no selling before [Launch Date + 3 years])
+- **Locking Mechanism**: 3-year vesting lock using **Streamflow** (popular & trusted platform)
 - **Wallet Type**: Public wallet address (to be disclosed after launch)
 - **No Burning**: All tokens are held, none are burned
 - **On-chain Verification**: Lock is verifiable on-chain from day 1
@@ -21,8 +21,8 @@ I publicly commit to holding **20% of the $COWSAYS token supply** and will not s
 - **Balance**: [To be updated regularly]
 - **Locked Amount**: 200,000,000 $COWSAYS (20% of supply)
 - **Lock Tool**: Streamflow vesting lock
-- **Lock Duration**: 10 years from launch date
-- **Purpose**: Holding 20% of supply with on-chain verified 10-year vesting lock
+- **Lock Duration**: 3 years from launch date
+- **Purpose**: Holding 20% of supply with on-chain verified 3-year vesting lock
 - **On-chain Proof**: Lock transaction will be publicly verifiable via Solana explorer
 
 ### Buyback Wallet

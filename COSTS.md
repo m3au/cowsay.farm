@@ -11,7 +11,7 @@
 
 2. **Streamflow Vesting Lock**
    - Cost: **~0.117 SOL (~$16-20 USD)** at current SOL prices
-   - Includes: 10-year vesting lock for 200M tokens (20% supply)
+   - Includes: 3-year vesting lock for 200M tokens (20% supply)
    - Optional auto-claim: 0.19 SOL (~$26-30) for automatic token distribution
    - Transaction fees: Minimal Solana network fees
    - Note: Streamflow charges 0% fees on tokens distributed, only network fees for contract creation
@@ -70,7 +70,7 @@
 
 This includes:
 - ✅ Token creation and launch
-- ✅ 10-year vesting lock setup
+- ✅ 3-year vesting lock setup
 - ✅ Initial €1000 investment
 - ✅ DEX upgrade
 
