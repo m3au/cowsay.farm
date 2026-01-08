@@ -1,7 +1,6 @@
 ---
 import PageLayout from "@/layouts/Base.astro";
 import BuybackTracker from "@/components/token/BuybackTracker.astro";
-import Countdown from "@/components/token/Countdown.astro";
 import PnLChart from "@/components/transparency/PnLChart.astro";
 import BuybackHistory from "@/components/transparency/BuybackHistory.astro";
 import WalletTracker from "@/components/transparency/WalletTracker.astro";
@@ -32,8 +31,21 @@ const meta = {
 	</section>
 
 	{
-		siteConfig.contractDropDate && !siteConfig.contractAddress && (
-			<Countdown targetDate={siteConfig.contractDropDate} />
+		!siteConfig.contractAddress && (
+			<div class="mb-8 rounded-md border border-accent bg-bgColor/50 px-4 py-3 text-center text-sm backdrop-blur-sm">
+				<p class="text-textColor">
+					<strong class="text-accent">CA drop coming soon</strong>, check the{" "}
+					<a
+						class="cactus-link font-semibold underline"
+						href="https://discord.gg/yhJ24mCSxd"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Discord server
+					</a>{" "}
+					for more information.
+				</p>
+			</div>
 		)
 	}
 

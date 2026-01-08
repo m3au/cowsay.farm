@@ -3,7 +3,6 @@ import PageLayout from "@/layouts/Base.astro";
 import { Image } from "astro:assets";
 import heroImg from "@/assets/hero_unit.png";
 import ContractAddress from "@/components/token/ContractAddress.astro";
-import Countdown from "@/components/token/Countdown.astro";
 import { siteConfig } from "@/site-config";
 ---
 
@@ -80,13 +79,24 @@ import { siteConfig } from "@/site-config";
 </script>
 
 <PageLayout meta={{ title: "developer jokes" }}>
-	<div style="margin-top: -2rem;margin-bottom: 4rem;">
-		{
-			siteConfig.contractDropDate && !siteConfig.contractAddress && (
-				<Countdown targetDate={siteConfig.contractDropDate} />
-			)
-		}
-	</div>
+	{
+		!siteConfig.contractAddress && (
+			<div class="mb-8 rounded-md border border-accent bg-bgColor/50 px-4 py-3 text-center text-sm backdrop-blur-sm">
+				<p class="text-textColor">
+					<strong class="text-accent">CA drop coming soon</strong>, check the{" "}
+					<a
+						class="cactus-link font-semibold underline"
+						href="https://discord.gg/yhJ24mCSxd"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Discord server
+					</a>{" "}
+					for more information.
+				</p>
+			</div>
+		)
+	}
 
 	<section>
 		<h1 class="title mb-6 inline-block cursor-pointer" id="kenobi">
