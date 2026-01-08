@@ -1,175 +1,160 @@
 ---
-import SocialList from "@/components/SocialList.astro";
 import PageLayout from "@/layouts/Base.astro";
 
 const meta = {
-	description: "Learn about the $COWSAYS token project, creator commitment, and mission to build a sustainable Solana token ecosystem.",
+	description:
+		"Learn about the @cowsayco community, a fun project bringing daily developer humor to Twitter, featuring NFTs, merchandise, and the $COWSAYS token.",
 	title: "About",
 };
 ---
 
 <PageLayout meta={meta}>
 	<section>
-		<h1 class="title mb-6">About $COWSAYS</h1>
+		<h1 class="title mb-6">About @cowsayco</h1>
 		<p class="mb-4">
-			$COWSAYS is a Solana token project built around the @cowsayco community. What started as a fun Twitter bot
-			sharing daily developer quotes has evolved into a transparent, community-driven token ecosystem with a
-			long-term vision.
+			@cowsayco is a community-driven project that brings daily developer humor to Twitter. The
+			project combines the nostalgic charm of the classic <a
+				class="cactus-link"
+				href="https://github.com/tnalpgge/rank-amateur-cowsay">cowsay</a
+			> command-line program from 1999 with the power of social media and modern web3 technology.
 		</p>
 		<p class="mb-4">
-			The project combines the nostalgic charm of the classic <a class="cactus-link" href="https://github.com/tnalpgge/rank-amateur-cowsay">cowsay</a> command-line program from 1999 with modern blockchain technology, creating a sustainable token economy backed by real revenue streams.
+			Our vision is to build the ultimate developer quote/meme ecosystem around the Cowsay brand,
+			combining daily developer quotes, merchandise, NFTs, and a sustainable token economy with
+			continuous buybacks for 3 years.
 		</p>
-	</section>
-
-	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Mission</h2>
-		<p class="mb-4">
-			Our mission is to build a sustainable, transparent token ecosystem that rewards the community while maintaining
-			long-term value. We achieve this through:
-		</p>
-		<ul class="list-disc list-inside space-y-2 mb-4">
-			<li><strong>Transparency:</strong> All financial operations, wallet balances, buyback transactions, and token burns are publicly disclosed</li>
-			<li><strong>Long-term Commitment:</strong> Creator holds 20% of supply with a 10-year vesting lock, demonstrating diamond hands</li>
-			<li><strong>Token Burning:</strong> All Pumpfun rewards and fees are dedicated to permanent token burning, creating a deflationary mechanism</li>
-			<li><strong>Sustainable Buybacks:</strong> All profits from merchandise and NFT sales are automatically reinvested into token buybacks</li>
-			<li><strong>Community Growth:</strong> Focus on building a sustainable ecosystem around the Cowsay brand</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Creator Story & Commitment</h2>
-		<p class="mb-4">
-			I'm the creator of the @cowsayco Twitter bot and the $COWSAYS token project. What started as a side project to
-			bring daily developer humor to the community has grown into something much bigger.
-		</p>
+		<p class="mb-4">The @cowsayco community is built on these core principles:</p>
 		<div class="mb-4 rounded border border-accent p-4">
-			<p class="mb-2">
-				<strong>My Public Commitment:</strong> I publicly commit to holding 20% of the $COWSAYS token supply (200M tokens) and will
-				not sell any tokens from this allocation for a period of 10 years from the token launch date.
-			</p>
-			<p class="mb-2">
-				<strong>Locking Mechanism:</strong> These tokens are secured with a 10-year vesting lock using <strong>Streamflow</strong> (popular & trusted platform), providing on-chain verification from day 1. This protects the floor price, stabilizes the market, and demonstrates my long-term commitment to the project.
-			</p>
-			<p class="text-sm text-muted">
-				See <a class="cactus-link" href="https://github.com/meowso/cowsay/blob/main/TRANSPARENCY.md" target="_blank" rel="noopener noreferrer">TRANSPARENCY.md</a> for full commitment details.
-			</p>
+			<ul class="list-inside list-disc space-y-2">
+				<li>
+					<strong>Community First:</strong> This is a community project. The token, NFTs, and merch are
+					all tools to support and grow the community, not the other way around.
+				</li>
+				<li>
+					<strong>Developer Culture:</strong> We celebrate the joys, struggles, and humor of being a
+					developer. Every quote, meme, and conversation reflects the real developer experience.
+				</li>
+				<li>
+					<strong>Transparency:</strong> All financial operations, wallet balances, and transactions
+					are publicly disclosed so the community knows exactly how resources are being used.
+				</li>
+				<li>
+					<strong>Long-term Sustainability:</strong> We're building for the long term with a 3-year commitment,
+					no quick pumps. Revenue from merchandise and NFTs supports the ecosystem, and tokenomics are
+					designed to benefit long-term community members.
+				</li>
+				<li>
+					<strong>Fun:</strong> We bring joy and laughter to developers' daily routines, creating moments
+					of happiness in the daily grind.
+				</li>
+			</ul>
 		</div>
+	</section>
+
+	<section>
+		<h2 class="title mb-6 mt-16 text-2xl">What We Do</h2>
 		<p class="mb-4">
-			This commitment isn't just words—it's backed by on-chain verification. You can verify the lock yourself on the Solana blockchain from day 1.
+			The @cowsayco community is built around several interconnected elements that create a fun,
+			sustainable ecosystem:
+		</p>
+
+		<h3 class="title mb-4 mt-8 text-lg">Daily Developer Quotes</h3>
+		<p class="mb-4">
+			Our Twitter bot (@cowsayco) shares a curated developer quote every day, presented in the
+			classic cowsay style. These quotes bring humor, inspiration, and relatability to developers
+			around the world, creating moments of joy in the daily grind.
+		</p>
+
+		<h3 class="title mb-4 mt-8 text-lg">Discord Community</h3>
+		<p class="mb-4">
+			Join our Discord server to connect with fellow developers, share memes, discuss tech, and be
+			part of a growing community that appreciates both coding and comedy.
+		</p>
+
+		<h3 class="title mb-4 mt-8 text-lg">NFT Auctions</h3>
+		<p class="mb-4">
+			Collect unique quote artwork NFTs featuring some of the most memorable developer quotes. Each
+			NFT is a piece of developer culture, auctioned to support the ecosystem.
+		</p>
+
+		<h3 class="title mb-4 mt-8 text-lg">Merchandise Shop</h3>
+		<p class="mb-4">
+			Show your love for the community with T-shirts, mugs, mousepads, and other merchandise
+			featuring @cowsayco designs. All profits contribute to the ecosystem.
+		</p>
+
+		<h3 class="title mb-4 mt-8 text-lg">$COWSAYS Token</h3>
+		<p class="mb-4">
+			The $COWSAYS token is part of the ecosystem, not the whole project. It's built on Solana with
+			transparent tokenomics, automated buybacks from shop and NFT profits, and token burning
+			mechanisms. The token serves as a way for the community to participate in and benefit from the
+			growth of the @cowsayco brand.
 		</p>
 	</section>
 
 	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Token Overview</h2>
+		<h2 class="title mb-6 mt-16 text-2xl">Join the Community</h2>
 		<p class="mb-4">
-			$COWSAYS is the official token of the Cowsay ecosystem, built on Solana for fast, low-cost transactions.
-		</p>
-		<dl class="space-y-4 mb-4">
-			<div class="flex flex-col gap-2">
-				<dt>
-					<span class="font-bold">Total Supply</span>
-				</dt>
-				<dd>1,000,000,000 (1B fixed supply)</dd>
-			</div>
-			<div class="flex flex-col gap-2">
-				<dt>
-					<span class="font-bold">Creator Allocation</span>
-				</dt>
-				<dd>20% (200M tokens) - 10-year vesting lock via Streamflow</dd>
-			</div>
-			<div class="flex flex-col gap-2">
-				<dt>
-					<span class="font-bold">Public Distribution</span>
-				</dt>
-				<dd>80% (800M tokens) - via fair bonding curve + DEX</dd>
-			</div>
-		</dl>
-		<p class="mb-4">
-			For complete tokenomics information, visit the <a class="cactus-link" href="/token/">Token page</a> or see the
-			<a class="cactus-link" href="https://github.com/meowso/cowsay/blob/main/TOKENOMICS.md" target="_blank" rel="noopener noreferrer">TOKENOMICS.md</a> file.
-		</p>
-	</section>
-
-	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Key Features</h2>
-		
-		<h3 class="title mb-4 mt-8 text-lg">Token Burning Strategy</h3>
-		<p class="mb-4">
-			All rewards and fees from Pump.fun are dedicated to <strong>permanent token burning</strong>:
-		</p>
-		<ul class="list-disc list-inside space-y-2 mb-4">
-			<li><strong>Pumpfun Trading Fees:</strong> Portion of trading fees distributed back to creator</li>
-			<li><strong>Pumpfun Rewards:</strong> Any rewards, incentives, or fee rebates from Pump.fun platform</li>
-			<li><strong>Burning Process:</strong> Funds are used to purchase tokens from the market and permanently burn them</li>
-			<li><strong>Supply Reduction:</strong> Creates a deflationary mechanism that reduces circulating supply over time</li>
-		</p>
-		<p class="mb-4">
-			This deflationary mechanism works alongside our buyback program to create a sustainable tokenomics model.
+			Connect with us on social media and explore all aspects of the @cowsayco ecosystem:
 		</p>
 
-		<h3 class="title mb-4 mt-8 text-lg">Automated Buyback Mechanism</h3>
-		<p class="mb-4">
-			All profits from the following Cowsay ecosystem sources are automatically reinvested into $COWSAYS token buybacks:
-		</p>
-		<ul class="list-disc list-inside space-y-2 mb-4">
-			<li><strong>Merchandise Shop:</strong> All profits from T-shirts, mugs, mousepads, and other products</li>
-			<li><strong>NFT Auctions:</strong> All proceeds from auctioned quote artwork NFTs</li>
-			<li><strong>Future Revenue:</strong> Any additional revenue generated by the Cowsay ecosystem</li>
-		</ul>
-		<p class="mb-4">
-			<strong>Note:</strong> Pumpfun rewards and fees are handled separately through token burning (see above), not through buybacks.
-		</p>
-		<p class="mb-4">
-			This creates a sustainable buyback mechanism where the success of the Cowsay brand directly benefits token
-			holders through continuous buybacks for 10 years.
-		</p>
-
-		<h3 class="title mb-4 mt-8 text-lg">Full Transparency</h3>
-		<p class="mb-4">
-			We believe in complete transparency. All financial operations are publicly tracked:
-		</p>
-		<ul class="list-disc list-inside space-y-2 mb-4">
-			<li>Real-time wallet balance tracking</li>
-			<li>Profit & Loss dashboard</li>
-			<li>On-chain buyback transaction history</li>
-			<li>On-chain token burn transaction history</li>
-			<li>Public wallet addresses</li>
-		</ul>
-		<p class="mb-4">
-			Visit the <a class="cactus-link" href="/transparency/">Transparency Dashboard</a> to see everything in real-time.
-		</p>
-	</section>
-
-	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Resources & Links</h2>
-		
-		<ul class="space-y-2 mb-4">
-			<li>
-				<a class="cactus-link" href="/token/">Token Information</a> - Complete token details and buyback tracker
-			</li>
-			<li>
-				<a class="cactus-link" href="/transparency/">Transparency Dashboard</a> - Financial transparency and wallet tracking
-			</li>
-			<li>
-				<a class="cactus-link" href="/shop/">Merchandise Shop</a> - Support the project and contribute to buybacks
-			</li>
-			<li>
-				<a class="cactus-link" href="/nfts/">NFT Auctions</a> - Collect unique quote artwork NFTs
-			</li>
-			<li>
-				<a class="cactus-link" href="https://github.com/meowso/cowsay/blob/main/TOKENOMICS.md" target="_blank" rel="noopener noreferrer">Full Tokenomics</a> - Detailed tokenomics documentation
-			</li>
-			<li>
-				<a class="cactus-link" href="https://github.com/meowso/cowsay/blob/main/TRANSPARENCY.md" target="_blank" rel="noopener noreferrer">Transparency & Commitment</a> - Complete transparency statement
-			</li>
-			<li>
-				<a class="cactus-link" href="https://twitter.com/cowsayco" target="_blank" rel="noopener noreferrer">@cowsayco on Twitter</a> - Follow for daily developer quotes
-			</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Connect</h2>
-		<SocialList />
+		<div class="mb-6 flex flex-wrap gap-4">
+			<a
+				class="rainbow rainbow-1 inline-block"
+				href="https://twitter.com/intent/user?screen_name=cowsayco"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<span>Follow @cowsayco</span>
+			</a>
+			<a
+				class="rainbow rainbow-1 inline-block"
+				href="https://discord.gg/yhJ24mCSxd"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<span>Join Discord</span>
+			</a>
+		</div>
 	</section>
 </PageLayout>
+
+<style>
+	.rainbow {
+		background-color: #343a40;
+		border-radius: 4px;
+		color: #fff;
+		cursor: pointer;
+		padding: 8px 16px;
+	}
+
+	html[data-theme="dark"] .rainbow {
+		color: #29bc89;
+	}
+
+	html[data-theme="dark"] .rainbow span {
+		mix-blend-mode: color-dodge;
+	}
+
+	html[data-theme="dark"] .rainbow:hover span {
+		mix-blend-mode: color-dodge;
+	}
+
+	.rainbow-1:hover {
+		background-image: linear-gradient(
+			90deg,
+			#3769ff 0%,
+			#3769ff 12%,
+			#b7f00c 45%,
+			#ff1e42 70%,
+			#3769ff 100%
+		);
+		animation: slidebg 10s linear infinite;
+	}
+
+	@keyframes slidebg {
+		to {
+			background-position: 24vw;
+		}
+	}
+</style>

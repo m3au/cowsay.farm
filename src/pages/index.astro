@@ -3,6 +3,7 @@ import PageLayout from "@/layouts/Base.astro";
 import { Image } from "astro:assets";
 import heroImg from "@/assets/hero_unit.png";
 import ContractAddress from "@/components/token/ContractAddress.astro";
+import Countdown from "@/components/token/Countdown.astro";
 import { siteConfig } from "@/site-config";
 ---
 
@@ -25,6 +26,18 @@ import { siteConfig } from "@/site-config";
 		color: #fff;
 		cursor: pointer;
 		padding: 8px 16px;
+	}
+
+	html[data-theme="dark"] .rainbow {
+		color: #29bc89;
+	}
+
+	html[data-theme="dark"] .rainbow span {
+		mix-blend-mode: color-dodge;
+	}
+
+	html[data-theme="dark"] .rainbow:hover span {
+		mix-blend-mode: color-dodge;
 	}
 
 	.rainbow-1:hover {
@@ -67,6 +80,14 @@ import { siteConfig } from "@/site-config";
 </script>
 
 <PageLayout meta={{ title: "developer jokes" }}>
+	<div style="margin-top: -2rem;margin-bottom: 4rem;">
+		{
+			siteConfig.contractDropDate && !siteConfig.contractAddress && (
+				<Countdown targetDate={siteConfig.contractDropDate} />
+			)
+		}
+	</div>
+
 	<section>
 		<h1 class="title mb-6 inline-block cursor-pointer" id="kenobi">
 			<span id="abduction">Hello there! 🐄 </span>
@@ -96,8 +117,21 @@ import { siteConfig } from "@/site-config";
 		>
 	</section>
 
-	{siteConfig.contractAddress && (
-		<ContractAddress contractAddress={siteConfig.contractAddress} />
-	)}
-</PageLayout
->
+	<section class="mb-6 mt-16">
+		<h2 class="title mb-4 text-2xl">Join the Community</h2>
+		<p class="mb-4">
+			Join the Discord server! The community is growing, and we're preparing for community-led
+			launch support. Come be part of the journey!
+		</p>
+		<a
+			class="rainbow rainbow-1 inline-block"
+			href="https://discord.gg/yhJ24mCSxd"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<span>Join Discord</span>
+		</a>
+	</section>
+
+	{siteConfig.contractAddress && <ContractAddress contractAddress={siteConfig.contractAddress} />}
+</PageLayout>

@@ -1,5 +1,5 @@
-import type { SiteConfig } from "@/types";
 import type { AstroExpressiveCodeOptions } from "astro-expressive-code";
+import type { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49)
@@ -15,7 +15,7 @@ export const siteConfig: SiteConfig = {
 	},
 	// Meta property used as the default description meta property
 	description:
-		"$COWSAYS is a Solana token project built around the @cowsayco community. Featuring transparent tokenomics, automated buybacks, and a 10-year creator commitment.",
+		"$COWSAYS is a Solana token project built around the @cowsayco community. Featuring transparent tokenomics, automated buybacks, and a 3-year creator commitment.",
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: "en-GB",
 	// Meta property, found in src/components/BaseHead.astro L:42
@@ -26,6 +26,10 @@ export const siteConfig: SiteConfig = {
 	// Option 1: Set via environment variable CONTRACT_ADDRESS
 	// Option 2: Set directly here, e.g., contractAddress: "YourContractAddressHere",
 	contractAddress: import.meta.env.CONTRACT_ADDRESS || undefined,
+	// Contract address drop date (ISO 8601 format, e.g., "2024-12-31T23:59:59Z")
+	// Option 1: Set via environment variable CONTRACT_DROP_DATE
+	// Option 2: Set directly here, e.g., contractDropDate: "2024-12-31T23:59:59Z",
+	contractDropDate: import.meta.env.CONTRACT_DROP_DATE || "2026-01-09T21:00:00Z", // Friday 9pm UTC
 	// webmentions: {
 	// 	// Webmention.io API endpoint. Get your own here: https://webmention.io/, and follow this blog post: https://astro-cactus.chriswilliams.dev/posts/webmentions/
 	// 	link: "https://webmention.io/astro-cactus.chriswilliams.dev/webmention",

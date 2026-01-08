@@ -5,6 +5,7 @@ export type SiteConfig = {
 	lang: string;
 	ogLocale: string;
 	contractAddress?: string;
+	contractDropDate?: string;
 	date: {
 		locale: string | string[] | undefined;
 		options: Intl.DateTimeFormatOptions;

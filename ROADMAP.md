@@ -1,7 +1,7 @@
 # $COWSAYS Project Roadmap
 
 ## Vision
-Build the ultimate developer quote/meme ecosystem around the Cowsay brand, combining daily developer quotes, merchandise, NFTs, and a sustainable token economy with continuous buybacks for 10 years.
+Build the ultimate developer quote/meme ecosystem around the Cowsay brand, combining daily developer quotes, merchandise, NFTs, and a sustainable token economy with continuous buybacks for 3 years.
 
 ---
 
@@ -38,7 +38,7 @@ Build the ultimate developer quote/meme ecosystem around the Cowsay brand, combi
 
 ### Milestones
 - [ ] Token creation on Pump.fun
-- [ ] Set up Streamflow vesting lock (10-year, 200M tokens)
+- [ ] Set up Streamflow vesting lock (3-year, 200M tokens)
 - [ ] Publish contract address and wallet addresses
 - [ ] DEX upgrade on Dexscreener ($299)
 - [ ] Link social accounts (X, website, GitHub) on Dexscreener
@@ -201,10 +201,10 @@ Build the ultimate developer quote/meme ecosystem around the Cowsay brand, combi
 
 ---
 
-## Phase 7: Long-Term Sustainability (Year 2-10)
+## Phase 7: Long-Term Sustainability (Year 2-3)
 
 ### Goals
-- Maintain 10-year commitment
+- Maintain 3-year commitment
 - Continuous growth
 - Build lasting brand
 
@@ -216,7 +216,7 @@ Build the ultimate developer quote/meme ecosystem around the Cowsay brand, combi
   - Ecosystem feature additions
   - Brand partnerships
 
-- **Year 5-10:**
+- **Year 3:**
   - Maintain commitment
   - Explore new opportunities
   - Community leadership transition (if needed)
@@ -266,11 +266,11 @@ Track these metrics throughout the project lifecycle:
 ### Core Principles
 1. **Transparency First**: All financial operations publicly disclosed
 2. **Community First**: Decisions prioritize community value
-3. **Long-term Focus**: 10-year commitment, no quick pumps
+3. **Long-term Focus**: 3-year commitment, no quick pumps
 4. **Sustainable Growth**: Build organically, scale responsibly
 
 ### Non-Negotiables
-- ✅ 10-year vesting lock commitment
+- ✅ 3-year vesting lock commitment
 - ✅ 100% revenue buybacks
 - ✅ Full transparency
 - ✅ Regular community updates
@@ -305,7 +305,7 @@ Track these metrics throughout the project lifecycle:
 | NFT Launch | Month 2-3 | NFT revenue |
 | Automation | Month 3-6 | Scaling, automation |
 | Expansion | Month 6-12 | Ecosystem growth |
-| Long-term | Year 2-10 | Sustainability |
+| Long-term | Year 2-3 | Sustainability |
 
 ---
 
@@ -314,7 +314,7 @@ Track these metrics throughout the project lifecycle:
 - This roadmap is a living document and will be updated as the project evolves
 - Priorities may shift based on community feedback
 - New opportunities may arise that aren't currently planned
-- All phases build toward the 10-year vision of sustainable ecosystem growth
+- All phases build toward the 3-year vision of sustainable ecosystem growth
 
 **Last Updated**: [Date will be set at launch]
 
