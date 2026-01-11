@@ -79,11 +79,24 @@ import { siteConfig } from "@/site-config";
 </script>
 
 <PageLayout meta={{ title: "developer jokes" }}>
-	{
-		!siteConfig.contractAddress && (
-			<div class="mb-8 rounded-md border border-accent bg-bgColor/50 px-4 py-3 text-center text-sm backdrop-blur-sm">
-				<p class="text-textColor">
-					<strong class="text-accent">CA drop coming soon</strong>, check the{" "}
+	<div
+		class="mb-8 rounded-md border-2 border-red-500 bg-red-500/10 px-4 py-4 text-center text-sm backdrop-blur-sm"
+	>
+		<p class="mb-2 text-textColor">
+			<strong class="text-base text-red-500">⚠️ IMPORTANT DISCLAIMER</strong>
+		</p>
+		<p class="mb-2 text-textColor">
+			<strong>The coin is still not launched.</strong> The token name will only be released when we launch
+			the coin.
+		</p>
+		<p class="text-textColor">
+			<strong class="text-red-500">WARNING:</strong> All $COWSAY and $COWSAYS tokens listed on bags.fm
+			are <strong>FAKE</strong> and not associated with this project.
+		</p>
+		{
+			!siteConfig.contractAddress && (
+				<p class="mt-3 text-textColor">
+					Check the{" "}
 					<a
 						class="cactus-link font-semibold underline"
 						href="https://discord.gg/yhJ24mCSxd"
@@ -94,9 +107,9 @@ import { siteConfig } from "@/site-config";
 					</a>{" "}
 					for more information.
 				</p>
-			</div>
-		)
-	}
+			)
+		}
+	</div>
 
 	<section>
 		<h1 class="title mb-6 inline-block cursor-pointer" id="kenobi">

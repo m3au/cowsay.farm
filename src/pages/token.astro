@@ -8,46 +8,56 @@ import { siteConfig } from "@/site-config";
 
 const meta = {
 	description:
-		"Information about the $COWSAYS token, including tokenomics, dev fees distribution, buyback mechanism, contract details, and complete financial transparency.",
-	title: "$COWSAYS Token",
+		"Information about the Cowsay token, including tokenomics, dev fees distribution, buyback mechanism, contract details, and complete financial transparency.",
+	title: "Token",
 };
 ---
 
 <PageLayout meta={meta}>
 	<section>
-		<h1 class="title mb-6">$COWSAYS Token</h1>
+		<h1 class="title mb-6">Token</h1>
 		<p class="mb-4">
-			$COWSAYS is the official token of the Cowsay ecosystem. Built on Solana, this token represents
+			The official token of the Cowsay ecosystem. Built on Solana, this token represents
 			the community around the daily developer quotes shared by the @cowsayco Twitter bot.
+		</p>
+		<p class="mb-4 text-muted text-sm">
+			<strong>Note:</strong> The token name and symbol will only be released when we launch the coin.
 		</p>
 		<div class="mb-4 rounded border border-accent p-4">
 			<ul class="list-inside list-disc space-y-2">
-				<li><strong>Token Name:</strong> COWSAYS</li>
-				<li><strong>Token Symbol:</strong> $COWSAYS</li>
+				<li><strong>Token Name:</strong> To be announced at launch</li>
+				<li><strong>Token Symbol:</strong> To be announced at launch</li>
 				<li><strong>Blockchain:</strong> Solana</li>
 				<li><strong>Total Supply:</strong> 1,000,000,000 (1B fixed supply)</li>
 			</ul>
 		</div>
 	</section>
 
-	{
-		!siteConfig.contractAddress && (
-			<div class="mb-8 rounded-md border border-accent bg-bgColor/50 px-4 py-3 text-center text-sm backdrop-blur-sm">
-				<p class="text-textColor">
-					<strong class="text-accent">CA drop coming soon</strong>, check the{" "}
-					<a
-						class="cactus-link font-semibold underline"
-						href="https://discord.gg/yhJ24mCSxd"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Discord server
-					</a>{" "}
-					for more information.
-				</p>
-			</div>
-		)
-	}
+	<div class="mb-8 rounded-md border-2 border-red-500 bg-red-500/10 px-4 py-4 text-center text-sm backdrop-blur-sm">
+		<p class="text-textColor mb-2">
+			<strong class="text-red-500 text-base">⚠️ IMPORTANT DISCLAIMER</strong>
+		</p>
+		<p class="text-textColor mb-2">
+			<strong>The coin is still not launched.</strong> The token name will only be released when we launch the coin.
+		</p>
+		<p class="text-textColor">
+			<strong class="text-red-500">WARNING:</strong> All $COWSAY and $COWSAYS tokens listed on bags.fm are <strong>FAKE</strong> and not associated with this project.
+		</p>
+		{!siteConfig.contractAddress && (
+			<p class="text-textColor mt-3">
+				Check the{" "}
+				<a
+					class="cactus-link font-semibold underline"
+					href="https://discord.gg/yhJ24mCSxd"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Discord server
+				</a>{" "}
+				for more information.
+			</p>
+		)}
+	</div>
 
 	<section>
 		<h2 class="title mb-6 mt-16 text-2xl">Tokenomics</h2>
