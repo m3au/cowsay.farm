@@ -80,18 +80,17 @@ import { siteConfig } from "@/site-config";
 
 <PageLayout meta={{ title: "developer jokes" }}>
 	<div
-		class="mb-8 rounded-md border-2 border-red-500 bg-red-500/10 px-4 py-4 text-center text-sm backdrop-blur-sm"
+		class="mb-4 rounded-md border-2 border-green-500 bg-green-500/10 px-4 py-4 text-center text-sm backdrop-blur-sm"
 	>
 		<p class="mb-2 text-textColor">
-			<strong class="text-base text-red-500">⚠️ IMPORTANT DISCLAIMER</strong>
+			<strong class="text-base text-green-500">🚀 Launch Announcement</strong>
 		</p>
 		<p class="mb-2 text-textColor">
-			<strong>The coin is still not launched.</strong> The token name will only be released when we launch
-			the coin.
+			<strong>Coin launch is set for Thursday afternoon CET!</strong> We're choosing a time that works
+			for both EU & US participants so everyone can join live.
 		</p>
-		<p class="text-textColor">
-			<strong class="text-red-500">WARNING:</strong> All $COWSAY and $COWSAYS tokens listed on bags.fm
-			are <strong>FAKE</strong> and not associated with this project.
+		<p class="mb-2 text-textColor">
+			Dev allocation is fully vested on Streamflow — proof will be public post-launch. 🍿😎
 		</p>
 		{
 			!siteConfig.contractAddress && (
@@ -109,6 +108,18 @@ import { siteConfig } from "@/site-config";
 				</p>
 			)
 		}
+	</div>
+
+	<div
+		class="mb-8 rounded-md border-2 border-red-500 bg-red-500/10 px-4 py-4 text-center text-sm backdrop-blur-sm"
+	>
+		<p class="mb-2 text-textColor">
+			<strong class="text-base text-red-500">⚠️ WARNING</strong>
+		</p>
+		<p class="text-textColor">
+			All $COWSAY and $COWSAYS tokens listed on bags.fm and other indexes are <strong>FAKE</strong> and not
+			associated with this project.
+		</p>
 	</div>
 
 	<section>

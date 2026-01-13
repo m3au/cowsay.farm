@@ -17,10 +17,10 @@ const meta = {
 	<section>
 		<h1 class="title mb-6">Token</h1>
 		<p class="mb-4">
-			The official token of the Cowsay ecosystem. Built on Solana, this token represents
-			the community around the daily developer quotes shared by the @cowsayco Twitter bot.
+			The official token of the Cowsay ecosystem. Built on Solana, this token represents the
+			community around the daily developer quotes shared by the @cowsayco Twitter bot.
 		</p>
-		<p class="mb-4 text-muted text-sm">
+		<p class="text-muted mb-4 text-sm">
 			<strong>Note:</strong> The token name and symbol will only be released when we launch the coin.
 		</p>
 		<div class="mb-4 rounded border border-accent p-4">
@@ -33,30 +33,47 @@ const meta = {
 		</div>
 	</section>
 
-	<div class="mb-8 rounded-md border-2 border-red-500 bg-red-500/10 px-4 py-4 text-center text-sm backdrop-blur-sm">
-		<p class="text-textColor mb-2">
-			<strong class="text-red-500 text-base">⚠️ IMPORTANT DISCLAIMER</strong>
+	<div
+		class="mb-4 rounded-md border-2 border-green-500 bg-green-500/10 px-4 py-4 text-center text-sm backdrop-blur-sm"
+	>
+		<p class="mb-2 text-textColor">
+			<strong class="text-base text-green-500">🚀 Launch Announcement</strong>
 		</p>
-		<p class="text-textColor mb-2">
-			<strong>The coin is still not launched.</strong> The token name will only be released when we launch the coin.
+		<p class="mb-2 text-textColor">
+			<strong>Coin launch is set for Thursday afternoon CET!</strong> We're choosing a time that works
+			for both EU & US participants so everyone can join live.
+		</p>
+		<p class="mb-2 text-textColor">
+			Dev allocation is fully vested on Streamflow — proof will be public post-launch. 🍿😎
+		</p>
+		{
+			!siteConfig.contractAddress && (
+				<p class="mt-3 text-textColor">
+					Check the{" "}
+					<a
+						class="cactus-link font-semibold underline"
+						href="https://discord.gg/yhJ24mCSxd"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Discord server
+					</a>{" "}
+					for more information.
+				</p>
+			)
+		}
+	</div>
+
+	<div
+		class="mb-8 rounded-md border-2 border-red-500 bg-red-500/10 px-4 py-4 text-center text-sm backdrop-blur-sm"
+	>
+		<p class="mb-2 text-textColor">
+			<strong class="text-base text-red-500">⚠️ WARNING</strong>
 		</p>
 		<p class="text-textColor">
-			<strong class="text-red-500">WARNING:</strong> All $COWSAY and $COWSAYS tokens listed on bags.fm are <strong>FAKE</strong> and not associated with this project.
+			All $COWSAY and $COWSAYS tokens listed on bags.fm and other indexes are <strong>FAKE</strong> and not
+			associated with this project.
 		</p>
-		{!siteConfig.contractAddress && (
-			<p class="text-textColor mt-3">
-				Check the{" "}
-				<a
-					class="cactus-link font-semibold underline"
-					href="https://discord.gg/yhJ24mCSxd"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Discord server
-				</a>{" "}
-				for more information.
-			</p>
-		)}
 	</div>
 
 	<section>
@@ -65,14 +82,14 @@ const meta = {
 		<h3 class="title mb-4 mt-8 text-lg">Long-term Vision</h3>
 		<div class="mb-4 rounded border border-accent p-4">
 			<p class="mb-4">
-				Our commitment is to build a sustainable, community-driven ecosystem that creates lasting value
-				for all participants. Over the next 3 years, we will:
+				Our commitment is to build a sustainable, community-driven ecosystem that creates lasting
+				value for all participants. Over the next 3 years, we will:
 			</p>
 			<ul class="list-inside list-disc space-y-2">
 				<li>
 					<strong>Continuous value creation:</strong> All revenue from merchandise, NFTs, and partnerships
-					will be reinvested into token buybacks and burns for the full 3-year period, creating a
-					deflationary mechanism that benefits long-term holders
+					will be reinvested into token buybacks and burns for the full 3-year period, creating a deflationary
+					mechanism that benefits long-term holders
 				</li>
 				<li>
 					<strong>Sustainable revenue loops:</strong> Build multiple revenue streams (merch shop, NFT
@@ -87,8 +104,8 @@ const meta = {
 					developer tools, and integrations that bring real utility to the token
 				</li>
 				<li>
-					<strong>Community governance:</strong> Introduce governance elements that allow token holders to
-					participate in key decisions about the project's direction
+					<strong>Community governance:</strong> Introduce governance elements that allow token holders
+					to participate in key decisions about the project's direction
 				</li>
 				<li>
 					<strong>Transparency & trust:</strong> Maintain complete on-chain transparency for all financial
