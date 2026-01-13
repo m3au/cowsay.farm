@@ -22,7 +22,7 @@ const meta = {
 			<strong class="text-base text-green-500">🚀 Launch Announcement</strong>
 		</p>
 		<p class="mb-2 text-textColor">
-			<strong>Coin launch is set for Thursday afternoon CET!</strong> We're choosing a time that works
+			<strong>Coin launch is set for Tuesday afternoon CET!</strong> We're choosing a time that works
 			for both EU & US participants so everyone can join live.
 		</p>
 		<p class="mb-2 text-textColor">
@@ -50,7 +50,8 @@ const meta = {
 	<div class="mb-8 rounded-md border-l-4 border-red-500 bg-red-500/10 px-4 py-3 text-sm">
 		<p class="text-textColor">
 			<strong class="text-red-500">⚠️ Warning:</strong> All $COWSAY and $COWSAYS tokens listed on bags.fm
-			and other indexes are <strong>not the official tokens</strong> from @cowsayco and are not associated with this project.
+			and other indexes are <strong>not the official tokens</strong> from @cowsayco and are not associated
+			with this project.
 		</p>
 	</div>
 
@@ -231,16 +232,17 @@ const meta = {
 
 		<div class="mb-6 rounded-lg border border-accent bg-accent/5 p-6 font-mono text-sm">
 			<h3 class="title mb-4 text-lg">Revenue Flow</h3>
-			<pre class="mb-0 overflow-x-auto text-xs"><code>{`// Revenue Distribution Protocol
+			<pre
+				class="mb-0 overflow-x-auto text-xs"><code>{`// Revenue Distribution Protocol
 function distributeRevenue(amount) {
   const buyback = amount * 0.45;  // 45% → Buyback
   const burn = amount * 0.45;      // 45% → Burn
   const treasury = amount * 0.10;  // 10% → Treasury
-  
+
   executeBuyback(buyback);         // Auto-buy from market
   executeBurn(burn);               // Permanent removal
   transferToTreasury(treasury);    // Holder airdrops
-  
+
   return {
     buyback: buyback,
     burn: burn,
