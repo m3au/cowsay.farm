@@ -10,133 +10,77 @@ const meta = {
 	title: "NFT Gallery • @cowsayco",
 };
 
-// Demo NFT image - replace with actual NFT images when available
-const demoNft = "/nft-001.png";
+// Demo NFT image - using actual NFT artwork
+const demoNft = "/nfts/common/nft-001-common.png";
 ---
 
 <PageLayout meta={meta}>
 	<!-- Section 1: The Hero (The Concept) -->
 	<section class="mb-12">
 		<h1 class="title mb-6">NFT Gallery</h1>
-		<p class="mb-4 text-lg">
+		<p class="mb-4">
 			Daily developer culture on the blockchain. Each quote from @cowsayco becomes a unique
 			collectible NFT—on-chain artifacts that capture the timeless truths of developer life.
 		</p>
-		<p class="text-muted mb-6">
-			The Genesis Collection: Curating 5 timeless developer truths, minted across 5 rarity tiers
-			with progressive utility perks.
+	</section>
+
+	<!-- Tiers Section - First Quote Only -->
+	<section class="mb-12">
+		<h2 class="title mb-6 text-2xl">Tiers</h2>
+		<p class="text-muted mb-6 text-sm">
+			Each NFT is a high-resolution (2000x+ PNG) terminal-style artwork with dark
+			backgrounds, available in 5 rarity tiers.
 		</p>
 
-		<div class="mb-6 flex flex-wrap gap-4">
-			<a
-				href="https://discord.gg/yhJ24mCSxd"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="rainbow rainbow-1 inline-block"
-			>
-				<span>Join Discord for Whitelist</span>
-			</a>
+		<!-- Quote 1 - All Tiers -->
+		<div class="mb-6">
+			<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5">
+				<div class="rounded border border-accent bg-black p-2">
+					<img
+						src="/nfts/common/nft-001-common.png"
+						alt="NFT #001 - Common tier"
+						class="w-full rounded"
+					/>
+					<p class="mt-2 text-center font-mono text-xs text-muted">Common</p>
+				</div>
+				<div class="rounded border border-accent bg-black p-2">
+					<img
+						src="/nfts/green/nft-001-green.png"
+						alt="NFT #001 - Green tier"
+						class="w-full rounded"
+					/>
+					<p class="mt-2 text-center font-mono text-xs text-muted">Green</p>
+				</div>
+				<div class="rounded border border-accent bg-black p-2">
+					<img
+						src="/nfts/rainbow-green/nft-001-rainbow-green.png"
+						alt="NFT #001 - Rainbow Green tier"
+						class="w-full rounded"
+					/>
+					<p class="mt-2 text-center font-mono text-xs text-muted">Rainbow Green</p>
+				</div>
+				<div class="rounded border border-accent bg-black p-2">
+					<img
+						src="/nfts/rainbow-yellow/nft-001-rainbow-yellow.png"
+						alt="NFT #001 - Rainbow Yellow tier"
+						class="w-full rounded"
+					/>
+					<p class="mt-2 text-center font-mono text-xs text-muted">Rainbow Yellow</p>
+				</div>
+				<div class="rounded border border-accent bg-black p-2">
+					<img
+						src="/nfts/rainbow-purple/nft-001-rainbow-purple.png"
+						alt="NFT #001 - Rainbow Purple tier"
+						class="w-full rounded"
+					/>
+					<p class="mt-2 text-center font-mono text-xs text-muted">Rainbow Purple</p>
+				</div>
+			</div>
 		</div>
 	</section>
 
-	<!-- Section 2: The Genesis Batch (The Visuals) -->
+	<!-- Tier Specs Table -->
 	<section class="mb-12">
-		<h2 class="title mb-6 text-2xl">Genesis Collection Preview</h2>
-		<p class="mb-6">
-			Our first collection features 5 iconic developer quotes, each minted across all rarity tiers
-			with high-resolution terminal-style designs.
-		</p>
-
-		<!-- Terminal-style Quote Gallery -->
-		<div class="mb-8 space-y-8">
-			<!-- Quote 1 -->
-			<div class="rounded-lg border border-accent bg-accent/5 p-6">
-				<div class="mb-4 flex items-center justify-between">
-					<h3 class="text-muted font-mono text-sm font-semibold">#001</h3>
-					<span class="text-muted font-mono text-xs">TIER: Common → Rainbow Purple</span>
-				</div>
-				<div class="mb-4 rounded border border-accent bg-black p-4">
-					<div class="flex min-h-[200px] items-center justify-center text-muted">
-						<p class="font-mono text-sm">"It works on my machine!" - Image placeholder</p>
-					</div>
-				</div>
-				<p class="text-muted text-sm">Available across all 5 rarity tiers</p>
-			</div>
-
-			<!-- Quote 2 -->
-			<div class="rounded-lg border border-accent bg-accent/5 p-6">
-				<div class="mb-4 flex items-center justify-between">
-					<h3 class="text-muted font-mono text-sm font-semibold">#002</h3>
-					<span class="text-muted font-mono text-xs">TIER: Common → Rainbow Purple</span>
-				</div>
-				<div class="mb-4 rounded border border-accent bg-black p-4">
-					<div class="flex min-h-[200px] items-center justify-center text-muted">
-						<p class="font-mono text-sm">"There are only two hard things in computer science: cache invalidation and naming things." - Image placeholder</p>
-					</div>
-				</div>
-				<p class="text-muted text-sm">Available across all 5 rarity tiers</p>
-			</div>
-
-			<!-- Quote 3 -->
-			<div class="rounded-lg border border-accent bg-accent/5 p-6">
-				<div class="mb-4 flex items-center justify-between">
-					<h3 class="text-muted font-mono text-sm font-semibold">#003</h3>
-					<span class="text-muted font-mono text-xs">TIER: Common → Rainbow Purple</span>
-				</div>
-				<div class="mb-4 rounded border border-accent bg-black p-4">
-					<div class="flex min-h-[200px] items-center justify-center text-muted">
-						<p class="font-mono text-sm">"There are 10 types of people in the world: those who understand binary, and those who don't." - Image placeholder</p>
-					</div>
-				</div>
-				<p class="text-muted text-sm">Available across all 5 rarity tiers</p>
-			</div>
-
-			<!-- Quote 4 -->
-			<div class="rounded-lg border border-accent bg-accent/5 p-6">
-				<div class="mb-4 flex items-center justify-between">
-					<h3 class="text-muted font-mono text-sm font-semibold">#004</h3>
-					<span class="text-muted font-mono text-xs">TIER: Common → Rainbow Purple</span>
-				</div>
-				<div class="mb-4 rounded border border-accent bg-black p-4">
-					<div class="flex min-h-[200px] items-center justify-center text-muted">
-						<p class="font-mono text-sm">"Why do programmers prefer dark mode? Because light attracts bugs." - Image placeholder</p>
-					</div>
-				</div>
-				<p class="text-muted text-sm">Available across all 5 rarity tiers</p>
-			</div>
-
-			<!-- Quote 5 -->
-			<div class="rounded-lg border border-accent bg-accent/5 p-6">
-				<div class="mb-4 flex items-center justify-between">
-					<h3 class="text-muted font-mono text-sm font-semibold">#005</h3>
-					<span class="text-muted font-mono text-xs">TIER: Common → Rainbow Purple</span>
-				</div>
-				<div class="mb-4 rounded border border-accent bg-black p-4">
-					<div class="flex min-h-[200px] items-center justify-center text-muted">
-						<p class="font-mono text-sm">"A SQL query goes into a bar, walks up to two tables, and asks, 'Can I join you?'" - Image placeholder</p>
-					</div>
-				</div>
-				<p class="text-muted text-sm">Available across all 5 rarity tiers</p>
-			</div>
-		</div>
-
-		<!-- Demo NFT Image Preview -->
-		<div class="mb-6 rounded-lg border border-accent bg-accent/5 p-6">
-			<h3 class="title mb-4 text-lg">Visual Preview</h3>
-			<p class="text-muted mb-4 text-sm">
-				Each NFT is a high-resolution (2000x+ PNG) terminal-style artwork with transparent
-				backgrounds, available in 5 rarity tiers.
-			</p>
-			<div class="rounded border border-accent bg-black p-4">
-				<img
-					src={demoNft}
-					alt="Cowsay NFT Preview - It works on my machine!"
-					class="mx-auto max-w-full"
-				/>
-			</div>
-		</div>
-
-		<!-- Collection Specs Table -->
 		<div class="mb-6 overflow-x-auto rounded-lg border border-accent">
 			<table class="w-full border-collapse">
 				<thead>
@@ -184,6 +128,24 @@ const demoNft = "/nft-001.png";
 					</tr>
 				</tbody>
 			</table>
+		</div>
+	</section>
+
+	<!-- Collections -->
+	<section class="mb-12">
+		<h2 class="title mb-6 text-2xl">Collections</h2>
+		
+		<div class="mb-6 rounded-lg border border-accent bg-accent/5 p-6">
+			<h3 class="title mb-4 text-lg">Genesis Collection</h3>
+			<p class="mb-4 text-muted">
+				Our first collection features 5 iconic developer quotes, each minted across all rarity tiers
+				with high-resolution terminal-style designs.
+			</p>
+			<div class="flex flex-wrap gap-4">
+				<a href="/genesis/" class="rainbow rainbow-1 inline-block">
+					<span>View Genesis Collection →</span>
+				</a>
+			</div>
 		</div>
 	</section>
 
@@ -291,7 +253,7 @@ const demoNft = "/nft-001.png";
 				</div>
 				<div>
 					<p class="text-muted mb-2">Resolution</p>
-					<p class="text-textColor">2000x+ PNG, transparent BG</p>
+					<p class="text-textColor">2000x+ PNG, dark BG</p>
 				</div>
 			</div>
 		</div>

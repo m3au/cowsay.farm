@@ -51,12 +51,12 @@ export const menuLinks: { path: string; title: string }[] = [
 		title: "Roadmap",
 	},
 	{
-		path: "/shop/",
-		title: "Shop",
-	},
-	{
 		path: "/nfts/",
 		title: "NFTs",
+	},
+	{
+		path: "/shop/",
+		title: "Shop",
 	},
 	{
 		path: "/about/",

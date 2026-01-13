@@ -14,21 +14,60 @@ const meta = {
 ---
 
 <PageLayout meta={meta}>
+	<!-- Launch Announcement -->
+	<div
+		class="mb-4 rounded-md border-2 border-green-500 bg-green-500/10 px-4 py-4 text-center text-sm backdrop-blur-sm"
+	>
+		<p class="mb-2 text-textColor">
+			<strong class="text-base text-green-500">🚀 Launch Announcement</strong>
+		</p>
+		<p class="mb-2 text-textColor">
+			<strong>Coin launch is set for Thursday afternoon CET!</strong> We're choosing a time that works
+			for both EU & US participants so everyone can join live.
+		</p>
+		<p class="mb-2 text-textColor">
+			Dev allocation is fully vested on Streamflow — proof will be public post-launch. 🍿😎
+		</p>
+		{
+			!siteConfig.contractAddress && (
+				<p class="mt-3 text-textColor">
+					Check the{" "}
+					<a
+						class="cactus-link font-semibold underline"
+						href="https://discord.gg/yhJ24mCSxd"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Discord server
+					</a>{" "}
+					for more information.
+				</p>
+			)
+		}
+	</div>
+
 	<!-- Alert Banner: Safety Warning -->
-	<div class="mb-6 rounded-md border-l-4 border-red-500 bg-red-500/10 px-4 py-3 text-sm">
+	<div class="mb-8 rounded-md border-l-4 border-red-500 bg-red-500/10 px-4 py-3 text-sm">
 		<p class="text-textColor">
 			<strong class="text-red-500">⚠️ Warning:</strong> All $COWSAY and $COWSAYS tokens listed on bags.fm
-			and other indexes are <strong>FAKE</strong> and not associated with this project.
+			and other indexes are <strong>not the official tokens</strong> from @cowsayco and are not associated with this project.
 		</p>
 	</div>
 
 	<!-- Section 1: The Hero (Identity) -->
 	<section class="mb-12">
 		<h1 class="title mb-6">Token</h1>
-		<p class="mb-6 text-lg">
+		<p class="mb-6">
 			The official token of the Cowsay ecosystem. Built on Solana, this token represents the
 			community around the daily developer quotes shared by the @cowsayco Twitter bot.
 		</p>
+
+		<div class="mb-6 rounded-lg border border-green-500 bg-black p-4 font-mono text-sm">
+			<div class="flex items-center gap-2">
+				<span class="text-green-500">$</span>
+				<span class="text-green-500">cat token.info</span>
+			</div>
+		</div>
 
 		<div class="rounded-lg border border-accent bg-accent/5 p-6 font-mono text-sm">
 			<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -114,6 +153,13 @@ const meta = {
 			</div>
 		</div>
 
+		<div class="mb-6 rounded-lg border border-green-500 bg-black p-4 font-mono text-sm">
+			<div class="flex items-center gap-2">
+				<span class="text-green-500">$</span>
+				<span class="text-green-500">cat launch.txt</span>
+			</div>
+		</div>
+
 		<div class="rounded-lg border border-accent bg-accent/5 p-6">
 			<h3 class="title mb-4 text-lg">Launch Details</h3>
 			<div class="grid gap-4 md:grid-cols-2">
@@ -176,6 +222,35 @@ const meta = {
 			</div>
 		</div>
 
+		<div class="mb-6 rounded-lg border border-green-500 bg-black p-4 font-mono text-sm">
+			<div class="flex items-center gap-2">
+				<span class="text-green-500">$</span>
+				<span class="text-green-500">./distribute-revenue.sh</span>
+			</div>
+		</div>
+
+		<div class="mb-6 rounded-lg border border-accent bg-accent/5 p-6 font-mono text-sm">
+			<h3 class="title mb-4 text-lg">Revenue Flow</h3>
+			<pre class="mb-0 overflow-x-auto text-xs"><code>{`// Revenue Distribution Protocol
+function distributeRevenue(amount) {
+  const buyback = amount * 0.45;  // 45% → Buyback
+  const burn = amount * 0.45;      // 45% → Burn
+  const treasury = amount * 0.10;  // 10% → Treasury
+  
+  executeBuyback(buyback);         // Auto-buy from market
+  executeBurn(burn);               // Permanent removal
+  transferToTreasury(treasury);    // Holder airdrops
+  
+  return {
+    buyback: buyback,
+    burn: burn,
+    treasury: treasury,
+    total: amount,
+    transparency: "https://cowsay.farm/token/#transparency"
+  };
+}`}</code></pre>
+		</div>
+
 		<div class="rounded-lg border border-accent bg-accent/5 p-6">
 			<h3 class="title mb-4 text-lg">Revenue Sources</h3>
 			<div class="grid gap-4 md:grid-cols-2">
@@ -222,6 +297,13 @@ const meta = {
 			wallet balances are publicly disclosed and verifiable on-chain.
 		</p>
 
+		<div class="mb-6 rounded-lg border border-green-500 bg-black p-4 font-mono text-sm">
+			<div class="flex items-center gap-2">
+				<span class="text-green-500">$</span>
+				<span class="text-green-500">./ecosystem-stats.sh</span>
+			</div>
+		</div>
+
 		<div class="mb-8 rounded-lg border border-accent p-6">
 			<h3 class="title mb-4 text-lg">Live Ecosystem Stats</h3>
 			<div class="grid gap-6 md:grid-cols-3">
@@ -243,17 +325,38 @@ const meta = {
 			</div>
 		</div>
 
+		<div class="mb-6 rounded-lg border border-green-500 bg-black p-4 font-mono text-sm">
+			<div class="flex items-center gap-2">
+				<span class="text-green-500">$</span>
+				<span class="text-green-500">solana balance</span>
+			</div>
+		</div>
+
 		<h3 class="title mb-4 text-lg">Wallet Addresses & Balances</h3>
 		<WalletTracker />
 
-		<h3 class="title mb-4 mt-8 text-lg">Profit & Loss</h3>
+		<div class="mb-6 mt-8 rounded-lg border border-green-500 bg-black p-4 font-mono text-sm">
+			<div class="flex items-center gap-2">
+				<span class="text-green-500">$</span>
+				<span class="text-green-500">cat pnl.txt</span>
+			</div>
+		</div>
+
+		<h3 class="title mb-4 text-lg">Profit & Loss</h3>
 		<p class="text-muted mb-4 text-sm">
 			Track all revenue and expenses from shop sales and NFT auctions, and see how profits are
 			calculated for buybacks.
 		</p>
 		<PnLChart />
 
-		<h3 class="title mb-4 mt-8 text-lg">Buyback History</h3>
+		<div class="mb-6 mt-8 rounded-lg border border-green-500 bg-black p-4 font-mono text-sm">
+			<div class="flex items-center gap-2">
+				<span class="text-green-500">$</span>
+				<span class="text-green-500">cat buybacks.txt</span>
+			</div>
+		</div>
+
+		<h3 class="title mb-4 text-lg">Buyback History</h3>
 		<p class="text-muted mb-4 text-sm">
 			All token buyback transactions are publicly recorded on-chain. Buybacks are executed
 			weekly/monthly based on available profits. Click any transaction to verify on Solana explorer.
