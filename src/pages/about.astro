@@ -3,158 +3,138 @@ import PageLayout from "@/layouts/Base.astro";
 
 const meta = {
 	description:
-		"Learn about the @cowsayco community, a fun project bringing daily developer humor to Twitter, featuring NFTs, merchandise, and the $COWSAYS token.",
+		"Learn about the @cowsayco community—porting developer culture to the blockchain. What started as a 1999 CLI joke is now a self-sustaining ecosystem for the modern engineer.",
 	title: "About",
 };
 ---
 
 <PageLayout meta={meta}>
-	<section>
-		<h1 class="title mb-6">About @cowsayco</h1>
+	<!-- Version Tag -->
+	<div class="mb-8 font-mono text-xs text-textColor/60">
+		<span>COWSAY.FARM v1.0.0</span>
+	</div>
+
+	<!-- Section 1: The Origin Story (The "Man Page") -->
+	<section class="mb-16">
+		<h1 class="title mb-6 font-mono">🐄 ABOUT</h1>
 		<p class="mb-4">
-			@cowsayco is a community-driven project that brings daily developer humor to Twitter. The
-			project combines the nostalgic charm of the classic <a
+			We are porting developer culture to the blockchain. What started as a 1999 CLI joke is now a
+			self-sustaining ecosystem for the modern engineer.
+		</p>
+		<p class="mb-4">
+			The original <a
 				class="cactus-link"
 				href="https://github.com/tnalpgge/rank-amateur-cowsay">cowsay</a
-			> command-line program from 1999 with the power of social media and modern web3 technology.
+			> command-line program was written in 1999 by Tony Monroe. It generated ASCII art of a cow
+			saying a message, becoming an instant classic in developer circles. Two decades later, we're
+			bringing that same irreverent spirit to Web3—not as a novelty, but as a home for dev jokes,
+			community, and sustainable economics.
 		</p>
-		<p class="mb-4">
-			Our vision is to build the ultimate developer quote/meme ecosystem around the Cowsay brand,
-			combining daily developer quotes, merchandise, NFTs, and a sustainable token economy with
-			continuous buybacks for 3 years.
-		</p>
-		<p class="mb-4">The @cowsayco community is built on these core principles:</p>
-		<div class="mb-4 rounded border border-accent p-4">
-			<ul class="list-inside list-disc space-y-2">
-				<li>
-					<strong>Community First:</strong> This is a community project. The token, NFTs, and merch are
-					all tools to support and grow the community, not the other way around.
-				</li>
-				<li>
-					<strong>Developer Culture:</strong> We celebrate the joys, struggles, and humor of being a
-					developer. Every quote, meme, and conversation reflects the real developer experience.
-				</li>
-				<li>
-					<strong>Transparency:</strong> All financial operations, wallet balances, and transactions
-					are publicly disclosed so the community knows exactly how resources are being used.
-				</li>
-				<li>
-					<strong>Long-term Sustainability:</strong> We're building for the long term with a 3-year commitment,
-					no quick pumps. Revenue from merchandise and NFTs supports the ecosystem, and tokenomics are
-					designed to benefit long-term community members.
-				</li>
-				<li>
-					<strong>Fun:</strong> We bring joy and laughter to developers' daily routines, creating moments
-					of happiness in the daily grind.
-				</li>
-			</ul>
+	</section>
+
+	<!-- Section 2: The Manifesto (Core Principles) -->
+	<section class="mb-16">
+		<h2 class="title mb-6 font-mono text-2xl">PRINCIPLES</h2>
+		<div class="space-y-6">
+			<blockquote class="border-l-4 border-accent pl-6 font-mono text-sm">
+				<strong class="block mb-2">Community-First Architecture</strong>
+				The token, NFTs, and merch are tools to support and grow the community, not the other way
+				around.
+			</blockquote>
+			<blockquote class="border-l-4 border-accent pl-6 font-mono text-sm">
+				<strong class="block mb-2">Developer Culture Preservation</strong>
+				We celebrate the joys, struggles, and humor of being a developer. Every quote, meme, and
+				conversation reflects the real developer experience.
+			</blockquote>
+			<blockquote class="border-l-4 border-accent pl-6 font-mono text-sm">
+				<strong class="block mb-2">On-Chain Verifiability</strong>
+				All financial operations, wallet balances, and transactions are publicly disclosed so the
+				community knows exactly how resources are being used.
+			</blockquote>
+			<blockquote class="border-l-4 border-accent pl-6 font-mono text-sm">
+				<strong class="block mb-2">Long-Term Uptime</strong>
+				We're building for the long term. Revenue from merchandise and NFTs supports the ecosystem,
+				with tokenomics designed to benefit long-term community members. For specific mechanisms,
+				see the <a class="cactus-link" href="/token/">Token</a> page.
+			</blockquote>
+			<blockquote class="border-l-4 border-accent pl-6 font-mono text-sm">
+				<strong class="block mb-2">Joy by Default</strong>
+				We bring laughter to developers' daily routines, creating moments of happiness in the daily
+				grind.
+			</blockquote>
 		</div>
 	</section>
 
-	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">What We Do</h2>
-		<p class="mb-4">
-			The @cowsayco community is built around several interconnected elements that create a fun,
-			sustainable ecosystem:
+	<!-- Section 3: The Architecture (The Ecosystem) -->
+	<section class="mb-16">
+		<h2 class="title mb-6 font-mono text-2xl">ECOSYSTEM</h2>
+		<p class="mb-8 text-textColor/80">
+			A simplified map of how the components interact:
 		</p>
-
-		<h3 class="title mb-4 mt-8 text-lg">Daily Developer Quotes</h3>
-		<p class="mb-4">
-			Our Twitter bot (@cowsayco) shares a curated developer quote every day, presented in the
-			classic cowsay style. These quotes bring humor, inspiration, and relatability to developers
-			around the world, creating moments of joy in the daily grind.
-		</p>
-
-		<h3 class="title mb-4 mt-8 text-lg">Discord Community</h3>
-		<p class="mb-4">
-			Join our Discord server to connect with fellow developers, share memes, discuss tech, and be
-			part of a growing community that appreciates both coding and comedy.
-		</p>
-
-		<h3 class="title mb-4 mt-8 text-lg">NFT Auctions</h3>
-		<p class="mb-4">
-			Collect unique quote artwork NFTs featuring some of the most memorable developer quotes. Each
-			NFT is a piece of developer culture, auctioned to support the ecosystem.
-		</p>
-
-		<h3 class="title mb-4 mt-8 text-lg">Merchandise Shop</h3>
-		<p class="mb-4">
-			Show your love for the community with T-shirts, mugs, mousepads, and other merchandise
-			featuring @cowsayco designs. All profits contribute to the ecosystem.
-		</p>
-
-		<h3 class="title mb-4 mt-8 text-lg">$COWSAYS Token</h3>
-		<p class="mb-4">
-			The $COWSAYS token is part of the ecosystem, not the whole project. It's built on Solana with
-			transparent tokenomics, automated buybacks from shop and NFT profits, and token burning
-			mechanisms. The token serves as a way for the community to participate in and benefit from the
-			growth of the @cowsayco brand.
+		<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+			<div class="rounded-lg border border-accent bg-accent/5 p-6">
+				<h3 class="mb-3 font-mono text-lg font-semibold">Bot</h3>
+				<p class="mb-4 text-sm text-textColor/80">
+					Daily developer quotes on Twitter. The content engine that powers the ecosystem.
+				</p>
+			</div>
+			<div class="rounded-lg border border-accent bg-accent/5 p-6">
+				<h3 class="mb-3 font-mono text-lg font-semibold">Token</h3>
+				<p class="mb-4 text-sm text-textColor/80">
+					Community participation and value alignment. Built on Solana with transparent
+					tokenomics. <a class="cactus-link text-xs" href="/token/">Details →</a>
+				</p>
+			</div>
+			<div class="rounded-lg border border-accent bg-accent/5 p-6">
+				<h3 class="mb-3 font-mono text-lg font-semibold">NFTs</h3>
+				<p class="mb-4 text-sm text-textColor/80">
+					Quote artwork as collectibles. Each NFT is a piece of developer culture.
+					<a class="cactus-link text-xs" href="/nfts/">Browse →</a>
+				</p>
+			</div>
+			<div class="rounded-lg border border-accent bg-accent/5 p-6">
+				<h3 class="mb-3 font-mono text-lg font-semibold">Shop</h3>
+				<p class="mb-4 text-sm text-textColor/80">
+					Merchandise revenue supports the ecosystem. Profits feed back into sustainable
+					economics. <a class="cactus-link text-xs" href="/shop/">Visit →</a>
+				</p>
+			</div>
+		</div>
+		<p class="mt-6 text-sm text-textColor/60">
+			Revenue from Shop and NFTs supports sustainable economics. See the
+			<a class="cactus-link" href="/token/">Token</a> page for specific mechanisms.
 		</p>
 	</section>
 
+	<!-- Section 4: The Team/Socials -->
 	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Join the Community</h2>
-		<p class="mb-4">
-			Connect with us on social media and explore all aspects of the @cowsayco ecosystem:
+		<h2 class="title mb-6 font-mono text-2xl">COMMUNITY</h2>
+		<p class="mb-6 text-textColor/80">
+			Who is behind the cow? Join the community:
 		</p>
-
-		<div class="mb-6 flex flex-wrap gap-4">
-			<a
-				class="rainbow rainbow-1 inline-block"
-				href="https://twitter.com/intent/user?screen_name=cowsayco"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<span>Follow @cowsayco</span>
-			</a>
-			<a
-				class="rainbow rainbow-1 inline-block"
-				href="https://discord.gg/yhJ24mCSxd"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<span>Join Discord</span>
-			</a>
+		<div class="space-y-3 font-mono text-sm">
+			<div class="rounded border border-accent bg-accent/5 p-4">
+				<code class="text-textColor/60">$</code>
+				<a
+					class="cactus-link ml-2"
+					href="https://twitter.com/intent/user?screen_name=cowsayco"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					follow --twitter @cowsayco
+				</a>
+			</div>
+			<div class="rounded border border-accent bg-accent/5 p-4">
+				<code class="text-textColor/60">$</code>
+				<a
+					class="cactus-link ml-2"
+					href="https://discord.gg/yhJ24mCSxd"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					join --discord
+				</a>
+			</div>
 		</div>
 	</section>
 </PageLayout>
-
-<style>
-	.rainbow {
-		background-color: #343a40;
-		border-radius: 4px;
-		color: #fff;
-		cursor: pointer;
-		padding: 8px 16px;
-	}
-
-	html[data-theme="dark"] .rainbow {
-		color: #29bc89;
-	}
-
-	html[data-theme="dark"] .rainbow span {
-		mix-blend-mode: color-dodge;
-	}
-
-	html[data-theme="dark"] .rainbow:hover span {
-		mix-blend-mode: color-dodge;
-	}
-
-	.rainbow-1:hover {
-		background-image: linear-gradient(
-			90deg,
-			#3769ff 0%,
-			#3769ff 12%,
-			#b7f00c 45%,
-			#ff1e42 70%,
-			#3769ff 100%
-		);
-		animation: slidebg 10s linear infinite;
-	}
-
-	@keyframes slidebg {
-		to {
-			background-position: 24vw;
-		}
-	}
-</style>

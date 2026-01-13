@@ -1,59 +1,295 @@
 ---
 import PageLayout from "@/layouts/Base.astro";
-import ProductGrid from "@/components/shop/ProductGrid.astro";
 
 const meta = {
 	description:
-		"Shop for Cowsay merchandise featuring your favorite developer quotes on T-shirts, mugs, mousepads, and more.",
+		"The physical extension of the Cowsay protocol. Protocol merch where 100% of profits fund token buybacks.",
 	title: "Shop",
 };
 ---
 
 <PageLayout meta={meta}>
-	<section>
-		<div class="mb-8 rounded border border-accent bg-accent/10 p-4">
-			<p class="mb-0 text-lg font-bold">Coming Soon</p>
-			<p class="text-muted mb-0 text-sm">
-				The shop is currently under development. Check back soon!
-			</p>
+	<!-- Section 1: The "Coming Soon" Terminal -->
+	<section class="mb-12">
+		<div class="mb-8 rounded-lg border border-accent bg-accent/5 p-6 font-mono text-sm">
+			<div class="mb-4 flex items-center gap-2">
+				<span class="text-green-500">$</span>
+				<span class="text-textColor">git checkout -b feature/merch-shop</span>
+			</div>
+			<div class="mb-4 flex items-center gap-2">
+				<span class="text-green-500">$</span>
+				<span class="text-textColor">status: 75% complete...</span>
+			</div>
+			<div class="mb-2 flex items-center gap-2">
+				<span class="text-green-500">✓</span>
+				<span class="text-muted">Product designs: DONE</span>
+			</div>
+			<div class="mb-2 flex items-center gap-2">
+				<span class="text-green-500">✓</span>
+				<span class="text-muted">Buyback integration: DONE</span>
+			</div>
+			<div class="mb-2 flex items-center gap-2">
+				<span class="text-yellow-500">⏳</span>
+				<span class="text-muted">Platform setup: IN PROGRESS</span>
+			</div>
+			<div class="flex items-center gap-2">
+				<span class="text-muted">⏸</span>
+				<span class="text-muted">Quality control: PENDING</span>
+			</div>
 		</div>
+
 		<h1 class="title mb-6">Shop</h1>
 		<p class="mb-4">
-			Show your love for developer quotes with Cowsay merchandise! All products feature curated
+			The physical extension of the Cowsay protocol. Protocol merch featuring your favorite developer
 			quotes from the @cowsayco Twitter bot.
 		</p>
-		<p class="mb-4">
-			<strong>100% of profits</strong> from all merchandise sales are automatically reinvested into $COWSAYS
-			token buybacks. Every purchase supports the token ecosystem.
+	</section>
+
+	<!-- Section 2: The Shop-to-Token Flywheel -->
+	<section class="mb-12">
+		<h2 class="title mb-6 text-2xl">The Shop-to-Token Flywheel</h2>
+		<p class="mb-6">
+			Every purchase directly fuels the token ecosystem. Net-profit protocol: all revenue, minus COGS
+			(Cost of Goods Sold), is routed directly to the Buyback Wallet. No management fees. No overhead.
+			100% for the community.
 		</p>
+
+		<div class="mb-6 rounded-lg border-2 border-accent bg-accent/10 p-6 text-center">
+			<p class="mb-2 text-2xl font-bold">100% of Profits → Buybacks</p>
+			<p class="text-muted text-sm">
+				All net profits from merchandise sales are automatically used to buy $COWSAYS tokens. All
+				buyback transactions are publicly recorded on-chain and verifiable via Solana explorer.
+			</p>
+		</div>
+
+		<div class="rounded-lg border border-accent bg-accent/5 p-6 font-mono text-sm">
+			<h3 class="title mb-4 text-lg">Process Flow</h3>
+			<pre class="mb-0 overflow-x-auto text-xs"><code>{`// The Shop-to-Token Protocol
+function processMerchSale(order) {
+  const revenue = order.total;
+  const cogs = order.production + order.shipping + order.platformFees;
+  const netProfit = revenue - cogs;
+  
+  if (netProfit > 0) {
+    buybackWallet.transfer(netProfit);
+    executeBuyback(netProfit); // Auto-buy $COWSAYS
+    logTransaction(onChain);   // Public verification
+  }
+  
+  return {
+    revenue,
+    cogs,
+    netProfit,
+    buybackAmount: netProfit,
+    transparency: "https://cowsay.farm/token/#transparency"
+  };
+}`}</code></pre>
+		</div>
+
+		<div class="mt-6 flex flex-wrap gap-4">
+			<a
+				href="/token/#transparency"
+				class="rainbow rainbow-1 inline-block"
+			>
+				<span>View Transparency Dashboard</span>
+			</a>
+			<a
+				href="https://discord.gg/yhJ24mCSxd"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="rainbow rainbow-1 inline-block"
+			>
+				<span>Join Discord for Drop Alerts</span>
+			</a>
+		</div>
 	</section>
 
-	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Products</h2>
-
-		<ProductGrid />
-	</section>
-
-	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Revenue & Buybacks</h2>
-
-		<p class="mb-4">
-			All shop revenue and profits are automatically used for token buybacks. All buyback
-			transactions are publicly recorded on-chain and can be verified via Solana explorer.
+	<!-- Section 3: Product Teasers -->
+	<section class="mb-12">
+		<h2 class="title mb-6 text-2xl">Product Pipeline</h2>
+		<p class="mb-6 text-muted">
+			Concept products in development. Terminal-style descriptions for dev-focused merch.
 		</p>
+
+		<div class="grid gap-6 md:grid-cols-2">
+			<div class="rounded-lg border border-accent bg-accent/5 p-6 font-mono text-sm">
+				<div class="mb-4 aspect-square w-full rounded border border-accent bg-accent/10 flex items-center justify-center">
+					<span class="text-muted text-xs">Image placeholder: hello-world-hoodie.jpg</span>
+				</div>
+				<div class="mb-4 flex items-center justify-between border-b border-accent/50 pb-2">
+					<h3 class="title text-lg">"Hello World" Hoodie</h3>
+					<span class="text-yellow-500 text-xs">DRAFT</span>
+				</div>
+				<div class="space-y-2 text-xs">
+					<div>
+						<span class="text-muted">Material:</span>
+						<span class="ml-2 text-textColor">100% Cotton</span>
+					</div>
+					<div>
+						<span class="text-muted">Quote:</span>
+						<span class="ml-2 text-textColor">"Hello World"</span>
+					</div>
+					<div>
+						<span class="text-muted">Status:</span>
+						<span class="ml-2 text-textColor">Quality Control</span>
+					</div>
+					<div>
+						<span class="text-muted">ETA:</span>
+						<span class="ml-2 text-textColor">Q1 2025</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="rounded-lg border border-accent bg-accent/5 p-6 font-mono text-sm">
+				<div class="mb-4 aspect-square w-full rounded border border-accent bg-accent/10 flex items-center justify-center">
+					<span class="text-muted text-xs">Image placeholder: cowsay-mug.jpg</span>
+				</div>
+				<div class="mb-4 flex items-center justify-between border-b border-accent/50 pb-2">
+					<h3 class="title text-lg">Cowsay Mug</h3>
+					<span class="text-yellow-500 text-xs">DRAFT</span>
+				</div>
+				<div class="space-y-2 text-xs">
+					<div>
+						<span class="text-muted">Material:</span>
+						<span class="ml-2 text-textColor">Ceramic</span>
+					</div>
+					<div>
+						<span class="text-muted">Design:</span>
+						<span class="ml-2 text-textColor">Terminal ASCII Art</span>
+					</div>
+					<div>
+						<span class="text-muted">Status:</span>
+						<span class="ml-2 text-textColor">Design Review</span>
+					</div>
+					<div>
+						<span class="text-muted">ETA:</span>
+						<span class="ml-2 text-textColor">Q1 2025</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="rounded-lg border border-accent bg-accent/5 p-6 font-mono text-sm">
+				<div class="mb-4 aspect-square w-full rounded border border-accent bg-accent/10 flex items-center justify-center">
+					<span class="text-muted text-xs">Image placeholder: it-works-tee.jpg</span>
+				</div>
+				<div class="mb-4 flex items-center justify-between border-b border-accent/50 pb-2">
+					<h3 class="title text-lg">"It Works On My Machine" Tee</h3>
+					<span class="text-yellow-500 text-xs">DRAFT</span>
+				</div>
+				<div class="space-y-2 text-xs">
+					<div>
+						<span class="text-muted">Material:</span>
+						<span class="ml-2 text-textColor">100% Cotton</span>
+					</div>
+					<div>
+						<span class="text-muted">Quote:</span>
+						<span class="ml-2 text-textColor">"It Works On My Machine"</span>
+					</div>
+					<div>
+						<span class="text-muted">Status:</span>
+						<span class="ml-2 text-textColor">Design Phase</span>
+					</div>
+					<div>
+						<span class="text-muted">ETA:</span>
+						<span class="ml-2 text-textColor">Q2 2025</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="rounded-lg border border-accent bg-accent/5 p-6 font-mono text-sm">
+				<div class="mb-4 aspect-square w-full rounded border border-accent bg-accent/10 flex items-center justify-center">
+					<span class="text-muted text-xs">Image placeholder: developer-mousepad.jpg</span>
+				</div>
+				<div class="mb-4 flex items-center justify-between border-b border-accent/50 pb-2">
+					<h3 class="title text-lg">Developer Mousepad</h3>
+					<span class="text-yellow-500 text-xs">DRAFT</span>
+				</div>
+				<div class="space-y-2 text-xs">
+					<div>
+						<span class="text-muted">Material:</span>
+						<span class="ml-2 text-textColor">Rubber Base + Cloth Surface</span>
+					</div>
+					<div>
+						<span class="text-muted">Design:</span>
+						<span class="ml-2 text-textColor">Terminal Grid Pattern</span>
+					</div>
+					<div>
+						<span class="text-muted">Status:</span>
+						<span class="ml-2 text-textColor">Concept</span>
+					</div>
+					<div>
+						<span class="text-muted">ETA:</span>
+						<span class="ml-2 text-textColor">TBD</span>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 
-	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">How It Works</h2>
-
-		<ol class="mb-4 list-inside list-decimal space-y-2">
-			<li>You purchase merchandise featuring your favorite Cowsay quotes</li>
-			<li>We calculate profits after expenses (production, shipping, platform fees)</li>
-			<li>All profits are automatically used to buy $COWSAYS tokens</li>
-			<li>Buyback transactions are publicly recorded on-chain</li>
-			<li>
-				You can track all buybacks on our <a class="cactus-link" href="/token/">token page</a>
-			</li>
-		</ol>
+	<!-- Section 4: Engagement & CTAs -->
+	<section class="mb-12">
+		<div class="rounded-lg border border-accent bg-accent/5 p-6">
+			<h2 class="title mb-4 text-xl">Get Notified</h2>
+			<p class="mb-4 text-muted">
+				Register for the first drop or suggest a quote for a T-shirt. Join Discord for merch drop
+				notifications and exclusive access.
+			</p>
+			<div class="flex flex-wrap gap-4">
+				<a
+					href="https://discord.gg/yhJ24mCSxd"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="rainbow rainbow-1 inline-block"
+				>
+					<span>Join Discord for Drop Alerts</span>
+				</a>
+				<a
+					href="/token/#transparency"
+					class="rainbow rainbow-1 inline-block"
+				>
+					<span>View Shop Revenue Wallet</span>
+				</a>
+			</div>
+		</div>
 	</section>
 </PageLayout>
+
+<style>
+	.rainbow {
+		background-color: #343a40;
+		border-radius: 4px;
+		color: #fff;
+		cursor: pointer;
+		padding: 8px 16px;
+	}
+
+	html[data-theme="dark"] .rainbow {
+		color: #29bc89;
+	}
+
+	html[data-theme="dark"] .rainbow span {
+		mix-blend-mode: color-dodge;
+	}
+
+	html[data-theme="dark"] .rainbow:hover span {
+		mix-blend-mode: color-dodge;
+	}
+
+	.rainbow-1:hover {
+		background-image: linear-gradient(
+			90deg,
+			#3769ff 0%,
+			#3769ff 12%,
+			#b7f00c 45%,
+			#ff1e42 70%,
+			#3769ff 100%
+		);
+		animation: slidebg 10s linear infinite;
+	}
+
+	@keyframes slidebg {
+		to {
+			background-position: 24vw;
+		}
+	}
+</style>

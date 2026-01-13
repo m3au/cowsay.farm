@@ -3,31 +3,32 @@ import PageLayout from "@/layouts/Base.astro";
 
 const meta = {
 	description:
-		"The @cowsayco project roadmap: building the ultimate developer quote/meme ecosystem with daily bot quotes, merchandise shop, NFT art, community, and token over 3 years.",
-	title: "Roadmap",
+		"Product release schedule for @cowsayco: a strategic roadmap from token launch through protocol automation, structured as three development epochs.",
+	title: "Roadmap • @cowsayco",
 };
 ---
 
 <PageLayout meta={meta}>
 	<section>
-		<h1 class="title mb-6">Project Roadmap</h1>
+		<h1 class="title mb-6">Product Release Schedule</h1>
 		<p class="mb-4">
-			This roadmap outlines the evolution of the @cowsayco project from launch to long-term
-			sustainability. Our commitment is to build the ultimate developer quote/meme ecosystem around
-			the daily bot, merchandise shop, NFT art, community, and token.
+			Strategic development roadmap structured as three epochs: Genesis (launch & stability), The Flywheel (revenue streams), and The Protocol (automation & governance).
 		</p>
-		<p class="mb-4 font-bold">
-			"Built for the long term, powered by the community: Cowsay forever." 🐄
+		<p class="mb-4 font-mono text-xs text-muted">
+			Strategic Horizon: 2025–2027 | Backed by on-chain vesting
 		</p>
 	</section>
 
 	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Timeline Summary</h2>
+		<h2 class="title mb-6 mt-16 text-2xl">Release Timeline</h2>
+		<div class="mb-6 overflow-x-auto rounded-lg border border-accent bg-black p-4">
+			<pre class="font-mono text-xs text-green-400">$ cat roadmap.txt</pre>
+		</div>
 		<div class="overflow-x-auto">
-			<table class="w-full border-collapse">
+			<table class="w-full border-collapse font-mono text-xs">
 				<thead>
 					<tr class="border-b border-accent">
-						<th class="p-2 text-left">Phase</th>
+						<th class="p-2 text-left">Epoch</th>
 						<th class="p-2 text-left">Timeline</th>
 						<th class="p-2 text-left">Focus</th>
 						<th class="p-2 text-left">Status</th>
@@ -35,46 +36,22 @@ const meta = {
 				</thead>
 				<tbody>
 					<tr class="border-b border-accent/50">
-						<td class="p-2">Pre-Launch & Launch</td>
-						<td class="p-2">Weeks 0-2</td>
-						<td class="p-2">Token creation, fair launch, vesting</td>
-						<td class="p-2"><span class="text-green-500">In Progress</span></td>
+						<td class="p-2">Epoch 1: Genesis</td>
+						<td class="p-2">Weeks 0-4</td>
+						<td class="p-2">Launch, vesting, stability</td>
+						<td class="p-2"><span class="text-green-400">[DEPLOYS_IN_PROGRESS]</span></td>
 					</tr>
 					<tr class="border-b border-accent/50">
-						<td class="p-2">Foundation</td>
-						<td class="p-2">Weeks 1-4</td>
-						<td class="p-2">Monitor launch, initial buybacks, community growth</td>
-						<td class="p-2"><span class="text-muted">Upcoming</span></td>
-					</tr>
-					<tr class="border-b border-accent/50">
-						<td class="p-2">NFT Genesis Batch</td>
-						<td class="p-2">Weeks 3-6</td>
-						<td class="p-2">First 5 unique developer quote NFTs</td>
-						<td class="p-2"><span class="text-muted">Upcoming</span></td>
-					</tr>
-					<tr class="border-b border-accent/50">
-						<td class="p-2">Merch Shop Launch</td>
-						<td class="p-2">Month 2-3</td>
-						<td class="p-2">Quote-themed apparel and items</td>
-						<td class="p-2"><span class="text-muted">Upcoming</span></td>
-					</tr>
-					<tr class="border-b border-accent/50">
-						<td class="p-2">Ongoing NFT Drops</td>
-						<td class="p-2">Month 3+</td>
-						<td class="p-2">Weekly/bi-weekly bot-tweeted quote NFTs</td>
-						<td class="p-2"><span class="text-muted">Upcoming</span></td>
-					</tr>
-					<tr class="border-b border-accent/50">
-						<td class="p-2">Automation & Expansion</td>
-						<td class="p-2">Months 3-12</td>
-						<td class="p-2">Scale buyback system, airdrops, partnerships</td>
-						<td class="p-2"><span class="text-muted">Upcoming</span></td>
+						<td class="p-2">Epoch 2: The Flywheel</td>
+						<td class="p-2">Weeks 3-12</td>
+						<td class="p-2">NFTs, merch, revenue streams</td>
+						<td class="p-2"><span class="text-yellow-400">[BACKLOG]</span></td>
 					</tr>
 					<tr>
-						<td class="p-2">Long-term</td>
-						<td class="p-2">Years 1-3</td>
-						<td class="p-2">Sustainable revenue loops, governance, buybacks</td>
-						<td class="p-2"><span class="text-muted">Upcoming</span></td>
+						<td class="p-2">Epoch 3: The Protocol</td>
+						<td class="p-2">Months 3-36</td>
+						<td class="p-2">Automation, airdrops, governance</td>
+						<td class="p-2"><span class="text-muted">[BACKLOG]</span></td>
 					</tr>
 				</tbody>
 			</table>
@@ -82,206 +59,152 @@ const meta = {
 	</section>
 
 	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Pre-Launch & Launch (Weeks 0-2)</h2>
+		<h2 class="title mb-6 mt-16 text-2xl">🛠️ Epoch 1: Genesis</h2>
+		<p class="mb-4 text-muted text-sm">
+			Launch & Stability | Timeline: Weeks 0-4
+		</p>
 		<div class="mb-4 rounded border border-accent p-4">
-			<h3 class="mb-3 font-bold">Goals</h3>
-			<ul class="mb-4 list-inside list-disc space-y-1">
-				<li>Token creation and fair launch on Pump.fun → Raydium</li>
-				<li>On-chain 3-year vesting for creator allocation</li>
-				<li>Announcements and community raid</li>
-			</ul>
-
-			<h3 class="mb-3 font-bold">Key Milestones</h3>
+			<h3 class="mb-3 font-bold font-mono text-sm">Milestones</h3>
 			<ul class="mb-4 space-y-2">
-				<li class="flex items-center gap-2">
-					<span class="text-green-500">✓</span>
-					<span>Website token pages created</span>
+				<li class="flex items-start gap-2">
+					<span class="text-green-400 font-mono text-xs">[COMPLETED]</span>
+					<span>Website token pages deployed</span>
 				</li>
-				<li class="flex items-center gap-2">
-					<span class="text-green-500">✓</span>
+				<li class="flex items-start gap-2">
+					<span class="text-green-400 font-mono text-xs">[COMPLETED]</span>
 					<span>Documentation complete</span>
 				</li>
-				<li class="flex items-center gap-2">
-					<span class="text-muted">○</span>
-					<span>Token creation on Pump.fun</span>
+				<li class="flex items-start gap-2">
+					<span class="text-yellow-400 font-mono text-xs">[DEPLOYS_IN_PROGRESS]</span>
+					<span>Token creation on Pump.fun → Raydium migration</span>
 				</li>
-				<li class="flex items-center gap-2">
-					<span class="text-muted">○</span>
-					<span>Fair launch migration to Raydium</span>
+				<li class="flex items-start gap-2">
+					<span class="text-yellow-400 font-mono text-xs">[DEPLOYS_IN_PROGRESS]</span>
+					<span class="font-semibold">On-chain 3-year vesting lock for creator allocation (200M tokens)</span>
 				</li>
-				<li class="flex items-center gap-2">
-					<span class="text-muted">○</span>
-					<span>On-chain 3-year vesting for creator allocation (200M tokens)</span>
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Contract address and wallet addresses published</span>
 				</li>
-				<li class="flex items-center gap-2">
-					<span class="text-muted">○</span>
-					<span>Publish contract address and wallet addresses</span>
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Launch announcement and community engagement</span>
 				</li>
-				<li class="flex items-center gap-2">
-					<span class="text-muted">○</span>
-					<span>Launch announcement thread on X/Twitter</span>
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Initial buyback execution from early revenue</span>
 				</li>
-				<li class="flex items-center gap-2">
-					<span class="text-muted">○</span>
-					<span>Community raid and engagement</span>
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Community growth via Discord and X/Twitter</span>
+				</li>
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Genesis NFT batch preview and teasers</span>
 				</li>
 			</ul>
+			<div class="mt-4 rounded border border-accent bg-accent/10 p-3">
+				<p class="mb-2 font-mono text-xs font-semibold">The 3-Year Covenant</p>
+				<p class="text-muted text-xs">
+					A fixed commitment to ecosystem growth through 2027, backed by on-chain vesting. The creator allocation (200M tokens) is locked for 3 years, providing the strongest trust signal for long-term sustainability.
+				</p>
+			</div>
 		</div>
 	</section>
 
 	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Foundation (Weeks 1-4)</h2>
+		<h2 class="title mb-6 mt-16 text-2xl">📦 Epoch 2: The Flywheel</h2>
+		<p class="mb-4 text-muted text-sm">
+			Revenue Streams & Ecosystem Growth | Timeline: Weeks 3-12
+		</p>
 		<div class="mb-4 rounded border border-accent p-4">
-			<h3 class="mb-3 font-bold">Goals</h3>
-			<ul class="mb-4 list-inside list-disc space-y-1">
-				<li>Monitor launch and token performance</li>
-				<li>Execute initial buybacks/burns using any early revenue</li>
-				<li>Begin teasing first NFT batch</li>
-				<li>Community growth via Discord and X</li>
-			</ul>
-
-			<h3 class="mb-3 font-bold">Key Activities</h3>
-			<ul class="list-inside list-disc space-y-1">
-				<li>Monitor launch metrics and community sentiment</li>
-				<li>Execute first buyback/burn if early revenue is generated</li>
-				<li>Tease Genesis NFT batch with previews</li>
-				<li>Build community on Discord and X/Twitter</li>
-				<li>Weekly community updates and engagement</li>
-				<li>Website optimization based on feedback</li>
-			</ul>
-		</div>
-	</section>
-
-	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">NFT Genesis Batch (Weeks 3-6)</h2>
-		<div class="mb-4 rounded border border-accent p-4">
-			<h3 class="mb-3 font-bold">Goals</h3>
-			<ul class="mb-4 list-inside list-disc space-y-1">
-				<li>Launch first 5 unique developer quote NFTs</li>
-				<li>Establish NFT minting and auction mechanism</li>
-				<li>Generate revenue for buybacks/burns</li>
-			</ul>
-
-			<h3 class="mb-3 font-bold">Genesis Batch Quotes</h3>
-			<ul class="mb-4 list-inside list-disc space-y-2">
-				<li>"It works on my machine."</li>
-				<li>
-					"There are only two hard things in computer science: cache invalidation and naming
-					things."
+			<h3 class="mb-3 font-bold font-mono text-sm">Milestones</h3>
+			<ul class="mb-4 space-y-2">
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Genesis Collection launch: 5 unique developer quote NFTs</span>
 				</li>
-				<li>
-					"There are 10 types of people in the world: those who understand binary, and those who
-					don't."
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>NFT minting and auction mechanism deployment (Metaplex on Solana)</span>
 				</li>
-				<li>"Why do programmers prefer dark mode? Because light attracts bugs."</li>
-				<li>"A SQL query goes into a bar, walks up to two tables, and asks, 'Can I join you?'"</li>
-			</ul>
-
-			<h3 class="mb-3 font-bold">Key Details</h3>
-			<ul class="mb-4 list-inside list-disc space-y-1">
-				<li>Limited editions: 10-20 per quote for accessibility + scarcity</li>
-				<li>Minted on Solana via Metaplex</li>
-				<li>Auctioned on Magic Eden</li>
-				<li>100% of proceeds used for $COWSAYS buybacks/burns</li>
-			</ul>
-		</div>
-	</section>
-
-	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Merch Shop Launch (Month 2-3)</h2>
-		<div class="mb-4 rounded border border-accent p-4">
-			<h3 class="mb-3 font-bold">Goals</h3>
-			<ul class="mb-4 list-inside list-disc space-y-1">
-				<li>Launch online store with quote-themed apparel and items</li>
-				<li>Generate revenue stream for buybacks</li>
-				<li>Establish sustainable buyback cycle</li>
-			</ul>
-
-			<h3 class="mb-3 font-bold">Products</h3>
-			<ul class="mb-4 list-inside list-disc space-y-1">
-				<li>T-shirts with popular quotes</li>
-				<li>Mugs</li>
-				<li>Mousepads</li>
-				<li>Stickers</li>
-				<li>Posters</li>
-			</ul>
-
-			<p class="text-muted text-sm">All shop revenue → 100% token buybacks</p>
-		</div>
-	</section>
-
-	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Ongoing NFT Drops (Month 3+)</h2>
-		<div class="mb-4 rounded border border-accent p-4">
-			<h3 class="mb-3 font-bold">Goals</h3>
-			<ul class="mb-4 list-inside list-disc space-y-1">
-				<li>Maintain regular NFT releases</li>
-				<li>Convert bot-tweeted quotes into collectibles</li>
-				<li>Sustain organic growth and engagement</li>
-			</ul>
-
-			<h3 class="mb-3 font-bold">Key Activities</h3>
-			<ul class="mb-4 list-inside list-disc space-y-1">
-				<li>Weekly or bi-weekly drops of new bot-tweeted quotes</li>
-				<li>Limited-edition NFTs maintaining scarcity</li>
-				<li>Continuous revenue generation for buybacks</li>
-			</ul>
-
-			<p class="text-muted text-sm">All NFT proceeds → 100% token buybacks/burns</p>
-		</div>
-	</section>
-
-	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Automation & Expansion (Months 3-12)</h2>
-		<div class="mb-4 rounded border border-accent p-4">
-			<h3 class="mb-3 font-bold">Goals</h3>
-			<ul class="mb-4 list-inside list-disc space-y-1">
-				<li>Scale buyback system with automation</li>
-				<li>Implement airdrops to NFT holders</li>
-				<li>Build strategic partnerships</li>
-				<li>Expand ecosystem features</li>
-			</ul>
-
-			<h3 class="mb-3 font-bold">Key Activities</h3>
-			<ul class="list-inside list-disc space-y-1">
-				<li>Automated buyback script implementation</li>
-				<li>Weekly/monthly automated buybacks</li>
-				<li>
-					Airdrops of $COWSAYS tokens to NFT holders (periodic snapshots, proportional to holdings)
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Merch shop launch: quote-themed apparel and items</span>
 				</li>
-				<li>Expand product catalog</li>
-				<li>Regular NFT releases</li>
-				<li>Community growth initiatives</li>
-				<li>Strategic partnerships with other projects</li>
-				<li>Community-driven quote selection</li>
-				<li>Developer tools or integrations</li>
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Revenue flow automation: 100% of proceeds → token buybacks/burns</span>
+				</li>
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Ongoing NFT drops: weekly/bi-weekly bot-tweeted quote NFTs</span>
+				</li>
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Sustainable buyback cycle establishment</span>
+				</li>
 			</ul>
+			<div class="mt-4 rounded border border-accent bg-accent/10 p-3">
+				<p class="mb-2 font-mono text-xs font-semibold">Revenue Allocation</p>
+				<p class="text-muted text-xs">
+					All NFT and merch proceeds are allocated 100% to $COWSAY token buybacks and burns, creating a deflationary mechanism that directly benefits token holders.
+				</p>
+			</div>
 		</div>
 	</section>
 
 	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Long-term (Years 1-3)</h2>
+		<h2 class="title mb-6 mt-16 text-2xl">🏛️ Epoch 3: The Protocol</h2>
+		<p class="mb-4 text-muted text-sm">
+			Automation, Airdrops & Governance | Timeline: Months 3-36 (Strategic Horizon: 2025–2027)
+		</p>
 		<div class="mb-4 rounded border border-accent p-4">
-			<h3 class="mb-3 font-bold">Goals</h3>
-			<ul class="mb-4 list-inside list-disc space-y-1">
-				<li>Maintain 3-year commitment</li>
-				<li>Build sustainable revenue loops</li>
-				<li>Implement community governance elements</li>
-				<li>Continue buybacks/burns</li>
+			<h3 class="mb-3 font-bold font-mono text-sm">Milestones</h3>
+			<ul class="mb-4 space-y-2">
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Automated buyback script deployment</span>
+				</li>
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Weekly/monthly automated buyback execution</span>
+				</li>
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Airdrop system: periodic $COWSAYS token distributions to NFT holders</span>
+				</li>
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Snapshot mechanism for proportional airdrop allocation</span>
+				</li>
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Strategic partnerships and ecosystem integrations</span>
+				</li>
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Community governance framework implementation</span>
+				</li>
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Developer tools and API integrations</span>
+				</li>
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Ecosystem feature expansion and scaling</span>
+				</li>
+				<li class="flex items-start gap-2">
+					<span class="text-muted font-mono text-xs">[BACKLOG]</span>
+					<span>Sustainable revenue loop optimization</span>
+				</li>
 			</ul>
-
-			<h3 class="mb-3 font-bold">Ongoing Activities</h3>
-			<ul class="list-inside list-disc space-y-1">
-				<li>Continue all revenue streams (merch, NFTs, partnerships)</li>
-				<li>Regular automated buybacks and burns</li>
-				<li>Community expansion and engagement</li>
-				<li>Ecosystem feature additions</li>
-				<li>Community governance elements</li>
-				<li>Brand partnerships and collaborations</li>
-				<li>Long-term sustainability planning</li>
-				<li>Seasonal merchandise collections</li>
-				<li>Limited edition NFT series</li>
-			</ul>
+			<div class="mt-4 rounded border border-accent bg-accent/10 p-3">
+				<p class="mb-2 font-mono text-xs font-semibold">Strategic Horizon (2025–2027)</p>
+				<p class="text-muted text-xs">
+					The 3-year covenant extends through 2027, ensuring continuous ecosystem development, automated buybacks, and community governance. All revenue streams (merch, NFTs, partnerships) feed into the sustainable buyback mechanism, creating long-term value for token holders.
+				</p>
+			</div>
 		</div>
 	</section>
 </PageLayout>
