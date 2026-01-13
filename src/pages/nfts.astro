@@ -6,27 +6,86 @@ import SalesHistory from "@/components/nft/SalesHistory.astro";
 const meta = {
 	description:
 		"Collect unique NFT artwork featuring your favorite Cowsay developer quotes. Each piece is auctioned, with all proceeds going to token buybacks.",
-	title: "NFT Gallery",
+	title: "NFT Gallery • @cowsayco",
 };
 ---
 
 <PageLayout meta={meta}>
 	<section>
-		<h1 class="title mb-6">Cowsays Quote NFTs – Genesis Batch Coming Weeks After Token Launch</h1>
+		<h1 class="title mb-6">NFT Gallery • @cowsayco</h1>
 		<p class="mb-4">
-			Each daily quote from @cowsayco will become a unique collectible NFT on Solana. Starting with a curated Genesis Batch of 5 timeless developer quotes, we're bringing the best of developer culture to the blockchain.
+			Genesis Batch of timeless developer quotes as unique Solana NFTs. Minted from daily @cowsayco
+			cowsay quotes in classic terminal aesthetics. Now with 5 rarity tiers for progressive perks.
 		</p>
 		<p class="mb-4">
-			<strong>100% of primary auction proceeds + royalties</strong> are automatically funneled into $COWSAYS buybacks and burns, creating value for the entire ecosystem.
+			Each daily quote from @cowsayco becomes a unique collectible NFT on Solana. Starting with a
+			curated Genesis Batch of 5 timeless developer quotes, we're bringing the best of developer
+			culture to the blockchain with high-res terminal-style designs.
 		</p>
+	</section>
+
+	<section>
+		<h2 class="title mb-6 mt-16 text-2xl">Tiers Overview</h2>
+		<p class="mb-6">
+			Our Genesis Batch features 5 distinct rarity tiers, each with unique terminal aesthetics and
+			tier-scaled utility perks. All NFTs are high-resolution (2000x+ PNGs) with transparent
+			backgrounds.
+		</p>
+
+		<div class="mb-6 overflow-x-auto">
+			<table class="w-full border-collapse border border-accent">
+				<thead>
+					<tr class="bg-accent/10">
+						<th class="border border-accent p-3 text-left">Tier</th>
+						<th class="border border-accent p-3 text-left">Supply</th>
+						<th class="border border-accent p-3 text-left">Design</th>
+						<th class="border border-accent p-3 text-left">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="border border-accent p-3 font-bold">Common (Plain White)</td>
+						<td class="border border-accent p-3">60%</td>
+						<td class="border border-accent p-3">Black ASCII on white BG</td>
+						<td class="border border-accent p-3">Minimalist entry-level collectible</td>
+					</tr>
+					<tr class="bg-accent/5">
+						<td class="border border-accent p-3 font-bold">Green (Linux Terminal)</td>
+						<td class="border border-accent p-3">25%</td>
+						<td class="border border-accent p-3">Green-on-black retro CRT glow</td>
+						<td class="border border-accent p-3"
+							>Nostalgic dev vibe with classic terminal aesthetics</td
+						>
+					</tr>
+					<tr>
+						<td class="border border-accent p-3 font-bold">Rainbow Green</td>
+						<td class="border border-accent p-3">10%</td>
+						<td class="border border-accent p-3">Rainbow gradient with green dominance</td>
+						<td class="border border-accent p-3">Fresh lolcat energy</td>
+					</tr>
+					<tr class="bg-accent/5">
+						<td class="border border-accent p-3 font-bold">Rainbow Yellow</td>
+						<td class="border border-accent p-3">5%</td>
+						<td class="border border-accent p-3">Yellow/orange rainbow focus</td>
+						<td class="border border-accent p-3">Sunny & energetic</td>
+					</tr>
+					<tr>
+						<td class="border border-accent p-3 font-bold">Rainbow Purple</td>
+						<td class="border border-accent p-3">3-5% (some 1/1)</td>
+						<td class="border border-accent p-3">Purple-dominant mystical rainbow</td>
+						<td class="border border-accent p-3">Ultra-rare mystical tier</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</section>
 
 	<section>
 		<h2 class="title mb-6 mt-16 text-2xl">Genesis Batch Preview</h2>
 		<p class="mb-6">
-			Our first collection features 5 iconic developer quotes, each minted as limited-edition NFTs in classic cowsay/terminal style (retro green/black background, rainbow text optional).
+			Our first collection features 5 iconic developer quotes, each minted across all rarity tiers.
 		</p>
-		
+
 		<div class="mb-6 rounded border border-accent p-4">
 			<h3 class="mb-4 font-bold">The 5 Selected Quotes:</h3>
 			<ul class="space-y-3">
@@ -36,11 +95,17 @@ const meta = {
 				</li>
 				<li class="flex items-start gap-2">
 					<span class="text-accent">2.</span>
-					<span>"There are only two hard things in computer science: cache invalidation and naming things."</span>
+					<span
+						>"There are only two hard things in computer science: cache invalidation and naming
+						things."</span
+					>
 				</li>
 				<li class="flex items-start gap-2">
 					<span class="text-accent">3.</span>
-					<span>"There are 10 types of people in the world: those who understand binary, and those who don't."</span>
+					<span
+						>"There are 10 types of people in the world: those who understand binary, and those who
+						don't."</span
+					>
 				</li>
 				<li class="flex items-start gap-2">
 					<span class="text-accent">4.</span>
@@ -48,19 +113,23 @@ const meta = {
 				</li>
 				<li class="flex items-start gap-2">
 					<span class="text-accent">5.</span>
-					<span>"A SQL query goes into a bar, walks up to two tables, and asks, 'Can I join you?'"</span>
+					<span
+						>"A SQL query goes into a bar, walks up to two tables, and asks, 'Can I join you?'"</span
+					>
 				</li>
 			</ul>
 		</div>
 	</section>
 
 	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Genesis Batch Details</h2>
+		<h2 class="title mb-6 mt-16 text-2xl">Details</h2>
 		<div class="mb-6 rounded border border-accent p-4">
 			<ul class="space-y-3">
 				<li class="flex items-start gap-2">
 					<span class="text-green-500">•</span>
-					<span><strong>Limited editions:</strong> 10-20 per quote for accessibility + scarcity</span>
+					<span
+						><strong>High-resolution:</strong> All NFTs are 2000x+ PNGs with transparent backgrounds</span
+					>
 				</li>
 				<li class="flex items-start gap-2">
 					<span class="text-green-500">•</span>
@@ -68,7 +137,9 @@ const meta = {
 				</li>
 				<li class="flex items-start gap-2">
 					<span class="text-green-500">•</span>
-					<span><strong>Primary sales:</strong> Via Magic Eden auctions</span>
+					<span
+						><strong>Primary sales:</strong> Via Tensor Launchpad (Dutch/English auctions) or Magic Eden</span
+					>
 				</li>
 				<li class="flex items-start gap-2">
 					<span class="text-green-500">•</span>
@@ -76,22 +147,42 @@ const meta = {
 				</li>
 				<li class="flex items-start gap-2">
 					<span class="text-green-500">•</span>
-					<span><strong>Revenue allocation:</strong> 100% of primary auction proceeds + royalties funneled into $COWSAYS buybacks and burns</span>
+					<span
+						><strong>Revenue allocation:</strong> 45% buyback $COWSAY / 45% burn / 10% treasury (for
+						future holder airdrops & rewards)</span
+					>
 				</li>
 				<li class="flex items-start gap-2">
 					<span class="text-green-500">•</span>
-					<span><strong>Future airdrops:</strong> $COWSAYS tokens to NFT holders (periodic snapshots, proportional to holdings)</span>
+					<span
+						><strong>Utilities:</strong> Holders get periodic claimable $COWSAY airdrops (tier-scaled:
+						higher tiers get larger shares). Initial airdrops from launch bundled supply. Secondary royalties
+						+ merch profits also fund treasury.</span
+					>
 				</li>
 			</ul>
 		</div>
+		<p class="text-muted mb-4 text-sm">
+			<strong>No-rug vibes:</strong> All revenue flows are transparent and verifiable on-chain. Treasury
+			allocations are locked for holder rewards, ensuring long-term value for the community.
+		</p>
 	</section>
 
 	<section>
 		<div class="mb-8 rounded border border-accent bg-accent/10 p-4">
-			<p class="mb-2 text-lg font-bold">Call to Action</p>
-			<p class="mb-0 text-sm">
-				Hold $COWSAYS and join the Discord for priority updates and potential whitelist opportunities.
+			<p class="mb-2 text-lg font-bold">Join Discord for Whitelist & Updates</p>
+			<p class="mb-2 text-sm">
+				Join the Discord for whitelist opportunities, claim instructions, and priority updates. Hold
+				$COWSAY for priority access to Genesis Batch mints.
 			</p>
+			<a
+				class="cactus-link font-semibold"
+				href="https://discord.gg/yhJ24mCSxd"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Join Discord →
+			</a>
 		</div>
 	</section>
 
@@ -119,6 +210,16 @@ const meta = {
 			<li>
 				<a
 					class="cactus-link"
+					href="https://tensor.trade"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Tensor Launchpad (Primary sales)
+				</a>
+			</li>
+			<li>
+				<a
+					class="cactus-link"
 					href="https://magiceden.io"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -133,7 +234,7 @@ const meta = {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					Tensor
+					Tensor (Secondary market)
 				</a>
 			</li>
 		</ul>
@@ -143,12 +244,19 @@ const meta = {
 		<h2 class="title mb-6 mt-16 text-2xl">How It Works</h2>
 
 		<ol class="mb-4 list-inside list-decimal space-y-2">
-			<li>Popular Cowsay quotes are minted as unique NFT artwork on Solana</li>
-			<li>NFTs are auctioned on Magic Eden, Tensor, or custom auction platforms</li>
-			<li>After marketplace fees, all proceeds are used to buy $COWSAYS tokens</li>
-			<li>Buyback transactions are publicly recorded and verifiable on-chain</li>
 			<li>
-				Track all sales and buybacks on our <a class="cactus-link" href="/token/">token page</a>
+				Popular Cowsay quotes are minted as unique NFT artwork on Solana across 5 rarity tiers
+			</li>
+			<li>NFTs are auctioned on Tensor Launchpad or Magic Eden (Dutch/English auctions)</li>
+			<li>
+				After marketplace fees, revenue is split: 45% buyback $COWSAY / 45% burn / 10% treasury
+			</li>
+			<li>All transactions are publicly recorded and verifiable on-chain (no-rug vibes)</li>
+			<li>Holders receive tier-scaled $COWSAY airdrops from treasury allocations</li>
+			<li>
+				Track all sales, buybacks, and burns on our <a class="cactus-link" href="/token/"
+					>token page</a
+				>
 			</li>
 		</ol>
 	</section>
