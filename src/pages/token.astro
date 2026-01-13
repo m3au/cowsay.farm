@@ -14,228 +14,302 @@ const meta = {
 ---
 
 <PageLayout meta={meta}>
-	<section>
+	<!-- Alert Banner: Safety Warning -->
+	<div class="mb-6 rounded-md border-l-4 border-red-500 bg-red-500/10 px-4 py-3 text-sm">
+		<p class="text-textColor">
+			<strong class="text-red-500">⚠️ Warning:</strong> All $COWSAY and $COWSAYS tokens listed on bags.fm
+			and other indexes are <strong>FAKE</strong> and not associated with this project.
+		</p>
+	</div>
+
+	<!-- Section 1: The Hero (Identity) -->
+	<section class="mb-12">
 		<h1 class="title mb-6">Token</h1>
-		<p class="mb-4">
+		<p class="mb-6 text-lg">
 			The official token of the Cowsay ecosystem. Built on Solana, this token represents the
 			community around the daily developer quotes shared by the @cowsayco Twitter bot.
 		</p>
-		<p class="text-muted mb-4 text-sm">
-			<strong>Note:</strong> The token name and symbol will only be released when we launch the coin.
-		</p>
-		<div class="mb-4 rounded border border-accent p-4">
-			<ul class="list-inside list-disc space-y-2">
-				<li><strong>Token Name:</strong> To be announced at launch</li>
-				<li><strong>Token Symbol:</strong> To be announced at launch</li>
-				<li><strong>Blockchain:</strong> Solana</li>
-				<li><strong>Total Supply:</strong> 1,000,000,000 (1B fixed supply)</li>
-			</ul>
+
+		<div class="rounded-lg border border-accent bg-accent/5 p-6 font-mono text-sm">
+			<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+				<div>
+					<span class="text-muted">Token Name:</span>
+					<code class="ml-2 block text-textColor">[REDACTED]</code>
+				</div>
+				<div>
+					<span class="text-muted">Token Symbol:</span>
+					<code class="ml-2 block text-textColor">[REDACTED]</code>
+				</div>
+				<div>
+					<span class="text-muted">Blockchain:</span>
+					<code class="ml-2 block text-textColor">Solana</code>
+				</div>
+				<div>
+					<span class="text-muted">Total Supply:</span>
+					<code class="ml-2 block text-textColor">1,000,000,000 (1B fixed)</code>
+				</div>
+			</div>
 		</div>
 	</section>
 
-	<div
-		class="mb-4 rounded-md border-2 border-green-500 bg-green-500/10 px-4 py-4 text-center text-sm backdrop-blur-sm"
-	>
-		<p class="mb-2 text-textColor">
-			<strong class="text-base text-green-500">🚀 Launch Announcement</strong>
-		</p>
-		<p class="mb-2 text-textColor">
-			<strong>Coin launch is set for Thursday afternoon CET!</strong> We're choosing a time that works
-			for both EU & US participants so everyone can join live.
-		</p>
-		<p class="mb-2 text-textColor">
-			Dev allocation is fully vested on Streamflow — proof will be public post-launch. 🍿😎
-		</p>
-		{
-			!siteConfig.contractAddress && (
-				<p class="mt-3 text-textColor">
-					Check the{" "}
-					<a
-						class="cactus-link font-semibold underline"
-						href="https://discord.gg/yhJ24mCSxd"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Discord server
-					</a>{" "}
-					for more information.
-				</p>
-			)
-		}
-	</div>
-
-	<div
-		class="mb-8 rounded-md border-2 border-red-500 bg-red-500/10 px-4 py-4 text-center text-sm backdrop-blur-sm"
-	>
-		<p class="mb-2 text-textColor">
-			<strong class="text-base text-red-500">⚠️ WARNING</strong>
-		</p>
-		<p class="text-textColor">
-			All $COWSAY and $COWSAYS tokens listed on bags.fm and other indexes are <strong>FAKE</strong> and
-			not associated with this project.
-		</p>
-	</div>
-
-	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">$COWSAY Tokenomics</h2>
-
-		<div class="mb-4 rounded border border-accent p-4">
-			<ul class="list-inside list-disc space-y-2">
-				<li><strong>Supply:</strong> 1B total (standard Pump.fun memecoin)</li>
-				<li>
-					<strong>Launch:</strong> Fair launch on Pump.fun with bonding curve
-				</li>
-			</ul>
-		</div>
-
-		<h3 class="title mb-4 mt-8 text-lg">👤 Dev/Team Allocation</h3>
-		<p class="mb-4">
-			The creator allocation is structured to ensure a strong launch while maintaining long-term
-			alignment with the community.
-		</p>
-		<div class="mb-4 rounded border border-accent p-4">
-			<ul class="list-inside list-disc space-y-2">
-				<li>
-					<strong>~20% auto to creator</strong> — Base allocation locked for long-term commitment
-				</li>
-				<li>
-					<strong>Bundled early buys</strong> — Additional ~20–30% across distributed wallets for strong
-					start & sniper protection
-				</li>
-				<li>
-					<strong>Total control ~40–50% initially</strong> — Provides launch stability and protects against
-					coordinated dumps
-				</li>
-			</ul>
-		</div>
-
-		<h3 class="title mb-4 mt-8 text-lg">🔒 Vesting</h3>
-		<p class="mb-4">
-			Main dev portion is fully locked and vested on Streamflow for 3 years (public contract link).
-			No early unlocks. All verifiable on-chain from day 1.
-		</p>
-		<div class="mb-4 rounded border border-accent p-4">
-			<ul class="list-inside list-disc space-y-2">
-				<li>
-					<strong>3-year vesting lock:</strong> Main dev allocation locked using Streamflow for 3 years
-					from launch
-				</li>
-				<li>
-					<strong>Public contract:</strong> Vesting contract is publicly verifiable on-chain via
-					<a
+	<!-- Section 2: The Vision (The "Why") -->
+	<section class="mb-12">
+		<h2 class="title mb-6 text-2xl">Long-term Vision</h2>
+		<div class="space-y-4">
+			<p>
+				Cowsay is built for the long term. The creator allocation (20% of total supply) is locked
+				for 3 years via Streamflow, ensuring long-term alignment with the community. These tokens
+				are never sold; they are held to maintain floor stability and demonstrate commitment to the
+				project's success.
+			</p>
+			<p>
+				The ecosystem generates sustainable revenue through NFT auctions and merchandise sales,
+				which directly funds token buybacks and burns—creating a deflationary flywheel that rewards
+				holders over time.
+			</p>
+			<div class="rounded-lg border border-accent p-4">
+				<p class="mb-2 font-semibold">3-Year Commitment</p>
+				<p class="text-muted text-sm">
+					The main creator allocation is fully vested on Streamflow for 3 years from launch. The
+					vesting contract is publicly verifiable on-chain via <a
 						class="cactus-link"
 						href="https://solscan.io"
 						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Solana Explorer
-					</a>
-				</li>
-				<li>
-					<strong>No early unlocks:</strong> Full commitment to the 3-year lock period with zero exceptions
-				</li>
-			</ul>
-		</div>
-
-		<h3 class="title mb-4 mt-8 text-lg">🎁 Initial Airdrops</h3>
-		<p class="mb-4">
-			Bootstrapped from bundled launch supply to reward early supporters and build community
-			momentum.
-		</p>
-		<div class="mb-4 rounded border border-accent p-4">
-			<ul class="list-inside list-disc space-y-2">
-				<li>
-					<strong>Source:</strong> Bootstrapped from bundled launch supply
-				</li>
-				<li>
-					<strong>Recipients:</strong> OG Discord members, NFT holders, and early community supporters
-				</li>
-				<li>
-					<strong>Purpose:</strong> Reward early believers and create strong initial distribution
-				</li>
-			</ul>
-		</div>
-
-		<h3 class="title mb-4 mt-8 text-lg">💰 Revenue Streams & Split</h3>
-		<p class="mb-4">
-			All revenue from NFT auctions, secondary royalties, merch shop profits, and any post-migration
-			dev fees is split transparently:
-		</p>
-		<div class="mb-4 rounded border border-accent p-4">
-			<ul class="list-inside list-disc space-y-2">
-				<li>
-					<strong>♻️ 45% Buyback:</strong> Purchases $COWSAY from market (adds demand and supports price
-					floor)
-				</li>
-				<li>
-					<strong>🔥 45% Burn:</strong> Permanent removal of tokens from supply (creates deflationary
-					pressure)
-				</li>
-				<li>
-					<strong>🎁 10% Treasury:</strong> Funds ongoing holder airdrops/claims (multisig-controlled,
-					on-chain verifiable)
-				</li>
-			</ul>
-		</div>
-		<p class="mb-4">
-			<strong>Goal:</strong> Strong deflationary pressure + sustainable community rewards. All transparent
-			& on-chain.
-		</p>
-
-		<h3 class="title mb-4 mt-8 text-lg">🎨 NFT Tie-in</h3>
-		<p class="mb-4">
-			COWSAY Quote NFTs (5 tiers) generate primary revenue for the above split, plus royalties flow
-			to treasury/airdrop fund.
-		</p>
-		<div class="mb-4 rounded border border-accent p-4">
-			<ul class="list-inside list-disc space-y-2">
-				<li>
-					<strong>5 NFT tiers:</strong> COWSAY Quote NFTs create primary revenue stream
-				</li>
-				<li>
-					<strong>Revenue sources:</strong> Primary sales (auctions) + secondary royalties
-				</li>
-				<li>
-					<strong>Royalties:</strong> Flow directly to treasury/airdrop fund for community rewards
-				</li>
-			</ul>
-		</div>
-
-		<div
-			class="mb-8 mt-8 rounded-md border-2 border-yellow-500 bg-yellow-500/10 px-4 py-4 text-center text-sm backdrop-blur-sm"
-		>
-			<p class="mb-2 text-textColor">
-				<strong class="text-base text-yellow-500">⚠️ Disclaimer</strong>
-			</p>
-			<p class="text-textColor">
-				No guarantees. This is a high-risk memecoin. <strong>DYOR</strong> (Do Your Own Research).
-			</p>
+						rel="noopener noreferrer">Solana Explorer</a
+					>. No early unlocks. All verifiable from day 1.
+				</p>
+			</div>
 		</div>
 	</section>
 
-	<section>
-		<h2 class="title mb-6 mt-16 text-2xl">Transparency Dashboard</h2>
-		<p class="mb-4">
-			Complete financial transparency for the Cowsay ecosystem. All revenue, expenses, buybacks, and
-			wallet balances are publicly disclosed.
+	<!-- Section 3: Tokenomics (The "What") -->
+	<section class="mb-12">
+		<h2 class="title mb-6 text-2xl">Token Distribution</h2>
+
+		<div class="mb-6 grid gap-6 md:grid-cols-2">
+			<div class="rounded-lg border border-accent p-6">
+				<h3 class="title mb-4 text-lg">Public Distribution</h3>
+				<p class="mb-4 text-4xl font-bold">80%</p>
+				<p class="text-muted mb-4 text-sm">
+					800,000,000 tokens available through fair launch on Pump.fun with bonding curve.
+				</p>
+				<ul class="space-y-2 text-sm">
+					<li>• Fair launch mechanism</li>
+					<li>• No presale or private allocation</li>
+					<li>• Initial airdrops to OG Discord members, NFT holders, and early supporters</li>
+				</ul>
+			</div>
+
+			<div class="rounded-lg border border-accent p-6">
+				<h3 class="title mb-4 text-lg">Creator Allocation</h3>
+				<p class="mb-4 text-4xl font-bold">20%</p>
+				<p class="text-muted mb-4 text-sm">
+					200,000,000 tokens locked for 3 years via Streamflow to ensure long-term alignment.
+				</p>
+				<ul class="space-y-2 text-sm">
+					<li>• Locked via Streamflow vesting contract</li>
+					<li>• Publicly verifiable on-chain</li>
+					<li>• Never sold—held for floor stability</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="rounded-lg border border-accent bg-accent/5 p-6">
+			<h3 class="title mb-4 text-lg">Launch Details</h3>
+			<div class="grid gap-4 md:grid-cols-2">
+				<div>
+					<p class="text-muted mb-2 text-sm">Launch Platform</p>
+					<p class="font-mono text-sm">Pump.fun</p>
+				</div>
+				<div>
+					<p class="text-muted mb-2 text-sm">Launch Mechanism</p>
+					<p class="font-mono text-sm">Bonding Curve</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 4: The Flywheel (The Mechanics) -->
+	<section class="mb-12">
+		<h2 class="title mb-6 text-2xl">The Deflationary Flywheel</h2>
+		<p class="mb-6">
+			All revenue from NFT auctions, secondary royalties, and merchandise sales is split
+			transparently to create sustainable deflationary pressure and community rewards.
 		</p>
 
-		<h3 class="title mb-4 mt-8 text-lg">Wallet Addresses & Balances</h3>
+		<div class="mb-6 rounded-lg border border-accent p-6">
+			<h3 class="title mb-4 text-lg">Revenue Distribution</h3>
+			<div class="space-y-4">
+				<div class="flex items-center justify-between border-b border-accent/50 pb-3">
+					<div class="flex items-center gap-3">
+						<span class="text-2xl">45%</span>
+						<div>
+							<p class="font-semibold">Buyback</p>
+							<p class="text-muted text-sm">
+								Purchases tokens from market, adding demand and supporting price floor
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="flex items-center justify-between border-b border-accent/50 pb-3">
+					<div class="flex items-center gap-3">
+						<span class="text-2xl">45%</span>
+						<div>
+							<p class="font-semibold">Burn</p>
+							<p class="text-muted text-sm">
+								Permanent removal of tokens from supply, creating deflationary pressure
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="flex items-center justify-between">
+					<div class="flex items-center gap-3">
+						<span class="text-2xl">10%</span>
+						<div>
+							<p class="font-semibold">Treasury</p>
+							<p class="text-muted text-sm">
+								Funds ongoing holder airdrops and claims (multisig-controlled, on-chain verifiable)
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="rounded-lg border border-accent bg-accent/5 p-6">
+			<h3 class="title mb-4 text-lg">Revenue Sources</h3>
+			<div class="grid gap-4 md:grid-cols-2">
+				<div>
+					<p class="mb-2 font-semibold">NFT Auctions</p>
+					<p class="text-muted text-sm">
+						COWSAY Quote NFTs (5 tiers) generate primary revenue through auctions. Secondary
+						royalties flow directly to treasury/airdrop fund.
+					</p>
+				</div>
+				<div>
+					<p class="mb-2 font-semibold">Merchandise Sales</p>
+					<p class="text-muted text-sm">
+						Shop profits contribute to the revenue split, ensuring the ecosystem remains
+						self-sustaining.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="mt-8 rounded-lg border-2 border-accent bg-accent/10 p-6 text-center">
+			<p class="mb-4 font-semibold">Ready to join the community?</p>
+			<div class="flex flex-wrap justify-center gap-4">
+				<a
+					href="https://discord.gg/yhJ24mCSxd"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="rainbow rainbow-1 inline-block"
+				>
+					<span>Join Discord for Launch Alerts</span>
+				</a>
+				<a
+					href="/roadmap/"
+					class="rainbow rainbow-1 inline-block"
+				>
+					<span>View Roadmap</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 5: Transparency Dashboard (Proof of Work) -->
+	<section class="mb-12">
+		<h2 class="title mb-6 text-2xl">Transparency Dashboard</h2>
+		<p class="mb-6">
+			Complete financial transparency for the Cowsay ecosystem. All revenue, expenses, buybacks, and
+			wallet balances are publicly disclosed and verifiable on-chain.
+		</p>
+
+		<div class="mb-8 rounded-lg border border-accent p-6">
+			<h3 class="title mb-4 text-lg">Live Ecosystem Stats</h3>
+			<div class="grid gap-6 md:grid-cols-3">
+				<div>
+					<p class="text-muted mb-2 text-sm">Total Revenue</p>
+					<p class="text-2xl font-bold">$0.00</p>
+					<p class="text-muted mt-1 text-xs">Awaiting launch</p>
+				</div>
+				<div>
+					<p class="text-muted mb-2 text-sm">Tokens Bought Back</p>
+					<p class="text-2xl font-bold">0</p>
+					<p class="text-muted mt-1 text-xs">Awaiting launch</p>
+				</div>
+				<div>
+					<p class="text-muted mb-2 text-sm">Tokens Burned</p>
+					<p class="text-2xl font-bold">0</p>
+					<p class="text-muted mt-1 text-xs">Awaiting launch</p>
+				</div>
+			</div>
+		</div>
+
+		<h3 class="title mb-4 text-lg">Wallet Addresses & Balances</h3>
 		<WalletTracker />
 
 		<h3 class="title mb-4 mt-8 text-lg">Profit & Loss</h3>
-		<p class="mb-4">
+		<p class="text-muted mb-4 text-sm">
 			Track all revenue and expenses from shop sales and NFT auctions, and see how profits are
 			calculated for buybacks.
 		</p>
 		<PnLChart />
 
 		<h3 class="title mb-4 mt-8 text-lg">Buyback History</h3>
-		<p class="mb-4">
+		<p class="text-muted mb-4 text-sm">
 			All token buyback transactions are publicly recorded on-chain. Buybacks are executed
 			weekly/monthly based on available profits. Click any transaction to verify on Solana explorer.
 		</p>
 		<BuybackTracker />
 		<BuybackHistory />
 	</section>
+
+	<!-- Disclaimer -->
+	<div class="rounded-md border border-yellow-500/50 bg-yellow-500/10 px-4 py-3 text-sm">
+		<p class="text-textColor">
+			<strong class="text-yellow-500">Disclaimer:</strong> No guarantees. This is a high-risk memecoin.
+			<strong>DYOR</strong> (Do Your Own Research).
+		</p>
+	</div>
 </PageLayout>
+
+<style>
+	.rainbow {
+		background-color: #343a40;
+		border-radius: 4px;
+		color: #fff;
+		cursor: pointer;
+		padding: 8px 16px;
+	}
+
+	html[data-theme="dark"] .rainbow {
+		color: #29bc89;
+	}
+
+	html[data-theme="dark"] .rainbow span {
+		mix-blend-mode: color-dodge;
+	}
+
+	html[data-theme="dark"] .rainbow:hover span {
+		mix-blend-mode: color-dodge;
+	}
+
+	.rainbow-1:hover {
+		background-image: linear-gradient(
+			90deg,
+			#3769ff 0%,
+			#3769ff 12%,
+			#b7f00c 45%,
+			#ff1e42 70%,
+			#3769ff 100%
+		);
+		animation: slidebg 10s linear infinite;
+	}
+
+	@keyframes slidebg {
+		to {
+			background-position: 24vw;
+		}
+	}
+</style>
