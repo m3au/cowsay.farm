@@ -47,15 +47,6 @@ const meta = {
 		</div>
 	</div>
 
-	<!-- Alert Banner: Safety Warning -->
-	<div class="mb-8 rounded-md border-l-4 border-red-500 bg-red-500/10 px-4 py-3 text-sm">
-		<p class="text-textColor">
-			<strong class="text-red-500">⚠️ Warning:</strong> All $COWSAY and $COWSAYS tokens listed on bags.fm
-			and other indexes are <strong>not the official tokens</strong> from @cowsayco and are not associated
-			with this project.
-		</p>
-	</div>
-
 	<!-- Section 1: The Hero (Identity) -->
 	<section class="mb-12">
 		<h1 class="title mb-6">Token</h1>
@@ -75,11 +66,11 @@ const meta = {
 			<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 				<div>
 					<span class="text-muted">Token Name:</span>
-					<code class="ml-2 block text-textColor">[REDACTED]</code>
+					<code class="ml-2 block text-textColor">COWSAYCO</code>
 				</div>
 				<div>
 					<span class="text-muted">Token Symbol:</span>
-					<code class="ml-2 block text-textColor">[REDACTED]</code>
+					<code class="ml-2 block text-textColor">$COWSAY</code>
 				</div>
 				<div>
 					<span class="text-muted">Blockchain:</span>
@@ -89,8 +80,87 @@ const meta = {
 					<span class="text-muted">Total Supply:</span>
 					<code class="ml-2 block text-textColor">1,000,000,000 (1B fixed)</code>
 				</div>
+				<div class="md:col-span-2">
+					<span class="text-muted">Contract Address:</span>
+					<div class="mt-2 flex flex-wrap items-center gap-2">
+						<code class="break-all text-textColor">7wVPhDegCLfcHcNdW1Z9Wbwd2HXMj3snLoiTeDNE</code>
+						<button
+							id="copy-ca-btn"
+							class="px-3 py-1 text-xs rounded border border-accent bg-accent/10 hover:bg-accent/20 transition-colors"
+							aria-label="Copy contract address"
+						>
+							Copy
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="mt-6 pt-6 border-t border-accent/50">
+				<h3 class="title mb-4 text-lg font-semibold">Links</h3>
+				<div class="flex flex-wrap gap-3">
+					<a
+						href="https://pump.fun/coin/7wVPhDegCLfcHcNdW1Z9Wbwd2HXMj3snLoiTeDNEpump"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="rainbow rainbow-1 inline-block"
+					>
+						<span>Pump.fun</span>
+					</a>
+					<a
+						href="https://dexscreener.com/solana/akojgezt4sk2fv5abmrq4tc2v9tml9wxf2nkljmrff5z"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="rainbow rainbow-1 inline-block"
+					>
+						<span>DexScreener</span>
+					</a>
+					<a
+						href="https://t.co/8LWYjAh7D1"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="rainbow rainbow-1 inline-block"
+					>
+						<span>Vesting Contract</span>
+					</a>
+					<a
+						href={`https://solscan.io/token/7wVPhDegCLfcHcNdW1Z9Wbwd2HXMj3snLoiTeDNE`}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="rainbow rainbow-1 inline-block"
+					>
+						<span>Solscan</span>
+					</a>
+				</div>
 			</div>
 		</div>
+	</section>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const copyBtn = document.getElementById("copy-ca-btn");
+			const contractAddress = "7wVPhDegCLfcHcNdW1Z9Wbwd2HXMj3snLoiTeDNE";
+
+			if (copyBtn) {
+				copyBtn.addEventListener("click", async function () {
+					try {
+						await navigator.clipboard.writeText(contractAddress);
+						const originalText = copyBtn.textContent;
+						copyBtn.textContent = "Copied!";
+						copyBtn.classList.add("bg-green-500/20");
+						setTimeout(() => {
+							copyBtn.textContent = originalText;
+							copyBtn.classList.remove("bg-green-500/20");
+						}, 2000);
+					} catch (err) {
+						console.error("Failed to copy:", err);
+						copyBtn.textContent = "Failed";
+						setTimeout(() => {
+							copyBtn.textContent = "Copy";
+						}, 2000);
+					}
+				});
+			}
+		});
+	</script>
 	</section>
 
 	<!-- Section 2: The Vision (The "Why") -->
