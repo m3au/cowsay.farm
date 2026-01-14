@@ -4,6 +4,7 @@ import BuybackTracker from "@/components/token/BuybackTracker.astro";
 import PnLChart from "@/components/transparency/PnLChart.astro";
 import BuybackHistory from "@/components/transparency/BuybackHistory.astro";
 import WalletTracker from "@/components/transparency/WalletTracker.astro";
+import ContractAddress from "@/components/token/ContractAddress.astro";
 import { siteConfig } from "@/site-config";
 
 const meta = {
@@ -25,7 +26,7 @@ const meta = {
 			<strong>$COWSAY is now live on Pump.fun!</strong> Join the community and trade now.
 		</p>
 		<p class="mb-2 text-textColor">
-			Creator allocation (25% of supply) is fully vested on Streamflow for 3 years. 🍿😎
+			Creator allocation (25% locked, 3% burnt) — 25% fully vested on Streamflow for 3 years. 🍿😎
 		</p>
 		<div class="mt-3 flex flex-wrap justify-center gap-3">
 			<a
@@ -168,10 +169,9 @@ const meta = {
 		<h2 class="title mb-6 text-2xl">Long-term Vision</h2>
 		<div class="space-y-4">
 			<p>
-				Cowsay is built for the long term. The creator allocation (25% of total supply) is locked
-				for 3 years via Streamflow, ensuring long-term alignment with the community. These tokens
-				are never sold; they are held to maintain floor stability and demonstrate commitment to the
-				project's success.
+				Cowsay is built for the long term. The creator allocation (28% total, with 25% locked) is secured
+				for 3 years via Streamflow, ensuring long-term alignment with the community. An additional 3% was
+				permanently burnt at launch, demonstrating commitment to deflationary tokenomics.
 			</p>
 			<p>
 				The ecosystem generates sustainable revenue through NFT auctions and merchandise sales,
@@ -181,13 +181,18 @@ const meta = {
 			<div class="rounded-lg border border-accent p-4">
 				<p class="mb-2 font-semibold">3-Year Commitment</p>
 				<p class="text-muted text-sm">
-					The main creator allocation (25% of supply) is fully vested on Streamflow for 3 years from launch. The
+					The main creator allocation (25% of supply) is fully vested on Streamflow for 3 years from launch. An additional 3% was permanently burnt at launch, reducing total supply. The
 					vesting contract is publicly verifiable on-chain via <a
 						class="cactus-link"
 						href="https://t.co/8LWYjAh7D1"
 						target="_blank"
 						rel="noopener noreferrer">Streamflow</a
-					> and <a
+					> and the <a
+						class="cactus-link"
+						href="https://solscan.io/tx/3dSKFj6o1DJxjwhDa1vV4rv4r1bXZovcSoNDUB9YRmrNHMtPLfAEncxVvLwNsZ1f6QbqRTHQT4dPDpUTJd7A45mq"
+						target="_blank"
+						rel="noopener noreferrer">burn transaction</a
+					> is verifiable on <a
 						class="cactus-link"
 						href="https://solscan.io"
 						target="_blank"
@@ -202,12 +207,12 @@ const meta = {
 	<section class="mb-12">
 		<h2 class="title mb-6 text-2xl">Token Distribution</h2>
 
-		<div class="mb-6 grid gap-6 md:grid-cols-2">
+		<div class="mb-6 grid gap-6 md:grid-cols-3">
 			<div class="rounded-lg border border-accent p-6">
 				<h3 class="title mb-4 text-lg">Public Distribution</h3>
-				<p class="mb-4 text-4xl font-bold">75%</p>
+				<p class="mb-4 text-4xl font-bold">72%</p>
 				<p class="text-muted mb-4 text-sm">
-					750,000,000 tokens available through fair launch on Pump.fun with bonding curve.
+					720,000,000 tokens available through fair launch on Pump.fun with bonding curve.
 				</p>
 				<ul class="space-y-2 text-sm">
 					<li>• Fair launch mechanism</li>
@@ -217,7 +222,7 @@ const meta = {
 			</div>
 
 			<div class="rounded-lg border border-accent p-6">
-				<h3 class="title mb-4 text-lg">Creator Allocation</h3>
+				<h3 class="title mb-4 text-lg">Creator Allocation (Locked)</h3>
 				<p class="mb-4 text-4xl font-bold">25%</p>
 				<p class="text-muted mb-4 text-sm">
 					250,000,000 tokens locked for 3 years via Streamflow to ensure long-term alignment.
@@ -227,6 +232,29 @@ const meta = {
 					<li>• Publicly verifiable on-chain</li>
 					<li>• Never sold—held for floor stability</li>
 				</ul>
+			</div>
+
+			<div class="rounded-lg border border-accent p-6">
+				<h3 class="title mb-4 text-lg">Burnt Supply</h3>
+				<p class="mb-4 text-4xl font-bold">3%</p>
+				<p class="text-muted mb-4 text-sm">
+					30,000,000 tokens permanently removed from supply at launch.
+				</p>
+				<ul class="space-y-2 text-sm">
+					<li>• Permanently removed from circulation</li>
+					<li>• On-chain verified burn transaction</li>
+					<li>• Deflationary mechanism</li>
+				</ul>
+				<p class="mt-3 text-xs">
+					<a
+						class="cactus-link"
+						href="https://solscan.io/tx/3dSKFj6o1DJxjwhDa1vV4rv4r1bXZovcSoNDUB9YRmrNHMtPLfAEncxVvLwNsZ1f6QbqRTHQT4dPDpUTJd7A45mq"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						View burn transaction on Solscan →
+					</a>
+				</p>
 			</div>
 		</div>
 

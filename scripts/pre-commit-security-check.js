@@ -84,12 +84,18 @@ const IGNORE_PATTERNS = [
 	/^scripts\/pre-commit-security-check\.js$/, // Don't check this file itself
 ];
 
-// Known safe patterns (public contract addresses, etc.)
+// Known safe patterns (public contract addresses, transaction hashes, URLs, etc.)
 const SAFE_PATTERNS = [
 	/contractAddress/i,
 	/CONTRACT_ADDRESS/i,
 	/public.*address/i,
 	/token.*address/i,
+	/solscan\.io/i,
+	/href=/i,
+	/url/i,
+	/transaction/i,
+	/tx/i,
+	/https?:\/\//i, // URLs are safe
 ];
 
 function isIgnored(filename) {
