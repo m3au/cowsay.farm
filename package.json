@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "format": "prettier -w --cache . && prettier -w --cache **/*.astro",
     "check": "astro check",
-    "bump": "bunx npm-check-updates \\!@playwright/test -u && bun install"
+    "bump": "bunx npm-check-updates \\!@playwright/test -u && bun install",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.1.6",
@@ -46,6 +47,7 @@
     "eslint-plugin-perfectionist": "^3.6.0",
     "eslint-plugin-regexp": "^2.6.0",
     "eslint-plugin-typescript-sort-keys": "^3.2.0",
+    "husky": "^9.1.7",
     "mdast-util-to-string": "^4.0.0",
     "postcss": "^8.4.47",
     "postcss-html": "^1.7.0",
