@@ -265,7 +265,7 @@ const meta = {
 			<div class="space-y-4">
 				<div class="flex items-center justify-between border-b border-accent/50 pb-3">
 					<div class="flex items-center gap-3">
-						<span class="text-2xl">45%</span>
+						<span class="text-2xl">40%</span>
 						<div>
 							<p class="font-semibold">Buyback</p>
 							<p class="text-muted text-sm">
@@ -276,7 +276,7 @@ const meta = {
 				</div>
 				<div class="flex items-center justify-between border-b border-accent/50 pb-3">
 					<div class="flex items-center gap-3">
-						<span class="text-2xl">45%</span>
+						<span class="text-2xl">30%</span>
 						<div>
 							<p class="font-semibold">Burn</p>
 							<p class="text-muted text-sm">
@@ -287,7 +287,7 @@ const meta = {
 				</div>
 				<div class="flex items-center justify-between">
 					<div class="flex items-center gap-3">
-						<span class="text-2xl">10%</span>
+						<span class="text-2xl">30%</span>
 						<div>
 							<p class="font-semibold">Treasury</p>
 							<p class="text-muted text-sm">
@@ -311,9 +311,9 @@ const meta = {
 			<pre
 				class="mb-0 overflow-x-auto text-xs"><code>{`// Revenue Distribution Protocol
 function distributeRevenue(amount) {
-  const buyback = amount * 0.45;  // 45% → Buyback
-  const burn = amount * 0.45;      // 45% → Burn
-  const treasury = amount * 0.10;  // 10% → Treasury
+  const buyback = amount * 0.40;  // 40% → Buyback
+  const burn = amount * 0.30;      // 30% → Burn
+  const treasury = amount * 0.30;  // 30% → Treasury
 
   executeBuyback(buyback);         // Auto-buy from market
   executeBurn(burn);               // Permanent removal
