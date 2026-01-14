@@ -12,41 +12,109 @@ const meta = {
 		"Information about the Cowsay token, including tokenomics, dev fees distribution, buyback mechanism, contract details, and complete financial transparency.",
 	title: "Token",
 };
+
+const devBuybacks = [
+	{
+		signature: "66F6abn7AyQXwyd9rp4qUVTmCpcGB5PBiEz77aWf1zMhgzZ1sUecpZMj5VPpY3xoKoM6QBFrnuehJQ2E6V7LWqwU",
+		humanTime: "2026-01-14 22:14:17 UTC",
+		solSpent: 1.980000001,
+		tokensBought: 12724804.88615,
+		valueUsd: 291.09,
+	},
+	{
+		signature: "64R8vSVybLVP2yNThCwfXBBYTnBWmX7FGa2Bxt1S3ja3KevHg1NoeaAxESLDy3amXy2JF1WY6LNnyzJce7amsgZY",
+		humanTime: "2026-01-14 22:13:38 UTC",
+		solSpent: 2,
+		tokensBought: 13797159.543939,
+		valueUsd: 294.03,
+	},
+	{
+		signature: "CK12y9mdbybBe97zvNXioLn3fcTcxrc4qAmhMnjnmHyK9noemGLGijk81wzyzWx4hvrtmjoVsAvW8ZtCSNihp4M",
+		humanTime: "2026-01-14 22:00:17 UTC",
+		solSpent: 1,
+		tokensBought: 6104781.483147,
+		valueUsd: 146.4,
+	},
+	{
+		signature: "4sq259PS17ASXZabj99SCKfoSZC7r9kdrNMMys3gq4H67FGUiGErL94YFpZ19TswE4gxSZCDinAGABshgMxFUSt2",
+		humanTime: "2026-01-14 21:57:50 UTC",
+		solSpent: 1,
+		tokensBought: 6311668.694658,
+		valueUsd: 146.4,
+	},
+	{
+		signature: "5Zrx44Nt4iKn7Tm5UvEZYUa5fE1mHvuiu6BYwkAH6imkpBJpzodrPKUK8GG69jNXKMXWAEd1T1QaT3GLU248mNzx",
+		humanTime: "2026-01-14 21:57:38 UTC",
+		solSpent: 1,
+		tokensBought: 6547253.299616,
+		valueUsd: 146.4,
+	},
+	{
+		signature: "3PU7tAkTXZU2PxNdF9bn5RNTRaz1biVnG6j7WyQhCJEq8LPS7JLxfGH4wpgbp28ogiDCeJDpqVTexqxPTNUKZSQB",
+		humanTime: "2026-01-14 06:09:54 UTC",
+		solSpent: 0.500000001,
+		tokensBought: 3955495.601374,
+		valueUsd: 72.17,
+	},
+	{
+		signature: "2ezhBpYFos6c4SSDUFyEEeHgYmVhAdid8aYotuFTNL1jZ5xGK3C351PYcbep3Ea2KqFP3AKakGogcha3HjkpALf8",
+		humanTime: "2026-01-14 02:51:56 UTC",
+		solSpent: 4,
+		tokensBought: 18349752.105566,
+		valueUsd: 582.92,
+	},
+	{
+		signature: "5JmsPhJzkcmqmJD4UtCVhiRX4v9ojCd625M7eKPWQhPHGyUDHW86XXitW9Mbx5dNLDLRkTiLzocp3Zjcm5exSfdH",
+		humanTime: "2026-01-13 22:55:12 UTC",
+		solSpent: 10.968298286,
+		tokensBought: 285268882.13929,
+		valueUsd: 1613.83,
+	},
+];
+
+const totals = devBuybacks.reduce(
+	(acc, entry) => ({
+		solSpent: acc.solSpent + entry.solSpent,
+		tokensBought: acc.tokensBought + entry.tokensBought,
+		valueUsd: acc.valueUsd + entry.valueUsd,
+	}),
+	{ solSpent: 0, tokensBought: 0, valueUsd: 0 }
+);
+
+const formatSol = (value: number) =>
+	new Intl.NumberFormat("en-US", {
+		minimumFractionDigits: 3,
+		maximumFractionDigits: 9,
+	}).format(value);
+const formatTokens = (value: number) =>
+	new Intl.NumberFormat("en-US", {
+		minimumFractionDigits: 2,
+		maximumFractionDigits: 2,
+	}).format(value);
+const formatUsd = (value: number) =>
+	new Intl.NumberFormat("en-US", {
+		style: "currency",
+		currency: "USD",
+		minimumFractionDigits: 2,
+		maximumFractionDigits: 2,
+	}).format(value);
 ---
 
 <PageLayout meta={meta}>
-	<!-- Launch Announcement -->
-	<div
-		class="mb-4 rounded-md border-2 border-green-500 bg-green-500/10 px-4 py-4 text-center text-sm backdrop-blur-sm"
-	>
-		<p class="mb-2 text-textColor">
-			<strong class="text-base text-green-500">🚀 Token is Live!</strong>
-		</p>
-		<p class="mb-2 text-textColor">
-			<strong>$COWSAY is now live on Pump.fun!</strong> Join the community and trade now.
-		</p>
-		<p class="mb-2 text-textColor">
-			Creator allocation (25% locked, 3% burnt) — 25% fully vested on Streamflow for 3 years. 🍿😎
-		</p>
-		<div class="mt-3 flex flex-wrap justify-center gap-3">
-			<a
-				class="rainbow rainbow-1 inline-block"
-				href="https://pump.fun/coin/7wVPhDegCLfcHcNdW1Z9Wbwd2HXMj3snLoiTeDNEpump"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<span>Buy on Pump.fun</span>
-			</a>
-			<a
-				class="rainbow rainbow-1 inline-block"
-				href="https://dexscreener.com/solana/akojgezt4sk2fv5abmrq4tc2v9tml9wxf2nkljmrff5z"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<span>View on DexScreener</span>
-			</a>
+	<div class="mb-6 rounded-lg border border-green-500 bg-black p-4 font-mono text-sm">
+		<div class="flex items-center gap-2">
+			<span class="text-green-500">$</span>
+			<span class="text-green-500">cat contract.address</span>
 		</div>
 	</div>
+
+	{
+		siteConfig.contractAddress && (
+			<div class="mb-12 rounded-lg border border-green-500 bg-black p-6 font-mono">
+				<ContractAddress contractAddress={siteConfig.contractAddress} />
+			</div>
+		)
+	}
 
 	<!-- Section 1: The Hero (Identity) -->
 	<section class="mb-12">
@@ -81,87 +149,8 @@ const meta = {
 					<span class="text-muted">Total Supply:</span>
 					<code class="ml-2 block text-textColor">1,000,000,000 (1B fixed)</code>
 				</div>
-				<div class="md:col-span-2">
-					<span class="text-muted">Contract Address:</span>
-					<div class="mt-2 flex flex-wrap items-center gap-2">
-						<code class="break-all text-textColor">7wVPhDegCLfcHcNdW1Z9Wbwd2HXMj3snLoiTeDNE</code>
-						<button
-							id="copy-ca-btn"
-							class="px-3 py-1 text-xs rounded border border-accent bg-accent/10 hover:bg-accent/20 transition-colors"
-							aria-label="Copy contract address"
-						>
-							Copy
-						</button>
-					</div>
-				</div>
-			</div>
-			<div class="mt-6 pt-6 border-t border-accent/50">
-				<h3 class="title mb-4 text-lg font-semibold">Links</h3>
-				<div class="flex flex-wrap gap-3">
-					<a
-						href="https://pump.fun/coin/7wVPhDegCLfcHcNdW1Z9Wbwd2HXMj3snLoiTeDNEpump"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="rainbow rainbow-1 inline-block"
-					>
-						<span>Pump.fun</span>
-					</a>
-					<a
-						href="https://dexscreener.com/solana/akojgezt4sk2fv5abmrq4tc2v9tml9wxf2nkljmrff5z"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="rainbow rainbow-1 inline-block"
-					>
-						<span>DexScreener</span>
-					</a>
-					<a
-						href="https://t.co/8LWYjAh7D1"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="rainbow rainbow-1 inline-block"
-					>
-						<span>Vesting Contract</span>
-					</a>
-					<a
-						href={`https://solscan.io/token/7wVPhDegCLfcHcNdW1Z9Wbwd2HXMj3snLoiTeDNE`}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="rainbow rainbow-1 inline-block"
-					>
-						<span>Solscan</span>
-					</a>
-				</div>
 			</div>
 		</div>
-	</section>
-
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			const copyBtn = document.getElementById("copy-ca-btn");
-			const contractAddress = "7wVPhDegCLfcHcNdW1Z9Wbwd2HXMj3snLoiTeDNE";
-
-			if (copyBtn) {
-				copyBtn.addEventListener("click", async function () {
-					try {
-						await navigator.clipboard.writeText(contractAddress);
-						const originalText = copyBtn.textContent;
-						copyBtn.textContent = "Copied!";
-						copyBtn.classList.add("bg-green-500/20");
-						setTimeout(() => {
-							copyBtn.textContent = originalText;
-							copyBtn.classList.remove("bg-green-500/20");
-						}, 2000);
-					} catch (err) {
-						console.error("Failed to copy:", err);
-						copyBtn.textContent = "Failed";
-						setTimeout(() => {
-							copyBtn.textContent = "Copy";
-						}, 2000);
-					}
-				});
-			}
-		});
-	</script>
 	</section>
 
 	<!-- Section 2: The Vision (The "Why") -->
@@ -169,9 +158,8 @@ const meta = {
 		<h2 class="title mb-6 text-2xl">Long-term Vision</h2>
 		<div class="space-y-4">
 			<p>
-				Cowsay is built for the long term. The creator allocation (28% total, with 25% locked) is secured
-				for 3 years via Streamflow, ensuring long-term alignment with the community. An additional 3% was
-				permanently burnt at launch, demonstrating commitment to deflationary tokenomics.
+				Cowsay is built for the long term. The creator allocation (28% total, with 25% locked) is
+				secured for 3 years via Streamflow, ensuring long-term alignment with the community.
 			</p>
 			<p>
 				The ecosystem generates sustainable revenue through NFT auctions and merchandise sales,
@@ -181,18 +169,13 @@ const meta = {
 			<div class="rounded-lg border border-accent p-4">
 				<p class="mb-2 font-semibold">3-Year Commitment</p>
 				<p class="text-muted text-sm">
-					The main creator allocation (25% of supply) is fully vested on Streamflow for 3 years from launch. An additional 3% was permanently burnt at launch, reducing total supply. The
-					vesting contract is publicly verifiable on-chain via <a
+					The main creator allocation (25% of supply) is fully vested on Streamflow for 3 years from
+					launch. The vesting contract is publicly verifiable on-chain via <a
 						class="cactus-link"
 						href="https://t.co/8LWYjAh7D1"
 						target="_blank"
 						rel="noopener noreferrer">Streamflow</a
-					> and the <a
-						class="cactus-link"
-						href="https://solscan.io/tx/3dSKFj6o1DJxjwhDa1vV4rv4r1bXZovcSoNDUB9YRmrNHMtPLfAEncxVvLwNsZ1f6QbqRTHQT4dPDpUTJd7A45mq"
-						target="_blank"
-						rel="noopener noreferrer">burn transaction</a
-					> is verifiable on <a
+					> and <a
 						class="cactus-link"
 						href="https://solscan.io"
 						target="_blank"
@@ -276,6 +259,58 @@ const meta = {
 					<p class="text-muted mb-2 text-sm">Launch Mechanism</p>
 					<p class="font-mono text-sm">Bonding Curve</p>
 				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="title mb-6 text-2xl">Dev Buyback Summary</h2>
+		<div class="rounded-lg border border-green-500 bg-black p-4">
+			<div class="mb-4 flex items-center gap-2 font-mono text-sm">
+				<span class="text-green-500">$</span>
+				<span class="text-green-500">cat dev-buybacks.log</span>
+			</div>
+			<div class="overflow-x-auto">
+				<table class="min-w-full text-left text-sm">
+					<thead class="text-green-500">
+						<tr>
+							<th class="pb-2 pr-4 font-semibold">Time (UTC)</th>
+							<th class="pb-2 pr-4 font-semibold">SOL Spent</th>
+							<th class="pb-2 pr-4 font-semibold">$COWSAY Bought</th>
+							<th class="pb-2 pr-4 font-semibold">USD Value</th>
+							<th class="pb-2 font-semibold">Tx</th>
+						</tr>
+					</thead>
+					<tbody class="text-textColor">
+						{devBuybacks.map((entry) => (
+							<tr class="border-t border-green-500/20">
+								<td class="py-2 pr-4 font-mono text-xs">{entry.humanTime}</td>
+								<td class="py-2 pr-4">{formatSol(entry.solSpent)}</td>
+								<td class="py-2 pr-4">{formatTokens(entry.tokensBought)}</td>
+								<td class="py-2 pr-4">{formatUsd(entry.valueUsd)}</td>
+								<td class="py-2">
+									<a
+										class="cactus-link"
+										href={`https://solscan.io/tx/${entry.signature}`}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										View
+									</a>
+								</td>
+							</tr>
+						))}
+					</tbody>
+					<tfoot>
+						<tr class="border-t border-green-500/40 text-green-500">
+							<td class="py-2 pr-4 font-semibold">Total</td>
+							<td class="py-2 pr-4 font-semibold">{formatSol(totals.solSpent)}</td>
+							<td class="py-2 pr-4 font-semibold">{formatTokens(totals.tokensBought)}</td>
+							<td class="py-2 pr-4 font-semibold">{formatUsd(totals.valueUsd)}</td>
+							<td class="py-2"></td>
+						</tr>
+					</tfoot>
+				</table>
 			</div>
 		</div>
 	</section>

@@ -28,31 +28,31 @@ if (contractAddress) {
 ---
 
 {contractAddress && qrCodeDataUrl && (
-	<section class="my-8 rounded-lg border border-gray-300 dark:border-gray-700 p-6 bg-gray-50 dark:bg-gray-900">
-		<h2 class="title mb-4 text-xl">Contract Address</h2>
+	<section class="contract-address-section">
+		<h2 class="title mb-4 text-xl text-green-500">Contract Address</h2>
 		<div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
 			<div class="flex-shrink-0">
 				<img
 					src={qrCodeDataUrl}
 					alt="QR Code for Contract Address"
-					class="w-48 h-48 border border-gray-300 dark:border-gray-700 rounded-lg bg-white p-2"
+					class="w-48 h-48 border border-green-500/50 rounded-lg bg-black p-2"
 				/>
 			</div>
 			<div class="flex-1 min-w-0">
-				<p class="mb-2 text-sm text-gray-600 dark:text-gray-400">Solana Contract Address:</p>
+				<p class="mb-2 text-sm text-green-500/80">Solana Contract Address:</p>
 				<div class="flex items-center gap-2 flex-wrap">
-					<code class="font-mono text-sm break-all bg-gray-100 dark:bg-gray-800 px-3 py-2 rounded border border-gray-300 dark:border-gray-700">
+					<code class="font-mono text-sm break-all bg-black text-green-500 px-3 py-2 rounded border border-green-500/50">
 						{contractAddress}
 					</code>
 					<button
 						id="copy-address-btn"
-						class="px-3 py-2 text-sm rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+						class="px-3 py-2 text-sm rounded border border-green-500/50 bg-black text-green-500 hover:bg-green-500/10 transition-colors"
 						aria-label="Copy contract address"
 					>
 						Copy
 					</button>
 				</div>
-				<p class="mt-3 text-xs text-gray-500 dark:text-gray-500">
+				<p class="mt-3 text-xs text-green-500/60">
 					Scan the QR code or copy the address to add $COWSAY to your wallet
 				</p>
 				<div class="mt-4 flex flex-wrap gap-3">
@@ -60,7 +60,7 @@ if (contractAddress) {
 						href="https://pump.fun/coin/7wVPhDegCLfcHcNdW1Z9Wbwd2HXMj3snLoiTeDNEpump"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="px-3 py-2 text-sm rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+						class="px-3 py-2 text-sm rounded border border-green-500/50 bg-black text-green-500 hover:bg-green-500/10 transition-colors"
 					>
 						Buy on Pump.fun
 					</a>
@@ -68,7 +68,7 @@ if (contractAddress) {
 						href="https://dexscreener.com/solana/akojgezt4sk2fv5abmrq4tc2v9tml9wxf2nkljmrff5z"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="px-3 py-2 text-sm rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+						class="px-3 py-2 text-sm rounded border border-green-500/50 bg-black text-green-500 hover:bg-green-500/10 transition-colors"
 					>
 						View on DexScreener
 					</a>
@@ -90,10 +90,10 @@ if (contractAddress) {
 						await navigator.clipboard.writeText(contractAddress);
 						const originalText = copyBtn.textContent;
 						copyBtn.textContent = "Copied!";
-						copyBtn.classList.add("bg-green-100", "dark:bg-green-900");
+						copyBtn.classList.add("bg-green-500/20");
 						setTimeout(() => {
 							copyBtn.textContent = originalText;
-							copyBtn.classList.remove("bg-green-100", "dark:bg-green-900");
+							copyBtn.classList.remove("bg-green-500/20");
 						}, 2000);
 					} catch (err) {
 						console.error("Failed to copy:", err);
