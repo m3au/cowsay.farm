@@ -48,6 +48,7 @@ if (contractAddress) {
 						id="copy-address-btn"
 						class="px-3 py-2 text-sm rounded border border-green-500/50 bg-black text-green-500 hover:bg-green-500/10 transition-colors"
 						aria-label="Copy contract address"
+						data-address={contractAddress}
 					>
 						Copy
 					</button>
@@ -82,27 +83,29 @@ if (contractAddress) {
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {
 			const copyBtn = document.getElementById("copy-address-btn");
-			const contractAddress = "{contractAddress}";
 
 			if (copyBtn) {
-				copyBtn.addEventListener("click", async function () {
-					try {
-						await navigator.clipboard.writeText(contractAddress);
-						const originalText = copyBtn.textContent;
-						copyBtn.textContent = "Copied!";
-						copyBtn.classList.add("bg-green-500/20");
-						setTimeout(() => {
-							copyBtn.textContent = originalText;
-							copyBtn.classList.remove("bg-green-500/20");
-						}, 2000);
-					} catch (err) {
-						console.error("Failed to copy:", err);
-						copyBtn.textContent = "Failed";
-						setTimeout(() => {
-							copyBtn.textContent = "Copy";
-						}, 2000);
-					}
-				});
+				const addressToCopy = copyBtn.getAttribute("data-address");
+				if (addressToCopy) {
+					copyBtn.addEventListener("click", async function () {
+						try {
+							await navigator.clipboard.writeText(addressToCopy);
+							const originalText = copyBtn.textContent;
+							copyBtn.textContent = "Copied!";
+							copyBtn.classList.add("bg-green-500/20");
+							setTimeout(() => {
+								copyBtn.textContent = originalText;
+								copyBtn.classList.remove("bg-green-500/20");
+							}, 2000);
+						} catch (err) {
+							console.error("Failed to copy:", err);
+							copyBtn.textContent = "Failed";
+							setTimeout(() => {
+								copyBtn.textContent = "Copy";
+							}, 2000);
+						}
+					});
+				}
 			}
 		});
 	</script>

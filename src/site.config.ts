@@ -25,7 +25,7 @@ export const siteConfig: SiteConfig = {
 	// Token contract address (set after launch)
 	// Option 1: Set via environment variable CONTRACT_ADDRESS
 	// Option 2: Set directly here, e.g., contractAddress: "YourContractAddressHere",
-	contractAddress: import.meta.env.CONTRACT_ADDRESS || "7wVPhDegCLfcHcNdW1Z9Wbwd2HXMj3snLoiTeDNE",
+	contractAddress: import.meta.env.CONTRACT_ADDRESS || "7wVPhDegCLfcHcNdW1Z9Wbwd2HXMj3snLoiTeDNEpump",
 	// Contract address drop date (ISO 8601 format, e.g., "2024-12-31T23:59:59Z")
 	// Option 1: Set via environment variable CONTRACT_DROP_DATE
 	// Option 2: Set directly here, e.g., contractDropDate: "2024-12-31T23:59:59Z",
