@@ -89,6 +89,36 @@ const totals = devBuybacks.reduce(
 	{ solSpent: 0, tokensBought: 0, valueUsd: 0 }
 );
 
+// Burn transactions (from CSV export, filtered for significant burns > $1 USD)
+const burns = [
+	{
+		signature: "5dqgYLb7vaenmfJyd7nDhNDz6T1hH9iBTNbcnLWimyjHmeFDonGeZLHS5f91oJCsstCLHi4JZcJjascpbaRG89xc",
+		humanTime: "2026-01-16 01:01:51 UTC",
+		tokensBurned: 18070000000,
+		valueUsd: 376.73,
+	},
+	{
+		signature: "2bDVHfdT1EtdqUriccWJftSHunHBS8YsrDuRoUmi6HJbz85xZCXx9ufzntpudMAt1QGH5uBuJFZ1Ky3pbvSstxBK",
+		humanTime: "2026-01-16 00:32:57 UTC",
+		tokensBurned: 1930000000,
+		valueUsd: 41.22,
+	},
+	{
+		signature: "3dSKFj6o1DJxjwhDa1vV4rv4r1bXZovcSoNDUB9YRmrNHMtPLfAEncxVvLwNsZ1f6QbqRTHQT4dPDpUTJd7A45mq",
+		humanTime: "2026-01-14 02:10:24 UTC",
+		tokensBurned: 35268882139.29,
+		valueUsd: 1134.36,
+	},
+];
+
+const burnTotals = burns.reduce(
+	(acc, entry) => ({
+		tokensBurned: acc.tokensBurned + entry.tokensBurned,
+		valueUsd: acc.valueUsd + entry.valueUsd,
+	}),
+	{ tokensBurned: 0, valueUsd: 0 }
+);
+
 const formatSol = (value: number) =>
 	new Intl.NumberFormat("en-US", {
 		minimumFractionDigits: 3,
@@ -229,7 +259,7 @@ const formatUsd = (value: number) =>
 				<h3 class="title mb-4 text-lg">Burnt Supply</h3>
 				<p class="mb-4 text-4xl font-bold">5%</p>
 				<p class="text-muted mb-4 text-sm">
-					50,000,000 tokens permanently removed from supply (3% at launch + 2% additional burn).
+					50,000,000 tokens permanently removed from supply (3% at launch + 2% additional burn split across two transactions).
 				</p>
 				<ul class="space-y-2 text-sm">
 					<li>• Permanently removed from circulation</li>
@@ -254,7 +284,17 @@ const formatUsd = (value: number) =>
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							View additional burn transaction (2%) on Solscan →
+							View additional burn transaction (0.2%) on Solscan →
+						</a>
+					</p>
+					<p>
+						<a
+							class="cactus-link"
+							href="https://solscan.io/tx/5dqgYLb7vaenmfJyd7nDhNDz6T1hH9iBTNbcnLWimyjHmeFDonGeZLHS5f91oJCsstCLHi4JZcJjascpbaRG89xc"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							View additional burn transaction (1.8%) on Solscan →
 						</a>
 					</p>
 				</div>
@@ -329,6 +369,57 @@ const formatUsd = (value: number) =>
 							<td class="py-2 pr-4 font-semibold">{formatSol(totals.solSpent)}</td>
 							<td class="py-2 pr-4 font-semibold">{formatTokens(totals.tokensBought)}</td>
 							<td class="py-2 pr-4 font-semibold">{formatUsd(totals.valueUsd)}</td>
+							<td class="py-2"></td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="title mb-6 text-2xl">Burn Summary</h2>
+		<div class="rounded-lg border border-green-500 bg-black p-4">
+			<div class="mb-4 flex items-center gap-2 font-mono text-sm">
+				<span class="text-green-500">$</span>
+				<span class="text-green-500">cat burns.log</span>
+			</div>
+			<div class="overflow-x-auto">
+				<table class="min-w-full text-left text-sm">
+					<thead class="text-green-500">
+						<tr>
+							<th class="pb-2 pr-4 font-semibold">Time (UTC)</th>
+							<th class="pb-2 pr-4 font-semibold">$COWSAY Burned</th>
+							<th class="pb-2 pr-4 font-semibold">USD Value</th>
+							<th class="pb-2 font-semibold">Tx</th>
+						</tr>
+					</thead>
+					<tbody class="text-textColor">
+						{
+							burns.map((entry) => (
+								<tr class="border-t border-green-500/20">
+									<td class="py-2 pr-4 font-mono text-xs">{entry.humanTime}</td>
+									<td class="py-2 pr-4">{formatTokens(entry.tokensBurned)}</td>
+									<td class="py-2 pr-4">{formatUsd(entry.valueUsd)}</td>
+									<td class="py-2">
+										<a
+											class="cactus-link"
+											href={`https://solscan.io/tx/${entry.signature}`}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											View
+										</a>
+									</td>
+								</tr>
+							))
+						}
+					</tbody>
+					<tfoot>
+						<tr class="border-t border-green-500/40 text-green-500">
+							<td class="py-2 pr-4 font-semibold">Total</td>
+							<td class="py-2 pr-4 font-semibold">{formatTokens(burnTotals.tokensBurned)}</td>
+							<td class="py-2 pr-4 font-semibold">{formatUsd(burnTotals.valueUsd)}</td>
 							<td class="py-2"></td>
 						</tr>
 					</tfoot>
