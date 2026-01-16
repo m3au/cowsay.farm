@@ -1,0 +1,231 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+	description:
+		"Genesis token holders eligible for the Cowsay #001: Genesis NFT airdrop. Claim your NFT now!",
+	title: "Token Holders • Genesis Airdrop",
+};
+
+// Token holders data
+const holders = [
+	{ name: "baby groot", wallet: "DSoqofgtBak71euFaxbk6CecTkpubRD1tw51BrJXTPSK" },
+	{ name: "TM", wallet: "Aziw8URxK23irkF6VZQrq28HoyyMagxA66jpotBPiiYe" },
+	{ name: "ZAHEEN's DOMAIN", wallet: "FUowNXbC9BcqQEafJwvEVXCZVdzGSfBV1ebJ4aXTpvtz" },
+	{ name: "drophyte/arc", wallet: "GuGexV5acGkyy6BhNp6kjmeZSUmcmyRuVaWNjZcqxTFg" },
+	{ name: "jay__2315", wallet: "EpVEAheutMsNbLGWT6K7RjDnN9Yd3utFJz8uDRnQbW8M" },
+	{ name: "Pratama", wallet: "6GE2boyL6z4LSkXWc89vVXimrrfRpX566jHKnVuGoPsT" },
+	{ name: "pr6spr", wallet: "sAdNbe1cKNMDqDsa4npB3TfL62T14uAo2MsUQfLvzLT" },
+	{ name: "Mister P", wallet: "GoiBkxrBUoBdmDvWm5ebFu4tbVWHTQEPjNEghimrBsxX" },
+	{ name: "Leonardo", wallet: "J3Bpnrfg1vBi1ecpQ4aoU7LT19VJfUKKoBtPpXs1nHZt" },
+	{ name: "vaz", wallet: "ExMXNXM8uG2dge5XCJmJkJBe3hZoss7eoFaiYfgeXy9m" },
+	{ name: "Sam9p", wallet: "7htBVB3PmnK9x2nnnqma7tpWzUxsuVcujSYaHdQ9ffEW" },
+	{ name: "ASH780", wallet: "EFwCjUFKE9SiLJbomLTPgb4auSS2HhHiA3ZCv5J2W3o" },
+	{ name: "hardtechisnotacrime", wallet: "9CUKzN3L7FcbSSpxLgJV8HzuBew7KMYvWHaagFbHQegM" },
+	{ name: "Fajrian", wallet: "FBGtopYmdbnc2RBgGyD1Lp6qDQphf6nrjzBhJi3F6Laj" },
+	{ name: "Ben", wallet: "HGPuoNoeYaUANKsT8qzTySYKedm2jS7DtVAK14M7Q9oj" },
+	{ name: "Luthi", wallet: "HdzCtqq2G9gSdwPJWkw5ZxPtibW9HLGfYisBg3L81imV" },
+	{ name: "treecode", wallet: "FemMzpvivRW8rjcaWENtnSvB6gkhtVhECfwMBAVZHrnR" },
+	{ name: "Levo1905", wallet: "AMQhuqairsFjqY2btJ19CGPAgafnf9A3GZma3wd3aXme" },
+	{ name: "Reeve Tron", wallet: "44Ryk48gu6uPPBnhBMJcBaT3J56AX7bxGB4DsigfXu9B" },
+	{ name: "SK II", wallet: "G4DvEAfBCrFKDs8eTrEpnacfmyT6W2hSyKEkpHQqhR3B" },
+	{ name: "SHENDY", wallet: "BhSFHiGxU3WZ4bKyUnbAN1b9cH7Wxuh258jNYgwfP1Nx" },
+	{ name: "romli", wallet: "K3isndARYA6G3adoA954efempidQcfEdnjk4Hm6rD2o" },
+	{ name: "RiRi HASHIRRA", wallet: "GXLhZoy22gxRF8BVWXscR3NVJwmiuKn7hkan6LnNQMQZ" },
+	{ name: "TORNADO1_1", wallet: "EfKypiCUE6zAyF3efQz5swNNLU2qyTWsWQCsbXKKeigF" },
+	{ name: "Shaolin", wallet: "9ep2dgRSyDzCthaxgZezpHDcYcEheVEaLAcwMwGq5Wp3" },
+	{ name: "Acapella", wallet: "FWJbjYJM43ohyb5eTp8yw2BCVFQubgv2UWjGw42aVVQS" },
+	{ name: "李·詹姆斯", wallet: "BfRDcNAGkc1aMLosia1Hs9EXGnKpTS8kzqvfLXZoWnaQ" },
+	{ name: "Kennedy S", wallet: "7va9ZANogcWPVciqWFkNC6S8sGLR6VjuLstF8KXwCQ4f" },
+];
+---
+
+<PageLayout meta={meta}>
+	<!-- Section 1: The Hero -->
+	<section class="mb-12">
+		<h1 class="title mb-6">Token Holders</h1>
+		<p class="mb-6 text-lg">
+			The first 28 supporters who joined the Cowsay farm early. Each holder is eligible for the
+			Genesis NFT airdrop: <strong>Cowsay #001: Genesis</strong>.
+		</p>
+
+		<div class="mb-8 rounded-lg border-2 border-yellow-500/50 bg-yellow-500/10 p-6">
+			<p class="mb-3 font-semibold text-yellow-600 dark:text-yellow-400">
+				⚠️ Important: Claim Your NFT
+			</p>
+			<p class="mb-4 text-textColor">
+				If your wallet is listed below, you are eligible for the Genesis NFT airdrop. You
+				<strong> must claim your NFT</strong> through DRIP Studio to receive it.
+			</p>
+			<p class="text-muted text-sm">
+				The airdrop will begin once we collect 50 wallet addresses. Holders also get priority on
+				future $COWSAY token claims.
+			</p>
+		</div>
+
+		<div class="mb-6 flex flex-wrap gap-4">
+			<a href="/token/" class="rainbow rainbow-1 inline-block">
+				<span>← Back to Token</span>
+			</a>
+		</div>
+	</section>
+
+	<!-- Section 2: Holder List -->
+	<section class="mb-12">
+		<div class="mb-6 rounded-lg border border-green-500 bg-black p-4 font-mono text-sm">
+			<div class="flex items-center gap-2">
+				<span class="text-green-500">$</span>
+				<span class="text-green-500">cat genesis-holders.txt</span>
+			</div>
+		</div>
+
+		<div class="mb-6 rounded-lg border border-accent bg-accent/5 p-6">
+			<div class="mb-4 flex items-center justify-between">
+				<h2 class="title text-xl">Genesis Holders ({holders.length})</h2>
+				<p class="text-muted text-sm">Total eligible wallets</p>
+			</div>
+		</div>
+
+		<div class="rounded-lg border border-green-500 bg-black p-4">
+			<div class="mb-4 flex items-center gap-2 font-mono text-sm">
+				<span class="text-green-500">$</span>
+				<span class="text-green-500">./list-holders.sh</span>
+			</div>
+			<div class="overflow-x-auto">
+				<table class="min-w-full text-left text-sm">
+					<thead class="text-green-500">
+						<tr>
+							<th class="pb-2 pr-4 font-semibold">#</th>
+							<th class="pb-2 pr-4 font-semibold">Name</th>
+							<th class="pb-2 pr-4 font-semibold">Wallet Address</th>
+							<th class="pb-2 font-semibold">Explorer</th>
+						</tr>
+					</thead>
+					<tbody class="text-textColor">
+						{holders.map((holder, index) => (
+							<tr class="border-t border-green-500/20">
+								<td class="py-3 pr-4 font-mono text-xs">{String(index + 1).padStart(2, "0")}</td>
+								<td class="py-3 pr-4 font-semibold">{holder.name}</td>
+								<td class="py-3 pr-4 font-mono text-xs break-all">{holder.wallet}</td>
+								<td class="py-3">
+									<a
+										class="cactus-link text-xs"
+										href={`https://solscan.io/account/${holder.wallet}`}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										View →
+									</a>
+								</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 3: Claim Instructions -->
+	<section class="mb-12">
+		<h2 class="title mb-6 text-2xl">How to Claim Your NFT</h2>
+		<div class="space-y-4">
+			<div class="rounded-lg border border-accent bg-accent/5 p-6">
+				<h3 class="title mb-4 text-lg">Step-by-Step Instructions</h3>
+				<ol class="space-y-3 text-sm">
+					<li class="flex gap-3">
+						<span class="flex-shrink-0 font-mono text-green-500">1.</span>
+						<span>
+							<strong>Connect your wallet</strong> that matches the address listed above to DRIP Studio.
+						</span>
+					</li>
+					<li class="flex gap-3">
+						<span class="flex-shrink-0 font-mono text-green-500">2.</span>
+						<span>
+							Navigate to the <strong>Cowsay #001: Genesis</strong> collection on DRIP Studio.
+						</span>
+					</li>
+					<li class="flex gap-3">
+						<span class="flex-shrink-0 font-mono text-green-500">3.</span>
+						<span>
+							Look for your wallet address in the airdrop list and <strong>claim your NFT</strong>.
+						</span>
+					</li>
+					<li class="flex gap-3">
+						<span class="flex-shrink-0 font-mono text-green-500">4.</span>
+						<span>
+							Once claimed, your Genesis NFT will appear in your wallet as a compressed NFT (cNFT).
+						</span>
+					</li>
+				</ol>
+			</div>
+
+			<div class="rounded-lg border border-accent p-6">
+				<h3 class="title mb-4 text-lg">Benefits for Genesis Holders</h3>
+				<ul class="space-y-2 text-sm">
+					<li>• <strong>Priority access</strong> to future $COWSAY token claims</li>
+					<li>• Exclusive Genesis NFT (Early Supporter edition)</li>
+					<li>• Recognition as one of the first 50 supporters of the Cowsay ecosystem</li>
+					<li>• Special perks in future airdrops and community events</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<div class="rounded-lg border-2 border-accent bg-accent/10 p-6 text-center">
+		<p class="mb-4 font-semibold">Have questions about claiming your NFT?</p>
+		<div class="flex flex-wrap justify-center gap-4">
+			<a
+				href="https://discord.gg/yhJ24mCSxd"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="rainbow rainbow-1 inline-block"
+			>
+				<span>Join Discord</span>
+			</a>
+			<a href="/token/" class="rainbow rainbow-1 inline-block">
+				<span>Learn More About Token</span>
+			</a>
+		</div>
+	</div>
+</PageLayout>
+
+<style>
+	.rainbow {
+		background-color: #343a40;
+		border-radius: 4px;
+		color: #fff;
+		cursor: pointer;
+		padding: 8px 16px;
+	}
+
+	html[data-theme="dark"] .rainbow {
+		color: #29bc89;
+	}
+
+	html[data-theme="dark"] .rainbow span {
+		mix-blend-mode: color-dodge;
+	}
+
+	html[data-theme="dark"] .rainbow:hover span {
+		mix-blend-mode: color-dodge;
+	}
+
+	.rainbow-1:hover {
+		background-image: linear-gradient(
+			90deg,
+			#3769ff 0%,
+			#3769ff 12%,
+			#b7f00c 45%,
+			#ff1e42 70%,
+			#3769ff 100%
+		);
+		animation: slidebg 10s linear infinite;
+	}
+
+	@keyframes slidebg {
+		to {
+			background-position: 24vw;
+		}
+	}
+</style>

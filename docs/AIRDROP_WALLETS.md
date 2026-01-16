@@ -1,0 +1,71 @@
+# Airdrop Wallet List
+
+## Genesis Airdrop Recipients
+
+One wallet per user, unique addresses only.
+
+**Total Wallets:** 28
+
+```
+DSoqofgtBak71euFaxbk6CecTkpubRD1tw51BrJXTPSK
+Aziw8URxK23irkF6VZQrq28HoyyMagxA66jpotBPiiYe
+FUowNXbC9BcqQEafJwvEVXCZVdzGSfBV1ebJ4aXTpvtz
+GuGexV5acGkyy6BhNp6kjmeZSUmcmyRuVaWNjZcqxTFg
+EpVEAheutMsNbLGWT6K7RjDnN9Yd3utFJz8uDRnQbW8M
+6GE2boyL6z4LSkXWc89vVXimrrfRpX566jHKnVuGoPsT
+sAdNbe1cKNMDqDsa4npB3TfL62T14uAo2MsUQfLvzLT
+GoiBkxrBUoBdmDvWm5ebFu4tbVWHTQEPjNEghimrBsxX
+J3Bpnrfg1vBi1ecpQ4aoU7LT19VJfUKKoBtPpXs1nHZt
+ExMXNXM8uG2dge5XCJmJkJBe3hZoss7eoFaiYfgeXy9m
+7htBVB3PmnK9x2nnnqma7tpWzUxsuVcujSYaHdQ9ffEW
+EFwCjUFKE9SiLJbomLTPgb4auSS2HhHiA3ZCv5J2W3o
+9CUKzN3L7FcbSSpxLgJV8HzuBew7KMYvWHaagFbHQegM
+FBGtopYmdbnc2RBgGyD1Lp6qDQphf6nrjzBhJi3F6Laj
+HGPuoNoeYaUANKsT8qzTySYKedm2jS7DtVAK14M7Q9oj
+HdzCtqq2G9gSdwPJWkw5ZxPtibW9HLGfYisBg3L81imV
+FemMzpvivRW8rjcaWENtnSvB6gkhtVhECfwMBAVZHrnR
+AMQhuqairsFjqY2btJ19CGPAgafnf9A3GZma3wd3aXme
+44Ryk48gu6uPPBnhBMJcBaT3J56AX7bxGB4DsigfXu9B
+G4DvEAfBCrFKDs8eTrEpnacfmyT6W2hSyKEkpHQqhR3B
+BhSFHiGxU3WZ4bKyUnbAN1b9cH7Wxuh258jNYgwfP1Nx
+K3isndARYA6G3adoA954efempidQcfEdnjk4Hm6rD2o
+GXLhZoy22gxRF8BVWXscR3NVJwmiuKn7hkan6LnNQMQZ
+EfKypiCUE6zAyF3efQz5swNNLU2qyTWsWQCsbXKKeigF
+9ep2dgRSyDzCthaxgZezpHDcYcEheVEaLAcwMwGq5Wp3
+FWJbjYJM43ohyb5eTp8yw2BCVFQubgv2UWjGw42aVVQS
+BfRDcNAGkc1aMLosia1Hs9EXGnKpTS8kzqvfLXZoWnaQ
+7va9ZANogcWPVciqWFkNC6S8sGLR6VjuLstF8KXwCQ4f
+```
+
+## User Attribution (Reference)
+
+1. baby groot — DSoqofgtBak71euFaxbk6CecTkpubRD1tw51BrJXTPSK
+2. TM — Aziw8URxK23irkF6VZQrq28HoyyMagxA66jpotBPiiYe
+3. ZAHEEN's DOMAIN — FUowNXbC9BcqQEafJwvEVXCZVdzGSfBV1ebJ4aXTpvtz
+4. drophyte/arc — GuGexV5acGkyy6BhNp6kjmeZSUmcmyRuVaWNjZcqxTFg
+5. jay\_\_2315 — EpVEAheutMsNbLGWT6K7RjDnN9Yd3utFJz8uDRnQbW8M
+6. Pratama — 6GE2boyL6z4LSkXWc89vVXimrrfRpX566jHKnVuGoPsT
+7. pr6spr — sAdNbe1cKNMDqDsa4npB3TfL62T14uAo2MsUQfLvzLT
+8. Mister P — GoiBkxrBUoBdmDvWm5ebFu4tbVWHTQEPjNEghimrBsxX
+9. Leonardo — J3Bpnrfg1vBi1ecpQ4aoU7LT19VJfUKKoBtPpXs1nHZt
+10. vaz — ExMXNXM8uG2dge5XCJmJkJBe3hZoss7eoFaiYfgeXy9m
+11. Sam9p — 7htBVB3PmnK9x2nnnqma7tpWzUxsuVcujSYaHdQ9ffEW
+12. ASH780 — EFwCjUFKE9SiLJbomLTPgb4auSS2HhHiA3ZCv5J2W3o
+13. hardtechisnotacrime — 9CUKzN3L7FcbSSpxLgJV8HzuBew7KMYvWHaagFbHQegM
+14. Fajrian — FBGtopYmdbnc2RBgGyD1Lp6qDQphf6nrjzBhJi3F6Laj
+15. Ben — HGPuoNoeYaUANKsT8qzTySYKedm2jS7DtVAK14M7Q9oj
+16. Luthi — HdzCtqq2G9gSdwPJWkw5ZxPtibW9HLGfYisBg3L81imV
+17. treecode — FemMzpvivRW8rjcaWENtnSvB6gkhtVhECfwMBAVZHrnR
+18. Levo1905 — AMQhuqairsFjqY2btJ19CGPAgafnf9A3GZma3wd3aXme
+19. Reeve Tron — 44Ryk48gu6uPPBnhBMJcBaT3J56AX7bxGB4DsigfXu9B (first occurrence)
+20. SK II — G4DvEAfBCrFKDs8eTrEpnacfmyT6W2hSyKEkpHQqhR3B
+21. SHENDY — BhSFHiGxU3WZ4bKyUnbAN1b9cH7Wxuh258jNYgwfP1Nx
+22. romli — K3isndARYA6G3adoA954efempidQcfEdnjk4Hm6rD2o
+23. RiRi HASHIRRA — GXLhZoy22gxRF8BVWXscR3NVJwmiuKn7hkan6LnNQMQZ
+24. TORNADO1_1 — EfKypiCUE6zAyF3efQz5swNNLU2qyTWsWQCsbXKKeigF
+25. Shaolin — 9ep2dgRSyDzCthaxgZezpHDcYcEheVEaLAcwMwGq5Wp3
+26. Acapella — FWJbjYJM43ohyb5eTp8yw2BCVFQubgv2UWjGw42aVVQS
+27. 李·詹姆斯 — BfRDcNAGkc1aMLosia1Hs9EXGnKpTS8kzqvfLXZoWnaQ
+28. Kennedy S — 7va9ZANogcWPVciqWFkNC6S8sGLR6VjuLstF8KXwCQ4f
+
+**Note:** Reeve Tron submitted a second address (2k2bUsSfreWM9cWuGDqwh8FCJX3g5K9haqrD7j1wMWQN) but only the first address is included per user rule.
