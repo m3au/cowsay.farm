@@ -1,5 +1,4 @@
 ---
-// Temporarily hidden - returning 404
 import PageLayout from "@/layouts/Base.astro";
 import BuybackTracker from "@/components/token/BuybackTracker.astro";
 import PnLChart from "@/components/transparency/PnLChart.astro";
@@ -137,9 +136,6 @@ const formatUsd = (value: number) =>
 		minimumFractionDigits: 2,
 		maximumFractionDigits: 2,
 	}).format(value);
-
-// Temporarily hidden - return 404 response
-return new Response(null, { status: 404 });
 ---
 
 <PageLayout meta={meta}>

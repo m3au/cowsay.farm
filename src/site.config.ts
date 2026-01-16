@@ -42,11 +42,10 @@ export const menuLinks: { path: string; title: string }[] = [
 		path: "/",
 		title: "Home",
 	},
-	// Temporarily hidden
-	// {
-	// 	path: "/token/",
-	// 	title: "Token",
-	// },
+	{
+		path: "/token/",
+		title: "Token",
+	},
 	{
 		path: "/roadmap/",
 		title: "Roadmap",
