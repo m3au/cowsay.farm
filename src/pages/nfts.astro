@@ -1,7 +1,6 @@
 ---
 import PageLayout from "@/layouts/Base.astro";
 import SalesHistory from "@/components/nft/SalesHistory.astro";
-import { Image } from "astro:assets";
 import Button from "@/components/ui/Button.astro";
 // import AuctionCard from "@/components/nft/AuctionCard.astro"; // TODO: Uncomment when implementing active auctions
 
@@ -10,9 +9,6 @@ const meta = {
 		"Collect unique NFT artwork featuring your favorite Cowsay developer quotes. Each piece is auctioned, with all proceeds going to token buybacks.",
 	title: "NFT Gallery • @cowsayco",
 };
-
-// Demo NFT image - using actual NFT artwork
-	const demoNft = "/nfts/common/nft-001-common.png"; // No Rarity tier
 ---
 
 <PageLayout meta={meta}>

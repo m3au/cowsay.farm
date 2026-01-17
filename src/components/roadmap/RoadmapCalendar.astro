@@ -1,9 +1,17 @@
 ---
-import { getRoadmapEvents, type RoadmapEvent } from "@/data/roadmap-events";
+import { type RoadmapEvent } from "@/data/roadmap-events";
 
 interface Props {
 	events: RoadmapEvent[];
 }
+
+type CalendarDay = {
+	day: number | null;
+	date: Date | null;
+	events: RoadmapEvent[];
+};
+
+type Week = CalendarDay[];
 
 const { events } = Astro.props;
 
@@ -92,13 +100,13 @@ function generateWeeksForMonth(year: number, month: number) {
 			const isDayInMonth = cellIndex >= firstDay && day <= daysInMonth;
 			const cellDate = isDayInMonth ? new Date(year, month, day) : null;
 			const dayEvents = cellDate ? getEventsForDate(cellDate) : [];
-			
+
 			week.push({
 				day: isDayInMonth ? day : null,
 				date: cellDate,
 				events: dayEvents,
 			});
-			
+
 			if (isDayInMonth) day++;
 		}
 		weeks.push(week);
@@ -110,9 +118,7 @@ const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 ---
 
 <div class="space-y-8">
-	{monthsToShow.map(({ year, month, date: monthDate }) => {
-		const daysInMonth = getDaysInMonth(year, month);
-		const firstDay = getFirstDayOfMonth(year, month);
+	{monthsToShow.map(({ year, month }) => {
 		const today = new Date();
 		const isCurrentMonth = year === today.getFullYear() && month === today.getMonth();
 
@@ -131,9 +137,9 @@ const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 							</tr>
 						</thead>
 						<tbody>
-							{generateWeeksForMonth(year, month).map((week) => (
+							{generateWeeksForMonth(year, month).map((week: Week) => (
 								<tr>
-									{week.map(({ day: dayNum, date: cellDate, events: dayEvents }) => {
+									{week.map(({ day: dayNum, date: cellDate, events: dayEvents }: CalendarDay) => {
 										const isToday =
 											cellDate &&
 											isCurrentMonth &&
@@ -152,9 +158,9 @@ const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 														<span class={isToday ? "font-bold text-accent" : ""}>
 															{dayNum}
 														</span>
-														{dayEvents.length > 0 && (
-															<div class="flex gap-1">
-																{dayEvents.map((event) => (
+													{dayEvents.length > 0 && (
+														<div class="flex gap-1">
+															{dayEvents.map((event: RoadmapEvent) => (
 																	<div
 																		class={`h-2 w-2 rounded-full ${getStatusDotColor(event.status)}`}
 																		title={event.title}
@@ -165,7 +171,7 @@ const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 													</div>
 													{dayEvents.length > 0 && (
 														<div class="mt-1 space-y-1">
-															{dayEvents.slice(0, 2).map((event) => (
+															{dayEvents.slice(0, 2).map((event: RoadmapEvent) => (
 																<div
 																	class={`rounded border p-1 text-[10px] ${getStatusColor(event.status)}`}
 																	title={event.description || event.title}
