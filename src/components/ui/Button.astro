@@ -1,0 +1,17 @@
+---
+interface Props {
+	href?: string;
+	target?: string;
+	rel?: string;
+	class?: string;
+}
+
+const { href, target, rel, class: className = "" } = Astro.props;
+const isLink = href !== undefined;
+const Tag = isLink ? "a" : "button";
+const linkProps = isLink ? { href, target, rel } : {};
+---
+
+<Tag class={`rainbow rainbow-1 inline-block ${className}`} {...linkProps}>
+	<span><slot /></span>
+</Tag>

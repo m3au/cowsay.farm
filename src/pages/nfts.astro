@@ -2,6 +2,7 @@
 import PageLayout from "@/layouts/Base.astro";
 import SalesHistory from "@/components/nft/SalesHistory.astro";
 import { Image } from "astro:assets";
+import Button from "@/components/ui/Button.astro";
 // import AuctionCard from "@/components/nft/AuctionCard.astro"; // TODO: Uncomment when implementing active auctions
 
 const meta = {
@@ -22,6 +23,54 @@ const meta = {
 			Daily developer culture on the blockchain. Each quote from @cowsayco becomes a unique
 			collectible NFT—on-chain artifacts that capture the timeless truths of developer life.
 		</p>
+	</section>
+
+	<!-- Genesis Token Holders Section -->
+	<section id="genesis-holders" class="mb-12 scroll-mt-8">
+		<h2 class="title mb-6 text-2xl">Genesis Token Holders</h2>
+		<p class="mb-6">
+			The first 50 early supporters who joined the Cowsay farm are eligible for the Genesis NFT
+			airdrop. Each holder receives the <strong>Cowsay #001: Genesis</strong> NFT as a thank you for
+			being here from the start.
+		</p>
+
+		<div class="mb-6 rounded-lg border-2 border-yellow-500/50 bg-yellow-500/10 p-6">
+			<p class="mb-3 font-semibold text-yellow-600 dark:text-yellow-400">
+				⚠️ Important: Claim Your NFT Now
+			</p>
+			<p class="mb-4 text-textColor">
+				If you're a Genesis holder, you <strong>must claim your NFT</strong> through DRIP Studio.
+				The airdrop begins once we collect 50 wallet addresses.
+			</p>
+			<p class="text-muted mb-4 text-sm">
+				Genesis holders also receive priority access to future $COWSAY token claims.
+			</p>
+			<div class="mt-4">
+				<Button href="/token-holders/">
+					View All Token Holders & Claim Instructions →
+				</Button>
+			</div>
+		</div>
+
+		<div class="rounded-lg border border-accent bg-accent/5 p-6">
+			<h3 class="title mb-4 text-lg">Benefits for Genesis Holders</h3>
+			<div class="grid gap-4 md:grid-cols-2">
+				<div>
+					<p class="mb-2 font-semibold">Genesis NFT Airdrop</p>
+					<p class="text-muted text-sm">
+						Each holder receives the Cowsay #001: Genesis NFT (Early Supporter edition) as a
+						compressed NFT on Solana.
+					</p>
+				</div>
+				<div>
+					<p class="mb-2 font-semibold">Priority Token Claims</p>
+					<p class="text-muted text-sm">
+						Genesis holders get priority access to future $COWSAY token claims and community
+						airdrops.
+					</p>
+				</div>
+			</div>
+		</div>
 	</section>
 
 	<!-- Tiers Section - First Quote Only -->
@@ -142,9 +191,9 @@ const meta = {
 				with high-resolution terminal-style designs.
 			</p>
 			<div class="flex flex-wrap gap-4">
-				<a href="/genesis/" class="rainbow rainbow-1 inline-block">
-					<span>View Genesis Collection →</span>
-				</a>
+				<Button href="/genesis/">
+					View Genesis Collection →
+				</Button>
 			</div>
 		</div>
 	</section>
@@ -277,30 +326,27 @@ const meta = {
 		</p>
 
 		<div class="mb-8 flex flex-wrap gap-4">
-			<a
+			<Button
 				href="https://tensor.trade"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="rainbow rainbow-1 inline-block"
 			>
-				<span>Tensor Launchpad</span>
-			</a>
-			<a
+				Tensor Launchpad
+			</Button>
+			<Button
 				href="https://magiceden.io"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="rainbow rainbow-1 inline-block"
 			>
-				<span>Magic Eden</span>
-			</a>
-			<a
+				Magic Eden
+			</Button>
+			<Button
 				href="https://tensor.trade"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="rainbow rainbow-1 inline-block"
 			>
-				<span>Tensor (Secondary)</span>
-			</a>
+				Tensor (Secondary)
+			</Button>
 		</div>
 	</section>
 
@@ -332,58 +378,18 @@ const meta = {
 		<div class="rounded-lg border-2 border-accent bg-accent/10 p-6 text-center">
 			<p class="mb-4 font-semibold">Ready to collect developer artifacts?</p>
 			<div class="flex flex-wrap justify-center gap-4">
-				<a
+				<Button
 					href="https://discord.gg/yhJ24mCSxd"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="rainbow rainbow-1 inline-block"
 				>
-					<span>Join Discord for Whitelist</span>
-				</a>
-				<a href="/token/" class="rainbow rainbow-1 inline-block">
-					<span>View Tokenomics</span>
-				</a>
+					Join Discord for Whitelist
+				</Button>
+				<Button href="/token/">
+					View Tokenomics
+				</Button>
 			</div>
 		</div>
 	</section>
 </PageLayout>
 
-<style>
-	.rainbow {
-		background-color: #343a40;
-		border-radius: 4px;
-		color: #fff;
-		cursor: pointer;
-		padding: 8px 16px;
-	}
-
-	html[data-theme="dark"] .rainbow {
-		color: #29bc89;
-	}
-
-	html[data-theme="dark"] .rainbow span {
-		mix-blend-mode: color-dodge;
-	}
-
-	html[data-theme="dark"] .rainbow:hover span {
-		mix-blend-mode: color-dodge;
-	}
-
-	.rainbow-1:hover {
-		background-image: linear-gradient(
-			90deg,
-			#3769ff 0%,
-			#3769ff 12%,
-			#b7f00c 45%,
-			#ff1e42 70%,
-			#3769ff 100%
-		);
-		animation: slidebg 10s linear infinite;
-	}
-
-	@keyframes slidebg {
-		to {
-			background-position: 24vw;
-		}
-	}
-</style>

@@ -5,6 +5,8 @@ import PnLChart from "@/components/transparency/PnLChart.astro";
 import BuybackHistory from "@/components/transparency/BuybackHistory.astro";
 import WalletTracker from "@/components/transparency/WalletTracker.astro";
 import ContractAddress from "@/components/token/ContractAddress.astro";
+import TokenLinks from "@/components/token/TokenLinks.astro";
+import Button from "@/components/ui/Button.astro";
 import { siteConfig } from "@/site-config";
 
 const meta = {
@@ -14,6 +16,72 @@ const meta = {
 };
 
 const devBuybacks = [
+	// From CSV export - grouped by signature
+	{
+		signature:
+			"4d6TGDsNs19SP5MmRMBEozxt9X6RmWtKyZvzRuLGHTaB3Dr6k5LveJyuKZbEzrBQ1uRRYbwwSNRmRLe78N6M91WH",
+		humanTime: "2026-01-17 22:04:42 UTC",
+		solSpent: 0.212,
+		tokensBought: 2000000,
+		valueUsd: 31.84,
+	},
+	{
+		signature:
+			"2zjp1HJKbzzvwnW8ytop5p1T79keD86o58vgoJgVBKTkqViikYLWLWzNAAhktyNBfRNuLMQU59pdRonv1J59Zr53",
+		humanTime: "2026-01-17 21:05:53 UTC",
+		solSpent: 0.335,
+		tokensBought: 3153000,
+		valueUsd: 50.2,
+	},
+	{
+		signature:
+			"5s7NXNqQKiEV1SE7eBFhXvG6712JTUj7SznBHX4PJE5y1SYUtUJakuYBuGLpQCj3KTwYgrRdU1ynj6TSv2Pwk5q2",
+		humanTime: "2026-01-16 21:56:38 UTC",
+		solSpent: 1.246,
+		tokensBought: 10000000,
+		valueUsd: 186.93,
+	},
+	{
+		signature:
+			"2wNDsbN5FjPfjiQ1iPwY6PhF3PiuuGPKzzkyCvEfe8hkY2YveAhi51bxbqkSzTxQt6cq87JCiU7bZkbh7PFL2h8t",
+		humanTime: "2026-01-16 00:15:19 UTC",
+		solSpent: 0.260,
+		tokensBought: 1846720,
+		valueUsd: 38.9872,
+	},
+	{
+		signature:
+			"3yeTYKEHVPMQGRbHHK89VZR9hYo6evEFRUhC6aVeYRZsVD2ZZSCuMMVxAii9VRCStEMQM9qdBhixxyPgb9KKJjmY",
+		humanTime: "2026-01-16 00:15:19 UTC",
+		solSpent: 0.130,
+		tokensBought: 923360,
+		valueUsd: 19.4936,
+	},
+	{
+		signature:
+			"2TCChXV1HY7HzsxPVA1rsENT62tBsWo3Y9dAj2kUNQNXKEK6SoKk13rLoq7xVNjKDBpXpXyUzGAVvaoibN3H3vSY",
+		humanTime: "2026-01-16 00:15:19 UTC",
+		solSpent: 0.260,
+		tokensBought: 1846720,
+		valueUsd: 38.9872,
+	},
+	{
+		signature:
+			"39tNtSs2yheHaPPFTX3Q1ZYDQarR6xVxYca26bKvDLC2pobKTrigsAeLp4A2i5zEzfXnZq3C59mFq5Yp1y6gUANu",
+		humanTime: "2026-01-16 00:15:19 UTC",
+		solSpent: 0.260,
+		tokensBought: 1846720,
+		valueUsd: 38.9872,
+	},
+	{
+		signature:
+			"Xi5gPbPn5oYLWbziAHwT1oHxxFAHd89Ft2FgebfSALjsYjPMkn9MjEwhZFVLFERfyZ8D5AMuLHUPthEVgQKzC2M",
+		humanTime: "2026-01-13 23:25:36 UTC",
+		solSpent: 28.395,
+		tokensBought: 250000000,
+		valueUsd: 4259.29,
+	},
+	// Previous buybacks
 	{
 		signature:
 			"66F6abn7AyQXwyd9rp4qUVTmCpcGB5PBiEz77aWf1zMhgzZ1sUecpZMj5VPpY3xoKoM6QBFrnuehJQ2E6V7LWqwU",
@@ -139,12 +207,14 @@ const formatUsd = (value: number) =>
 ---
 
 <PageLayout meta={meta}>
-	<div class="mb-6 rounded-lg border border-green-500 bg-black p-4 font-mono text-sm">
-		<div class="flex items-center gap-2">
-			<span class="text-green-500">$</span>
-			<span class="text-green-500">cat contract.address</span>
-		</div>
-	</div>
+	<!-- Section 1: Token Info -->
+	<section class="mb-12">
+		<h1 class="title mb-6">Token</h1>
+	<p class="mb-6">
+		The official token of the Cowsay ecosystem. Built on Solana, this token represents the
+		community around the daily developer quotes shared by the @cowsayco Twitter bot.
+	</p>
+</section>
 
 	{
 		siteConfig.contractAddress && (
@@ -154,42 +224,13 @@ const formatUsd = (value: number) =>
 		)
 	}
 
-	<!-- Section 1: The Hero (Identity) -->
-	<section class="mb-12">
-		<h1 class="title mb-6">Token</h1>
-		<p class="mb-6">
-			The official token of the Cowsay ecosystem. Built on Solana, this token represents the
-			community around the daily developer quotes shared by the @cowsayco Twitter bot.
-		</p>
-
-		<div class="mb-6 rounded-lg border border-green-500 bg-black p-4 font-mono text-sm">
-			<div class="flex items-center gap-2">
-				<span class="text-green-500">$</span>
-				<span class="text-green-500">cat token.info</span>
+	{
+		siteConfig.contractAddress && (
+			<div class="mb-12">
+				<TokenLinks contractAddress={siteConfig.contractAddress} />
 			</div>
-		</div>
-
-		<div class="rounded-lg border border-accent bg-accent/5 p-6 font-mono text-sm">
-			<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-				<div>
-					<span class="text-muted">Token Name:</span>
-					<code class="ml-2 block text-textColor">COWSAYCO</code>
-				</div>
-				<div>
-					<span class="text-muted">Token Symbol:</span>
-					<code class="ml-2 block text-textColor">$COWSAY</code>
-				</div>
-				<div>
-					<span class="text-muted">Blockchain:</span>
-					<code class="ml-2 block text-textColor">Solana</code>
-				</div>
-				<div>
-					<span class="text-muted">Total Supply:</span>
-					<code class="ml-2 block text-textColor">945,000,000 (945M)</code>
-				</div>
-			</div>
-		</div>
-	</section>
+		)
+	}
 
 	<!-- Section 2: The Vision (The "Why") -->
 	<section class="mb-12">
@@ -300,31 +341,20 @@ const formatUsd = (value: number) =>
 				</div>
 			</div>
 		</div>
-
-		<div class="mb-6 rounded-lg border border-green-500 bg-black p-4 font-mono text-sm">
-			<div class="flex items-center gap-2">
-				<span class="text-green-500">$</span>
-				<span class="text-green-500">cat launch.txt</span>
-			</div>
-		</div>
-
-		<div class="rounded-lg border border-accent bg-accent/5 p-6">
-			<h3 class="title mb-4 text-lg">Launch Details</h3>
-			<div class="grid gap-4 md:grid-cols-2">
-				<div>
-					<p class="text-muted mb-2 text-sm">Launch Platform</p>
-					<p class="font-mono text-sm">Pump.fun</p>
-				</div>
-				<div>
-					<p class="text-muted mb-2 text-sm">Launch Mechanism</p>
-					<p class="font-mono text-sm">Bonding Curve</p>
-				</div>
-			</div>
-		</div>
 	</section>
 
 	<section id="buybacks" class="mb-12 scroll-mt-8">
 		<h2 class="title mb-6 text-2xl">Dev Buyback Summary</h2>
+		<div class="mb-4">
+			<a
+				href="https://solscan.io/token/7wVPhDegCLfcHcNdW1Z9Wbwd2HXMj3snLoiTeDNEpump?activity_type=ACTIVITY_SPL_TRANSFER&exclude_amount_zero=true&remove_spam=false&from_address=666V4HbB73nmNNXwQ1cx25RHYWw1G8RWtAzDaZh2Pdtw&page_size=100"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="cactus-link text-sm"
+			>
+				View all buyback transactions on Solscan →
+			</a>
+		</div>
 		<div class="rounded-lg border border-green-500 bg-black p-4">
 			<div class="mb-4 flex items-center gap-2 font-mono text-sm">
 				<span class="text-green-500">$</span>
@@ -379,6 +409,16 @@ const formatUsd = (value: number) =>
 
 	<section id="burn" class="mb-12 scroll-mt-8">
 		<h2 class="title mb-6 text-2xl">Burn Summary</h2>
+		<div class="mb-4">
+			<a
+				href="https://solscan.io/token/7wVPhDegCLfcHcNdW1Z9Wbwd2HXMj3snLoiTeDNEpump?activity_type=ACTIVITY_SPL_BURN&exclude_amount_zero=false&page_size=100&remove_spam=false"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="cactus-link text-sm"
+			>
+				View all burn transactions on Solscan →
+			</a>
+		</div>
 		<div class="rounded-lg border border-green-500 bg-black p-4">
 			<div class="mb-4 flex items-center gap-2 font-mono text-sm">
 				<span class="text-green-500">$</span>
@@ -428,53 +468,13 @@ const formatUsd = (value: number) =>
 		</div>
 	</section>
 
-	<!-- Section 4: Genesis Token Holders -->
-	<section class="mb-12">
-		<h2 class="title mb-6 text-2xl">Genesis Token Holders</h2>
-		<p class="mb-6">
-			The first 28 early supporters who joined the Cowsay farm are eligible for the Genesis NFT
-			airdrop. Each holder receives the <strong>Cowsay #001: Genesis</strong> NFT as a thank you for
-			being here from the start.
+	<!-- Genesis Token Holders Banner -->
+	<div class="mb-12 rounded-lg border border-yellow-500/50 bg-yellow-500/10 p-4">
+		<p class="text-sm text-textColor">
+			<strong class="text-yellow-600 dark:text-yellow-400">Genesis Token Holders:</strong> The first 50 early supporters are eligible for the Genesis NFT airdrop.{" "}
+			<a href="/nfts/#genesis-holders" class="cactus-link">Learn more about Genesis holders →</a>
 		</p>
-
-		<div class="mb-6 rounded-lg border-2 border-yellow-500/50 bg-yellow-500/10 p-6">
-			<p class="mb-3 font-semibold text-yellow-600 dark:text-yellow-400">
-				⚠️ Important: Claim Your NFT Now
-			</p>
-			<p class="mb-4 text-textColor">
-				If you're a Genesis holder, you <strong>must claim your NFT</strong> through DRIP Studio.
-				The airdrop begins once we collect 50 wallet addresses.
-			</p>
-			<p class="text-muted mb-4 text-sm">
-				Genesis holders also receive priority access to future $COWSAY token claims.
-			</p>
-			<div class="mt-4">
-				<a href="/token-holders/" class="rainbow rainbow-1 inline-block">
-					<span>View All Token Holders & Claim Instructions →</span>
-				</a>
-			</div>
-		</div>
-
-		<div class="rounded-lg border border-accent bg-accent/5 p-6">
-			<h3 class="title mb-4 text-lg">Benefits for Genesis Holders</h3>
-			<div class="grid gap-4 md:grid-cols-2">
-				<div>
-					<p class="mb-2 font-semibold">Genesis NFT Airdrop</p>
-					<p class="text-muted text-sm">
-						Each holder receives the Cowsay #001: Genesis NFT (Early Supporter edition) as a
-						compressed NFT on Solana.
-					</p>
-				</div>
-				<div>
-					<p class="mb-2 font-semibold">Priority Token Claims</p>
-					<p class="text-muted text-sm">
-						Genesis holders get priority access to future $COWSAY token claims and community
-						airdrops.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
+	</div>
 
 	<!-- Section 5: The Flywheel (The Mechanics) -->
 	<section class="mb-12">
@@ -576,30 +576,29 @@ function distributeRevenue(amount) {
 		<div class="mt-8 rounded-lg border-2 border-accent bg-accent/10 p-6 text-center">
 			<p class="mb-4 font-semibold">Ready to join the community?</p>
 			<div class="flex flex-wrap justify-center gap-4">
-				<a
+				<Button
 					href="https://discord.gg/yhJ24mCSxd"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="rainbow rainbow-1 inline-block"
 				>
-					<span>Join Discord for Launch Alerts</span>
-				</a>
-				<a
+					Join Discord for Launch Alerts
+				</Button>
+				<Button
 					href="https://x.com/i/communities/2011240178778607815"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="rainbow rainbow-1 inline-block"
 				>
-					<span>Join Twitter Community</span>
-				</a>
-				<a href="/roadmap/" class="rainbow rainbow-1 inline-block">
-					<span>View Roadmap</span>
-				</a>
+					Join Twitter Community
+				</Button>
+				<Button href="/roadmap/">
+					View Roadmap
+				</Button>
 			</div>
 		</div>
 	</section>
 
 	<!-- Section 6: Transparency Dashboard (Proof of Work) -->
+	<!--
 	<section class="mb-12">
 		<h2 class="title mb-6 text-2xl">Transparency Dashboard</h2>
 		<p class="mb-6">
@@ -674,6 +673,7 @@ function distributeRevenue(amount) {
 		<BuybackTracker />
 		<BuybackHistory />
 	</section>
+	-->
 
 	<!-- Disclaimer -->
 	<div class="rounded-md border border-yellow-500/50 bg-yellow-500/10 px-4 py-3 text-sm">
@@ -684,45 +684,6 @@ function distributeRevenue(amount) {
 	</div>
 </PageLayout>
 
-<style>
-	.rainbow {
-		background-color: #343a40;
-		border-radius: 4px;
-		color: #fff;
-		cursor: pointer;
-		padding: 8px 16px;
-	}
-
-	html[data-theme="dark"] .rainbow {
-		color: #29bc89;
-	}
-
-	html[data-theme="dark"] .rainbow span {
-		mix-blend-mode: color-dodge;
-	}
-
-	html[data-theme="dark"] .rainbow:hover span {
-		mix-blend-mode: color-dodge;
-	}
-
-	.rainbow-1:hover {
-		background-image: linear-gradient(
-			90deg,
-			#3769ff 0%,
-			#3769ff 12%,
-			#b7f00c 45%,
-			#ff1e42 70%,
-			#3769ff 100%
-		);
-		animation: slidebg 10s linear infinite;
-	}
-
-	@keyframes slidebg {
-		to {
-			background-position: 24vw;
-		}
-	}
-</style>
 
 <script>
 	// Handle scroll to section via query parameter (e.g., /token?scroll=buybacks)
@@ -730,7 +691,7 @@ function distributeRevenue(amount) {
 	const scrollToSection = () => {
 		const urlParams = new URLSearchParams(window.location.search);
 		const scrollTo = urlParams.get('scroll') || window.location.hash.slice(1);
-		
+
 		if (scrollTo) {
 			setTimeout(() => {
 				const element = document.getElementById(scrollTo);
@@ -744,10 +705,10 @@ function distributeRevenue(amount) {
 			}, 100);
 		}
 	};
-	
+
 	// Run on page load
 	window.addEventListener('load', scrollToSection);
-	
+
 	// Also handle hash changes (for browser back/forward)
 	window.addEventListener('hashchange', scrollToSection);
 </script>

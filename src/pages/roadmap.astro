@@ -1,11 +1,15 @@
 ---
 import PageLayout from "@/layouts/Base.astro";
+import { getRoadmapEvents } from "@/data/roadmap-events";
+import RoadmapCalendar from "@/components/roadmap/RoadmapCalendar.astro";
 
 const meta = {
 	description:
 		"Product release schedule for @cowsayco: a strategic roadmap from token launch through protocol automation, structured as three development epochs.",
 	title: "Roadmap • @cowsayco",
 };
+
+const events = getRoadmapEvents();
 ---
 
 <PageLayout meta={meta}>
@@ -56,6 +60,14 @@ const meta = {
 				</tbody>
 			</table>
 		</div>
+	</section>
+
+	<section>
+		<h2 class="title mb-6 mt-16 text-2xl">📅 Roadmap Calendar</h2>
+		<p class="mb-6 text-muted text-sm">
+			Track our progress: completed achievements and upcoming milestones on the calendar.
+		</p>
+		<RoadmapCalendar events={events} />
 	</section>
 
 	<section>

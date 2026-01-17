@@ -1,5 +1,6 @@
 ---
 import PageLayout from "@/layouts/Base.astro";
+import Button from "@/components/ui/Button.astro";
 
 const meta = {
 	description:
@@ -87,20 +88,16 @@ function processMerchSale(order) {
 		</div>
 
 		<div class="mt-6 flex flex-wrap gap-4">
-			<a
-				href="/token/#transparency"
-				class="rainbow rainbow-1 inline-block"
-			>
-				<span>View Transparency Dashboard</span>
-			</a>
-			<a
+			<Button href="/token/#transparency">
+				View Transparency Dashboard
+			</Button>
+			<Button
 				href="https://discord.gg/yhJ24mCSxd"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="rainbow rainbow-1 inline-block"
 			>
-				<span>Join Discord for Drop Alerts</span>
-			</a>
+				Join Discord for Drop Alerts
+			</Button>
 		</div>
 	</section>
 
@@ -235,61 +232,18 @@ function processMerchSale(order) {
 				notifications and exclusive access.
 			</p>
 			<div class="flex flex-wrap gap-4">
-				<a
+				<Button
 					href="https://discord.gg/yhJ24mCSxd"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="rainbow rainbow-1 inline-block"
 				>
-					<span>Join Discord for Drop Alerts</span>
-				</a>
-				<a
-					href="/token/#transparency"
-					class="rainbow rainbow-1 inline-block"
-				>
-					<span>View Shop Revenue Wallet</span>
-				</a>
+					Join Discord for Drop Alerts
+				</Button>
+				<Button href="/token/#transparency">
+					View Shop Revenue Wallet
+				</Button>
 			</div>
 		</div>
 	</section>
 </PageLayout>
 
-<style>
-	.rainbow {
-		background-color: #343a40;
-		border-radius: 4px;
-		color: #fff;
-		cursor: pointer;
-		padding: 8px 16px;
-	}
-
-	html[data-theme="dark"] .rainbow {
-		color: #29bc89;
-	}
-
-	html[data-theme="dark"] .rainbow span {
-		mix-blend-mode: color-dodge;
-	}
-
-	html[data-theme="dark"] .rainbow:hover span {
-		mix-blend-mode: color-dodge;
-	}
-
-	.rainbow-1:hover {
-		background-image: linear-gradient(
-			90deg,
-			#3769ff 0%,
-			#3769ff 12%,
-			#b7f00c 45%,
-			#ff1e42 70%,
-			#3769ff 100%
-		);
-		animation: slidebg 10s linear infinite;
-	}
-
-	@keyframes slidebg {
-		to {
-			background-position: 24vw;
-		}
-	}
-</style>

@@ -1,0 +1,224 @@
+---
+import { getRoadmapEvents, type RoadmapEvent } from "@/data/roadmap-events";
+
+interface Props {
+	events: RoadmapEvent[];
+}
+
+const { events } = Astro.props;
+
+const now = new Date();
+const currentMonth = now.getMonth();
+const currentYear = now.getFullYear();
+
+// Get events for a specific date
+function getEventsForDate(date: Date): RoadmapEvent[] {
+	const dateStr = date.toISOString().split("T")[0];
+	return events.filter((event) => event.date === dateStr);
+}
+
+function getStatusColor(status: RoadmapEvent["status"]): string {
+	switch (status) {
+		case "completed":
+			return "bg-green-500/20 border-green-500/50";
+		case "in_progress":
+			return "bg-yellow-500/20 border-yellow-500/50";
+		case "planned":
+			return "bg-blue-500/20 border-blue-500/50";
+		case "backlog":
+			return "bg-muted/20 border-muted/50";
+		default:
+			return "bg-muted/20 border-muted/50";
+	}
+}
+
+function getStatusDotColor(status: RoadmapEvent["status"]): string {
+	switch (status) {
+		case "completed":
+			return "bg-green-400";
+		case "in_progress":
+			return "bg-yellow-400";
+		case "planned":
+			return "bg-blue-400";
+		case "backlog":
+			return "bg-muted";
+		default:
+			return "bg-muted";
+	}
+}
+
+// Generate calendar months to display (current month + next 5 months)
+function generateMonths(): { year: number; month: number; date: Date }[] {
+	const months: { year: number; month: number; date: Date }[] = [];
+	for (let i = 0; i < 6; i++) {
+		const date = new Date(currentYear, currentMonth + i, 1);
+		months.push({
+			year: date.getFullYear(),
+			month: date.getMonth(),
+			date,
+		});
+	}
+	return months;
+}
+
+const monthsToShow = generateMonths();
+
+function getDaysInMonth(year: number, month: number): number {
+	return new Date(year, month + 1, 0).getDate();
+}
+
+function getFirstDayOfMonth(year: number, month: number): number {
+	return new Date(year, month, 1).getDay();
+}
+
+function formatMonthYear(year: number, month: number): string {
+	return new Date(year, month, 1).toLocaleDateString("en-GB", {
+		month: "long",
+		year: "numeric",
+	});
+}
+
+function generateWeeksForMonth(year: number, month: number) {
+	const weeks: Week[] = [];
+	let day = 1;
+	const daysInMonth = getDaysInMonth(year, month);
+	const firstDay = getFirstDayOfMonth(year, month);
+	const totalCells = Math.ceil((firstDay + daysInMonth) / 7) * 7;
+
+	for (let i = 0; i < totalCells; i += 7) {
+		const week: Week = [];
+		for (let j = 0; j < 7; j++) {
+			const cellIndex = i + j;
+			const isDayInMonth = cellIndex >= firstDay && day <= daysInMonth;
+			const cellDate = isDayInMonth ? new Date(year, month, day) : null;
+			const dayEvents = cellDate ? getEventsForDate(cellDate) : [];
+			
+			week.push({
+				day: isDayInMonth ? day : null,
+				date: cellDate,
+				events: dayEvents,
+			});
+			
+			if (isDayInMonth) day++;
+		}
+		weeks.push(week);
+	}
+	return weeks;
+}
+
+const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+---
+
+<div class="space-y-8">
+	{monthsToShow.map(({ year, month, date: monthDate }) => {
+		const daysInMonth = getDaysInMonth(year, month);
+		const firstDay = getFirstDayOfMonth(year, month);
+		const today = new Date();
+		const isCurrentMonth = year === today.getFullYear() && month === today.getMonth();
+
+		return (
+			<div class="rounded-lg border border-accent bg-accent/5 p-6">
+				<h3 class="mb-4 font-mono text-lg font-semibold">{formatMonthYear(year, month)}</h3>
+				<div class="overflow-x-auto">
+					<table class="w-full border-collapse font-mono text-xs">
+						<thead>
+							<tr>
+								{dayNames.map((day) => (
+									<th class="border-b border-accent/50 p-2 text-center text-textColor/60">
+										{day}
+									</th>
+								))}
+							</tr>
+						</thead>
+						<tbody>
+							{generateWeeksForMonth(year, month).map((week) => (
+								<tr>
+									{week.map(({ day: dayNum, date: cellDate, events: dayEvents }) => {
+										const isToday =
+											cellDate &&
+											isCurrentMonth &&
+											cellDate.getDate() === today.getDate() &&
+											cellDate.getMonth() === today.getMonth() &&
+											cellDate.getFullYear() === today.getFullYear();
+
+										if (dayNum !== null) {
+											return (
+												<td
+													class={`relative border border-accent/30 p-2 align-top ${
+														isToday ? "bg-accent/20" : ""
+													}`}
+												>
+													<div class="mb-1 flex items-center justify-between">
+														<span class={isToday ? "font-bold text-accent" : ""}>
+															{dayNum}
+														</span>
+														{dayEvents.length > 0 && (
+															<div class="flex gap-1">
+																{dayEvents.map((event) => (
+																	<div
+																		class={`h-2 w-2 rounded-full ${getStatusDotColor(event.status)}`}
+																		title={event.title}
+																	></div>
+																))}
+															</div>
+														)}
+													</div>
+													{dayEvents.length > 0 && (
+														<div class="mt-1 space-y-1">
+															{dayEvents.slice(0, 2).map((event) => (
+																<div
+																	class={`rounded border p-1 text-[10px] ${getStatusColor(event.status)}`}
+																	title={event.description || event.title}
+																>
+																	<div class="truncate font-semibold">{event.title}</div>
+																	{event.epoch && (
+																		<div class="text-[9px] text-textColor/60">
+																			{event.epoch}
+																		</div>
+																	)}
+																</div>
+															))}
+															{dayEvents.length > 2 && (
+																<div class="text-[10px] text-textColor/60">
+																	+{dayEvents.length - 2} more
+																</div>
+															)}
+														</div>
+													)}
+												</td>
+											);
+										} else {
+											return (
+												<td class="border border-accent/10 bg-accent/5 p-2 text-muted/30">
+													&nbsp;
+												</td>
+											);
+										}
+									})}
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
+				<div class="mt-4 flex flex-wrap gap-4 text-xs">
+					<div class="flex items-center gap-2">
+						<div class="h-2 w-2 rounded-full bg-green-400"></div>
+						<span class="text-textColor/60">Completed</span>
+					</div>
+					<div class="flex items-center gap-2">
+						<div class="h-2 w-2 rounded-full bg-yellow-400"></div>
+						<span class="text-textColor/60">In Progress</span>
+					</div>
+					<div class="flex items-center gap-2">
+						<div class="h-2 w-2 rounded-full bg-blue-400"></div>
+						<span class="text-textColor/60">Planned</span>
+					</div>
+					<div class="flex items-center gap-2">
+						<div class="h-2 w-2 rounded-full bg-muted"></div>
+						<span class="text-textColor/60">Backlog</span>
+					</div>
+				</div>
+			</div>
+		);
+	})}
+</div>

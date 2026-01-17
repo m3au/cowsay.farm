@@ -1,5 +1,6 @@
 ---
 import PageLayout from "@/layouts/Base.astro";
+import Button from "@/components/ui/Button.astro";
 
 const meta = {
 	description:
@@ -45,7 +46,7 @@ const holders = [
 	<section class="mb-12">
 		<h1 class="title mb-6">Token Holders</h1>
 		<p class="mb-6 text-lg">
-			The first 28 supporters who joined the Cowsay farm early. Each holder is eligible for the
+			The first 50 supporters who joined the Cowsay farm early. Each holder is eligible for the
 			Genesis NFT airdrop: <strong>Cowsay #001: Genesis</strong>.
 		</p>
 
@@ -64,9 +65,9 @@ const holders = [
 		</div>
 
 		<div class="mb-6 flex flex-wrap gap-4">
-			<a href="/token/" class="rainbow rainbow-1 inline-block">
-				<span>← Back to Token</span>
-			</a>
+			<Button href="/token/">
+				← Back to Token
+			</Button>
 		</div>
 	</section>
 
@@ -175,57 +176,17 @@ const holders = [
 	<div class="rounded-lg border-2 border-accent bg-accent/10 p-6 text-center">
 		<p class="mb-4 font-semibold">Have questions about claiming your NFT?</p>
 		<div class="flex flex-wrap justify-center gap-4">
-			<a
+			<Button
 				href="https://discord.gg/yhJ24mCSxd"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="rainbow rainbow-1 inline-block"
 			>
-				<span>Join Discord</span>
-			</a>
-			<a href="/token/" class="rainbow rainbow-1 inline-block">
-				<span>Learn More About Token</span>
-			</a>
+				Join Discord
+			</Button>
+			<Button href="/token/">
+				Learn More About Token
+			</Button>
 		</div>
 	</div>
 </PageLayout>
 
-<style>
-	.rainbow {
-		background-color: #343a40;
-		border-radius: 4px;
-		color: #fff;
-		cursor: pointer;
-		padding: 8px 16px;
-	}
-
-	html[data-theme="dark"] .rainbow {
-		color: #29bc89;
-	}
-
-	html[data-theme="dark"] .rainbow span {
-		mix-blend-mode: color-dodge;
-	}
-
-	html[data-theme="dark"] .rainbow:hover span {
-		mix-blend-mode: color-dodge;
-	}
-
-	.rainbow-1:hover {
-		background-image: linear-gradient(
-			90deg,
-			#3769ff 0%,
-			#3769ff 12%,
-			#b7f00c 45%,
-			#ff1e42 70%,
-			#3769ff 100%
-		);
-		animation: slidebg 10s linear infinite;
-	}
-
-	@keyframes slidebg {
-		to {
-			background-position: 24vw;
-		}
-	}
-</style>

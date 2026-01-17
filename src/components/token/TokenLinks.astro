@@ -1,0 +1,148 @@
+---
+import Button from "@/components/ui/Button.astro";
+
+interface Props {
+	contractAddress?: string;
+}
+
+const { contractAddress } = Astro.props;
+---
+
+{contractAddress && (
+	<section class="mb-6">
+		<div class="space-y-4">
+			<!-- Real-Time Charts & Analytics -->
+			<div>
+				<p class="mb-2 text-xs font-semibold text-green-500/80">Real-Time Charts & Analytics</p>
+				<div class="flex flex-wrap gap-4">
+					<Button
+						href={`https://dexscreener.com/solana/${contractAddress}`}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						DexScreener
+					</Button>
+					<Button
+						href={`https://birdeye.so/token/${contractAddress}?chain=solana`}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Birdeye
+					</Button>
+					<Button
+						href={`https://gmgn.ai/sol/token/${contractAddress}`}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						GMGN.ai
+					</Button>
+					<Button
+						href="https://www.dextools.io/app/solana/pair-explorer/AkoJgEzT4Sk2fV5ABMRQ4tc2v9TmL9Wxf2nKLjMrff5Z"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						DEXTools
+					</Button>
+					<Button
+						href={`https://www.geckoterminal.com/solana/pools/${contractAddress}`}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						GeckoTerminal
+					</Button>
+				</div>
+			</div>
+
+			<!-- Buy & Trade -->
+			<div>
+				<p class="mb-2 text-xs font-semibold text-green-500/80">Buy & Trade</p>
+				<div class="flex flex-wrap gap-4">
+					<Button
+						href={`https://jup.ag/swap/SOL-${contractAddress}`}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Jupiter
+					</Button>
+					<Button
+						href={`https://raydium.io/swap/?inputMint=sol&outputMint=${contractAddress}`}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Raydium
+					</Button>
+					<Button
+						href={`https://pump.fun/${contractAddress}`}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Pump.fun
+					</Button>
+				</div>
+			</div>
+
+			<!-- Blockchain Explorers -->
+			<div>
+				<p class="mb-2 text-xs font-semibold text-green-500/80">Blockchain Explorers</p>
+				<div class="flex flex-wrap gap-4">
+					<Button
+						href={`https://solscan.io/token/${contractAddress}`}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Solscan
+					</Button>
+					<Button
+						href={`https://solana.fm/address/${contractAddress}`}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						SolanaFM
+					</Button>
+					<Button
+						href={`https://www.okx.com/web3/explorer/sol/token/${contractAddress}`}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						OKX Explorer
+					</Button>
+				</div>
+			</div>
+
+			<!-- Safety & Transparency -->
+			<div>
+				<p class="mb-2 text-xs font-semibold text-green-500/80">Safety & Transparency</p>
+				<div class="flex flex-wrap gap-4">
+					<Button
+						href={`https://rugcheck.xyz/tokens/${contractAddress}`}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						RugCheck
+					</Button>
+					<Button
+						href={`https://v2.bubblemaps.io/map?address=${contractAddress}&chain=solana`}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Bubble Maps
+					</Button>
+					<Button
+						href="https://solscan.io/token/7wVPhDegCLfcHcNdW1Z9Wbwd2HXMj3snLoiTeDNEpump?activity_type=ACTIVITY_SPL_TRANSFER&exclude_amount_zero=true&remove_spam=false&from_address=666V4HbB73nmNNXwQ1cx25RHYWw1G8RWtAzDaZh2Pdtw&page_size=100"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						View all buyback transactions on Solscan →
+					</Button>
+					<Button
+						href="https://solscan.io/token/7wVPhDegCLfcHcNdW1Z9Wbwd2HXMj3snLoiTeDNEpump?activity_type=ACTIVITY_SPL_BURN&exclude_amount_zero=false&page_size=100&remove_spam=false"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						View all burn transactions on Solscan →
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+)}
