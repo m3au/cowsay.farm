@@ -1,0 +1,129 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+import { getTeamMembers } from "@/data/team";
+
+const meta = {
+	description:
+		"Meet the team behind @cowsayco—the people building and growing the developer culture community on the blockchain.",
+	title: "Team • @cowsayco",
+};
+
+const teamMembers = getTeamMembers();
+---
+
+<PageLayout meta={meta}>
+	<!-- Section 1: The Hero -->
+	<section class="mb-12">
+		<h1 class="title mb-6 font-mono">🐄 TEAM</h1>
+		<p class="mb-4">
+			Meet the people building and growing the @cowsayco community. From ambassadors to developers,
+			we're a team dedicated to porting developer culture to the blockchain.
+		</p>
+	</section>
+
+	<!-- Section 2: Team Members -->
+	<section class="mb-16">
+		<h2 class="title mb-6 font-mono text-2xl">PROJECT MEMBERS</h2>
+		{teamMembers.length > 0 ? (
+			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+				{teamMembers.map((member) => {
+					const twitterHandle = member.twitter?.startsWith("http")
+						? member.twitter
+						: member.twitter
+							? `https://twitter.com/${member.twitter.replace(/^@/, "")}`
+							: null;
+					const twitterDisplay = member.twitter?.startsWith("http")
+						? member.twitter.split("/").pop()?.replace(/\?.*$/, "") || member.twitter
+						: member.twitter?.replace(/^@/, "");
+
+					return (
+						<div class="rounded-lg border border-accent bg-accent/5 p-6">
+							{member.image && (
+								<div class="mb-4">
+									<img
+										src={member.image}
+										alt={`${member.name} profile picture`}
+										class="h-24 w-24 rounded-full object-cover border border-accent"
+									/>
+								</div>
+							)}
+							<h3 class="mb-2 font-mono text-lg font-semibold">{member.name}</h3>
+							<p class="mb-4 text-sm text-textColor/80">{member.role}</p>
+							{(member.twitter || member.discord) && (
+								<div class="space-y-2 font-mono text-xs">
+									{member.twitter && (
+										<div>
+											<code class="text-textColor/60">$</code>
+											<a
+												class="cactus-link ml-2"
+												href={twitterHandle || "#"}
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												follow --twitter @{twitterDisplay}
+											</a>
+										</div>
+									)}
+									{member.discord && (
+										<div>
+											<code class="text-textColor/60">$</code>
+											<span class="ml-2 text-textColor/80">
+												discord: {member.discord}
+											</span>
+										</div>
+									)}
+								</div>
+							)}
+						</div>
+					);
+				})}
+			</div>
+		) : (
+			<p class="text-textColor/60 font-mono text-sm">No team members listed yet.</p>
+		)}
+	</section>
+
+	<!-- Section 3: Join the Team -->
+	<section>
+		<h2 class="title mb-6 font-mono text-2xl">JOIN THE TEAM</h2>
+		<p class="mb-4 text-textColor/80">
+			We're always looking for passionate community members to help grow @cowsayco. Interested in
+			joining? Reach out on Discord or Twitter.
+		</p>
+		<div class="space-y-3 font-mono text-sm">
+			<div class="rounded border border-accent bg-accent/5 p-4">
+				<code class="text-textColor/60">$</code>
+				<a
+					class="cactus-link ml-2"
+					href="https://x.com/i/communities/2011240178778607815"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					join --twitter-community
+				</a>
+			</div>
+			<div class="rounded border border-accent bg-accent/5 p-4">
+				<code class="text-textColor/60">$</code>
+				<a
+					class="cactus-link ml-2"
+					href="https://discord.gg/yhJ24mCSxd"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					join --discord
+				</a>
+			</div>
+			<div class="rounded border border-accent bg-accent/5 p-4">
+				<code class="text-textColor/60">$</code>
+				<a
+					class="cactus-link ml-2"
+					href="https://twitter.com/intent/user?screen_name=cowsayco"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					follow --twitter @cowsayco
+				</a>
+			</div>
+		</div>
+	</section>
+</PageLayout>
