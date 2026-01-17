@@ -323,7 +323,7 @@ const formatUsd = (value: number) =>
 		</div>
 	</section>
 
-	<section class="mb-12">
+	<section id="buybacks" class="mb-12 scroll-mt-8">
 		<h2 class="title mb-6 text-2xl">Dev Buyback Summary</h2>
 		<div class="rounded-lg border border-green-500 bg-black p-4">
 			<div class="mb-4 flex items-center gap-2 font-mono text-sm">
@@ -377,7 +377,7 @@ const formatUsd = (value: number) =>
 		</div>
 	</section>
 
-	<section class="mb-12">
+	<section id="burn" class="mb-12 scroll-mt-8">
 		<h2 class="title mb-6 text-2xl">Burn Summary</h2>
 		<div class="rounded-lg border border-green-500 bg-black p-4">
 			<div class="mb-4 flex items-center gap-2 font-mono text-sm">
@@ -723,3 +723,31 @@ function distributeRevenue(amount) {
 		}
 	}
 </style>
+
+<script>
+	// Handle scroll to section via query parameter (e.g., /token?scroll=buybacks)
+	// or hash anchor (e.g., /token#buybacks)
+	const scrollToSection = () => {
+		const urlParams = new URLSearchParams(window.location.search);
+		const scrollTo = urlParams.get('scroll') || window.location.hash.slice(1);
+		
+		if (scrollTo) {
+			setTimeout(() => {
+				const element = document.getElementById(scrollTo);
+				if (element) {
+					element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+					// Clean up URL by removing query parameter after scroll
+					if (urlParams.get('scroll')) {
+						window.history.replaceState({}, '', '/token/');
+					}
+				}
+			}, 100);
+		}
+	};
+	
+	// Run on page load
+	window.addEventListener('load', scrollToSection);
+	
+	// Also handle hash changes (for browser back/forward)
+	window.addEventListener('hashchange', scrollToSection);
+</script>
