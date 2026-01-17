@@ -27,10 +27,22 @@ export const teamMembers: TeamMember[] = [
 		image: "/team/bima.jpg",
 	},
 	{
+		name: "Kerstin",
+		role: "Merch Shop Operator",
+		twitter: "https://x.com/Kerstin682",
+		image: "/team/kerstin.jpg",
+	},
+	{
 		name: "Franklin",
 		role: "Project Ambassador",
 		twitter: "https://twitter.com/big_franklin01",
 		image: "/team/franklin.jpg",
+	},
+	{
+		name: "TM",
+		role: "Discord Moderator",
+		twitter: "https://x.com/tm401z",
+		image: "/team/tm.jpg",
 	},
 ];
 
